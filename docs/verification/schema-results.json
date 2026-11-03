@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "schemas": 4,
+  "validated_artifacts": 46,
+  "ci_yaml": "parsed; execution on GitHub was not performed"
+}

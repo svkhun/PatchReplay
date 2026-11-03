@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "case_id": {
+      "pattern": "^[a-z0-9][a-z0-9_-]{0,79}$",
+      "type": "string"
+    },
+    "evaluator_id": {
+      "pattern": "^[a-z0-9][a-z0-9_-]{0,79}$",
+      "type": "string"
+    },
+    "evaluator_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "patch": {
+      "description": "Relative path; runtime rejects traversal, links, device names and reserved characters.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "patch_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "repeats": {
+      "maximum": 5,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "required_pytest": {
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "source_id": {
+      "pattern": "^[a-z0-9][a-z0-9_-]{0,79}$",
+      "type": "string"
+    },
+    "source_revision": {
+      "pattern": "^sha256:[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "suite_id": {
+      "pattern": "^[a-z0-9][a-z0-9_-]{0,79}$",
+      "type": "string"
+    },
+    "suite_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "timeout_seconds": {
+      "maximum": 60,
+      "minimum": 0.05,
+      "type": "number"
+    },
+    "title": {
+      "maxLength": 300,
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "case_id",
+    "title",
+    "source_id",
+    "source_revision",
+    "patch",
+    "patch_sha256",
+    "evaluator_id",
+    "evaluator_sha256",
+    "suite_id",
+    "suite_sha256",
+    "repeats",
+    "timeout_seconds",
+    "required_pytest"
+  ],
+  "title": "PatchReplay case v1",
+  "type": "object"
+}

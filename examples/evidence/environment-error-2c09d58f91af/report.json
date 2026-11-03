@@ -1,0 +1,39 @@
+{
+  "cache": {
+    "enabled": false,
+    "reason": "MVP always executes; identities are reserved for future exact-input cache keys."
+  },
+  "case_id": "environment-error",
+  "checks": [],
+  "created_at": "2026-11-03T08:13:43.150564+00:00",
+  "evaluator_version": "0.1.0",
+  "executor": "controlled-fixtures-v1",
+  "identities": {
+    "case_sha256": "dcba9f11ff5b00f3b2b08490c1e1ffb9095993c699779d49e436493329a4d77d",
+    "engine_sha256": "3ae2337a4a31bd100856692bb88f5560ae361230359a5bf0710adcede07142d6",
+    "environment_sha256": "08a8fb2bf22263e5117035051d37e764783dd7fb32b96562b9975080e5e9e2e9",
+    "evaluator_sha256": "2fd35a2be6c3362fd95fcca9673a587d7c104b6af3d5b836389e9cf46bce9c47",
+    "inputs_sha256": "a9ee37d872ac575a0f5443e3529f8668e08c0010090f74e7ca98bc401a63e8e8",
+    "patch_sha256": "f43c8fc4e9eabeb869fd35d303d98d78e7ef840f6abf54aa03821719d69aea7d",
+    "source_revision": "sha256:dc9af9a73747ed374fbf0cee83132cfa7ba08df954ce421c1cc1fd77456b46d2",
+    "suite_sha256": "a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e"
+  },
+  "limitations": [
+    "Synthetic controlled fixtures only; this is not a coding-agent benchmark or evidence of general correctness.",
+    "The local executor is not a security sandbox. External repositories and unregistered patches are rejected.",
+    "A clean environment removes inherited credentials; it does not restrict host filesystem access or network access.",
+    "Timeouts and repeated observations bound this evaluation; they cannot prove determinism or absence of flakes.",
+    "SHA-256 detects changes relative to a trusted manifest anchor; it does not authenticate the producer.",
+    "Replay records dependencies and platform identity but does not snapshot the OS, hardware, or scheduling."
+  ],
+  "reason": "Environment preflight failed: pytest 0.0.0 and usable Git are required. Nothing was installed.",
+  "repeats": 2,
+  "replay": "python -m patchreplay replay <this-package-directory> --output replay-output",
+  "run_id": "environment-error-2c09d58f91af",
+  "schema_version": 1,
+  "status": "INFRA_ERROR",
+  "steps": [],
+  "suite_id": "synthetic-clamp-v1",
+  "timeout_seconds": 10.0,
+  "title": "Synthetic clamp / environment error"
+}

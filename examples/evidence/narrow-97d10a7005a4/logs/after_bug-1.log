@@ -1,0 +1,10 @@
+.F                                                                       [100%]
+================================== FAILURES ===================================
+__________________________ test_nonzero_lower_bound ___________________________
+evaluator\test_bug.py:9: in test_nonzero_lower_bound
+    assert clamp(1, 5, 10) == 5
+E   AssertionError
+- generated xml file: D:\All Project\open-ai\examples\evidence\narrow-97d10a7005a4\checks\after_bug-1.xml -
+=========================== short test summary info ===========================
+FAILED evaluator\test_bug.py::test_nonzero_lower_bound - AssertionError
+1 failed, 1 passed in 0.38s

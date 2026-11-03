@@ -1,0 +1,155 @@
+{
+  "cases": [
+    {
+      "actual": "VERIFIED_FOR_DECLARED_CHECKS",
+      "case_id": "good",
+      "expected": "VERIFIED_FOR_DECLARED_CHECKS",
+      "package": "good-712685dc91b8"
+    },
+    {
+      "actual": "FIX_FAILED",
+      "case_id": "ineffective",
+      "expected": "FIX_FAILED",
+      "package": "ineffective-da6da95eac86"
+    },
+    {
+      "actual": "FIX_FAILED",
+      "case_id": "narrow",
+      "expected": "FIX_FAILED",
+      "package": "narrow-97d10a7005a4"
+    },
+    {
+      "actual": "REGRESSION_DETECTED",
+      "case_id": "regression",
+      "expected": "REGRESSION_DETECTED",
+      "package": "regression-c45cdc19a7c1"
+    },
+    {
+      "actual": "EVALUATION_INTEGRITY_FAILED",
+      "case_id": "protected",
+      "expected": "EVALUATION_INTEGRITY_FAILED",
+      "package": "protected-af047d7e304b"
+    },
+    {
+      "actual": "INFRA_ERROR",
+      "case_id": "environment-error",
+      "expected": "INFRA_ERROR",
+      "package": "environment-error-2c09d58f91af"
+    },
+    {
+      "actual": "INCONCLUSIVE",
+      "case_id": "timeout",
+      "expected": "INCONCLUSIVE",
+      "package": "timeout-64bb849189fc"
+    },
+    {
+      "actual": "INCONCLUSIVE",
+      "case_id": "unstable",
+      "expected": "INCONCLUSIVE",
+      "package": "unstable-0a16c33f068c"
+    },
+    {
+      "actual": "BUG_NOT_REPRODUCED",
+      "case_id": "already-fixed",
+      "expected": "BUG_NOT_REPRODUCED",
+      "package": "already-fixed-889f5680c775"
+    },
+    {
+      "actual": "FIX_FAILED",
+      "case_id": "syntax-error",
+      "expected": "FIX_FAILED",
+      "package": "syntax-error-ad84da9d877b"
+    }
+  ],
+  "claim_results": [
+    {
+      "asserted": {
+        "denominator": 10,
+        "denominator_policy": "all_declared_cases",
+        "numerator": 1
+      },
+      "claim_id": "suite-supported",
+      "excluded_from_numerator": {
+        "BUG_NOT_REPRODUCED": 1,
+        "EVALUATION_INTEGRITY_FAILED": 1,
+        "FIX_FAILED": 3,
+        "INCONCLUSIVE": 2,
+        "INFRA_ERROR": 1,
+        "REGRESSION_DETECTED": 1
+      },
+      "observed": {
+        "denominator": 10,
+        "denominator_policy": "all_declared_cases",
+        "numerator": 1
+      },
+      "reason": "Observed 1/10 within the declared scope. All declared cases remain in the denominator.",
+      "schema_version": 1,
+      "status": "SUPPORTED_FOR_SCOPE"
+    },
+    {
+      "asserted": {
+        "denominator": 10,
+        "denominator_policy": "all_declared_cases",
+        "numerator": 8
+      },
+      "claim_id": "wrong-number",
+      "excluded_from_numerator": {
+        "BUG_NOT_REPRODUCED": 1,
+        "EVALUATION_INTEGRITY_FAILED": 1,
+        "FIX_FAILED": 3,
+        "INCONCLUSIVE": 2,
+        "INFRA_ERROR": 1,
+        "REGRESSION_DETECTED": 1
+      },
+      "observed": {
+        "denominator": 10,
+        "denominator_policy": "all_declared_cases",
+        "numerator": 1
+      },
+      "reason": "Observed 1/10 within the declared scope. All declared cases remain in the denominator.",
+      "schema_version": 1,
+      "status": "CONTRADICTED"
+    },
+    {
+      "asserted": {
+        "denominator": 1,
+        "denominator_policy": "all_declared_cases",
+        "numerator": 1
+      },
+      "claim_id": "regression-supported",
+      "excluded_from_numerator": {},
+      "observed": {
+        "denominator": 1,
+        "denominator_policy": "all_declared_cases",
+        "numerator": 1
+      },
+      "reason": "Observed 1/1 within the declared scope. All declared cases remain in the denominator.",
+      "schema_version": 1,
+      "status": "SUPPORTED_FOR_SCOPE"
+    },
+    {
+      "claim_id": "stale-patch",
+      "reason": "Evidence no longer matches the explicitly expected input identities.",
+      "schema_version": 1,
+      "stale_cases": [
+        "good"
+      ],
+      "status": "STALE"
+    },
+    {
+      "claim_id": "missing-evidence",
+      "reason": "Evidence is incomplete or inconsistent: [Errno 2] No such file or directory: 'D:\\\\All Project\\\\open-ai\\\\examples\\\\evidence\\\\missing-package\\\\manifest.json'",
+      "schema_version": 1,
+      "status": "INSUFFICIENT_EVIDENCE"
+    },
+    {
+      "claim_id": "tampered-evidence",
+      "reason": "Evidence is incomplete or inconsistent: Manifest differs from the claim's pinned SHA-256",
+      "schema_version": 1,
+      "status": "INSUFFICIENT_EVIDENCE"
+    }
+  ],
+  "expectations_met": true,
+  "schema_version": 1,
+  "scope": "Synthetic workflow demonstration; not general coding-agent performance."
+}

@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "files_checked": 545,
+  "core.autocrlf": true,
+  "changed_by_clean_filters": [],
+  "limitation": "Read-only Git clean-filter check; this does not execute the project on another OS."
+}

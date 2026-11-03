@@ -1,0 +1,15 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+__________________________ test_negative_lower_bound __________________________
+evaluator\test_bug.py:5: in test_negative_lower_bound
+    assert clamp(-2, 0, 10) == 0
+E   AssertionError
+__________________________ test_nonzero_lower_bound ___________________________
+evaluator\test_bug.py:9: in test_nonzero_lower_bound
+    assert clamp(1, 5, 10) == 5
+E   AssertionError
+- generated xml file: D:\All Project\open-ai\examples\evidence\regression-c45cdc19a7c1\checks\before_bug-1.xml -
+=========================== short test summary info ===========================
+FAILED evaluator\test_bug.py::test_negative_lower_bound - AssertionError
+FAILED evaluator\test_bug.py::test_nonzero_lower_bound - AssertionError
+2 failed in 0.39s

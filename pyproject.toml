@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools==75.8.2", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "patchreplay"
+version = "0.1.0"
+description = "Turn a bug fix into a replayable evidence package."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = ["pytest==8.3.5"]
+
+[project.scripts]
+patchreplay = "patchreplay.cli:main"
+evidenceci = "patchreplay.cli:evidence_main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+patchreplay = ["data/**/*", "templates/*.html"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+pythonpath = ["src"]
+

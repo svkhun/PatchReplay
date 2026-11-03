@@ -1,0 +1,179 @@
+{
+  "assertion": {
+    "denominator": 10,
+    "denominator_policy": "all_declared_cases",
+    "numerator": 8
+  },
+  "claim_id": "wrong-number",
+  "evidence": [
+    {
+      "case_id": "good",
+      "expected": {
+        "case_sha256": "9532ffaf4208f2ecdc555c86310d2d22b94731ddc003981cea0a9af2054f6f5f",
+        "engine_sha256": "3ae2337a4a31bd100856692bb88f5560ae361230359a5bf0710adcede07142d6",
+        "environment_sha256": "08a8fb2bf22263e5117035051d37e764783dd7fb32b96562b9975080e5e9e2e9",
+        "evaluator_sha256": "2fd35a2be6c3362fd95fcca9673a587d7c104b6af3d5b836389e9cf46bce9c47",
+        "inputs_sha256": "3364e01af4121a57bddc9a343fd64ae765498aa19a55e24817813f4807456091",
+        "patch_sha256": "f43c8fc4e9eabeb869fd35d303d98d78e7ef840f6abf54aa03821719d69aea7d",
+        "source_revision": "sha256:dc9af9a73747ed374fbf0cee83132cfa7ba08df954ce421c1cc1fd77456b46d2",
+        "suite_sha256": "a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e"
+      },
+      "manifest_sha256": "7aaf5f350ff3226e8eeff415846af0a272d420b06ddea2a743fa2e0a08344567",
+      "package": "good-712685dc91b8"
+    },
+    {
+      "case_id": "ineffective",
+      "expected": {
+        "case_sha256": "65bb6af893b7f9e3333ebe2e48ea525da899d0d723cf905a5a06e7583e84b5b2",
+        "engine_sha256": "3ae2337a4a31bd100856692bb88f5560ae361230359a5bf0710adcede07142d6",
+        "environment_sha256": "08a8fb2bf22263e5117035051d37e764783dd7fb32b96562b9975080e5e9e2e9",
+        "evaluator_sha256": "2fd35a2be6c3362fd95fcca9673a587d7c104b6af3d5b836389e9cf46bce9c47",
+        "inputs_sha256": "5b971a792448ef12fcc542c668b56beac4440d619e3d2cd114c90e44f3d9bee4",
+        "patch_sha256": "eb35ebc22a9e89fed238f4718adece061a57fb0021189588b9c2a4fb7afbd73d",
+        "source_revision": "sha256:dc9af9a73747ed374fbf0cee83132cfa7ba08df954ce421c1cc1fd77456b46d2",
+        "suite_sha256": "a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e"
+      },
+      "manifest_sha256": "60b8a3e1f30a9aae46eb22be3ea8ec4b234b2528821e9ed2707a6095d661057e",
+      "package": "ineffective-da6da95eac86"
+    },
+    {
+      "case_id": "narrow",
+      "expected": {
+        "case_sha256": "fcb4e163278627d8d90264e62d7d676a4c924345182daed548d610b9efed0449",
+        "engine_sha256": "3ae2337a4a31bd100856692bb88f5560ae361230359a5bf0710adcede07142d6",
+        "environment_sha256": "08a8fb2bf22263e5117035051d37e764783dd7fb32b96562b9975080e5e9e2e9",
+        "evaluator_sha256": "2fd35a2be6c3362fd95fcca9673a587d7c104b6af3d5b836389e9cf46bce9c47",
+        "inputs_sha256": "613def47e78d71bf186da225f2f6a3c1dc5ffab16cb1185aedf3e3851d20b2e0",
+        "patch_sha256": "9380fd0da9ee369989c4a3df9e94c2518c294fc8ebcb9896503f7cbfe237bf70",
+        "source_revision": "sha256:dc9af9a73747ed374fbf0cee83132cfa7ba08df954ce421c1cc1fd77456b46d2",
+        "suite_sha256": "a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e"
+      },
+      "manifest_sha256": "3293adfd0ec354beb1701a166b69128aa210f4dc7a0073df0221bb8d91383f25",
+      "package": "narrow-97d10a7005a4"
+    },
+    {
+      "case_id": "regression",
+      "expected": {
+        "case_sha256": "7d225a1fa7afca55af3f6eb2310469a4ee757280ead43683b6d0e3dcd4ec0c6b",
+        "engine_sha256": "3ae2337a4a31bd100856692bb88f5560ae361230359a5bf0710adcede07142d6",
+        "environment_sha256": "08a8fb2bf22263e5117035051d37e764783dd7fb32b96562b9975080e5e9e2e9",
+        "evaluator_sha256": "2fd35a2be6c3362fd95fcca9673a587d7c104b6af3d5b836389e9cf46bce9c47",
+        "inputs_sha256": "3e655837bb0696aa30cc42e9d11f88013fbe99c980e8f45515f7cf97bcc8b146",
+        "patch_sha256": "77e599bab6e0e2c19c92691bdc622f21dff10e7d331fa44221a3c6e5ce753ac2",
+        "source_revision": "sha256:dc9af9a73747ed374fbf0cee83132cfa7ba08df954ce421c1cc1fd77456b46d2",
+        "suite_sha256": "a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e"
+      },
+      "manifest_sha256": "33afa5a109c58260317f164158f496e131d26e0ef7d2c8524af05f97ac118492",
+      "package": "regression-c45cdc19a7c1"
+    },
+    {
+      "case_id": "protected",
+      "expected": {
+        "case_sha256": "df63edb7ab6dc5174769df887a0f994ccaa5d88738eea037699ae489441763de",
+        "engine_sha256": "3ae2337a4a31bd100856692bb88f5560ae361230359a5bf0710adcede07142d6",
+        "environment_sha256": "08a8fb2bf22263e5117035051d37e764783dd7fb32b96562b9975080e5e9e2e9",
+        "evaluator_sha256": "2fd35a2be6c3362fd95fcca9673a587d7c104b6af3d5b836389e9cf46bce9c47",
+        "inputs_sha256": "5f01fc7ccb386d0a89b8ce5f7d8df83e6560649ee55e95aabf3295faf3a57bc3",
+        "patch_sha256": "ad383eb97b8a089a94469dd30bef2a80690ef4a10b00c00cf262ef3f30fdb48d",
+        "source_revision": "sha256:dc9af9a73747ed374fbf0cee83132cfa7ba08df954ce421c1cc1fd77456b46d2",
+        "suite_sha256": "a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e"
+      },
+      "manifest_sha256": "2e05e599caf6c7e09f086eea37754b2218fb6cb8b396c53974cbdf4e64cc7cbb",
+      "package": "protected-af047d7e304b"
+    },
+    {
+      "case_id": "environment-error",
+      "expected": {
+        "case_sha256": "dcba9f11ff5b00f3b2b08490c1e1ffb9095993c699779d49e436493329a4d77d",
+        "engine_sha256": "3ae2337a4a31bd100856692bb88f5560ae361230359a5bf0710adcede07142d6",
+        "environment_sha256": "08a8fb2bf22263e5117035051d37e764783dd7fb32b96562b9975080e5e9e2e9",
+        "evaluator_sha256": "2fd35a2be6c3362fd95fcca9673a587d7c104b6af3d5b836389e9cf46bce9c47",
+        "inputs_sha256": "a9ee37d872ac575a0f5443e3529f8668e08c0010090f74e7ca98bc401a63e8e8",
+        "patch_sha256": "f43c8fc4e9eabeb869fd35d303d98d78e7ef840f6abf54aa03821719d69aea7d",
+        "source_revision": "sha256:dc9af9a73747ed374fbf0cee83132cfa7ba08df954ce421c1cc1fd77456b46d2",
+        "suite_sha256": "a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e"
+      },
+      "manifest_sha256": "7806f6cb767601ce6df1905ffc9e61b1d730b5106b069e11aaabad7e905fc74e",
+      "package": "environment-error-2c09d58f91af"
+    },
+    {
+      "case_id": "timeout",
+      "expected": {
+        "case_sha256": "8e0c095185c87132db338bd960a798a7eb115a7ede18fa2d97b615abdadd1879",
+        "engine_sha256": "3ae2337a4a31bd100856692bb88f5560ae361230359a5bf0710adcede07142d6",
+        "environment_sha256": "08a8fb2bf22263e5117035051d37e764783dd7fb32b96562b9975080e5e9e2e9",
+        "evaluator_sha256": "2fd35a2be6c3362fd95fcca9673a587d7c104b6af3d5b836389e9cf46bce9c47",
+        "inputs_sha256": "9258e31e0e2009541e285f16e952d2f2c17c217c3a1e7aca46930742cbe6ea1f",
+        "patch_sha256": "435344e2f8eb62634c582db405b549868df7b5b12d7fb3d5fbc01371fee75a71",
+        "source_revision": "sha256:dc9af9a73747ed374fbf0cee83132cfa7ba08df954ce421c1cc1fd77456b46d2",
+        "suite_sha256": "a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e"
+      },
+      "manifest_sha256": "c70cc7dc7699f91e981973680db96bfaaafc69b07befc7cc63fd6b28181b2c80",
+      "package": "timeout-64bb849189fc"
+    },
+    {
+      "case_id": "unstable",
+      "expected": {
+        "case_sha256": "70a3cf388804d1e5b6fc7e2a5fb1905677a82b13f7d8fd66e1a40b4732a2a0d7",
+        "engine_sha256": "3ae2337a4a31bd100856692bb88f5560ae361230359a5bf0710adcede07142d6",
+        "environment_sha256": "08a8fb2bf22263e5117035051d37e764783dd7fb32b96562b9975080e5e9e2e9",
+        "evaluator_sha256": "2fd35a2be6c3362fd95fcca9673a587d7c104b6af3d5b836389e9cf46bce9c47",
+        "inputs_sha256": "a7d4bab19ccbeb0fae93db364a77f2092a45019cd8e6e7d9b2d93bbc74d85d2f",
+        "patch_sha256": "be98589cf6b843d93d046b1fed3194ca01db0fad9b91d3f2d41a624598a9e366",
+        "source_revision": "sha256:dc9af9a73747ed374fbf0cee83132cfa7ba08df954ce421c1cc1fd77456b46d2",
+        "suite_sha256": "a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e"
+      },
+      "manifest_sha256": "762cd4c0b63e7002595d9326eade8979cf211ccd8e9b8d5dec3c6bde393c8c32",
+      "package": "unstable-0a16c33f068c"
+    },
+    {
+      "case_id": "already-fixed",
+      "expected": {
+        "case_sha256": "aa5a7cd3952883d7d8c8de44e003c8837216621c12fb331768ec8e670e3c685f",
+        "engine_sha256": "3ae2337a4a31bd100856692bb88f5560ae361230359a5bf0710adcede07142d6",
+        "environment_sha256": "08a8fb2bf22263e5117035051d37e764783dd7fb32b96562b9975080e5e9e2e9",
+        "evaluator_sha256": "2fd35a2be6c3362fd95fcca9673a587d7c104b6af3d5b836389e9cf46bce9c47",
+        "inputs_sha256": "d3dbf0c2cb653bd4aa084d7fbcbd81b3fb88d2d271acae7ac8e12e271316a23e",
+        "patch_sha256": "05d2b017f117b3dfd1c049d9bc2976e3b4201875192ca2c6f7fdfae46360dd02",
+        "source_revision": "sha256:fc46eeb29bbe873d7e6217db2eccecbb7fa20d13e8558ca9bb90c1fd355cd25d",
+        "suite_sha256": "a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e"
+      },
+      "manifest_sha256": "f2476925b53b7c818ada7658edc7eb359ef0a17a97c4be0afb945965ef4d19f7",
+      "package": "already-fixed-889f5680c775"
+    },
+    {
+      "case_id": "syntax-error",
+      "expected": {
+        "case_sha256": "1f21b4a556a1f1a8d27efe29011d714a1a97cfaf22aa48446c90e54c8d861a44",
+        "engine_sha256": "3ae2337a4a31bd100856692bb88f5560ae361230359a5bf0710adcede07142d6",
+        "environment_sha256": "08a8fb2bf22263e5117035051d37e764783dd7fb32b96562b9975080e5e9e2e9",
+        "evaluator_sha256": "2fd35a2be6c3362fd95fcca9673a587d7c104b6af3d5b836389e9cf46bce9c47",
+        "inputs_sha256": "6451aaa09971436db94af02e8789bbf18de868461f9bfeb3444ba0bf40b99ffd",
+        "patch_sha256": "80f6a1089f9bf2cac46a776f04e0bb7890d7ab6e8a377ba15939e62320e940c1",
+        "source_revision": "sha256:dc9af9a73747ed374fbf0cee83132cfa7ba08df954ce421c1cc1fd77456b46d2",
+        "suite_sha256": "a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e"
+      },
+      "manifest_sha256": "fea3cb135498585590e63b954cfc2955dd6691bcf66e37787958f126eaa92a39",
+      "package": "syntax-error-ad84da9d877b"
+    }
+  ],
+  "kind": "success_count",
+  "schema_version": 1,
+  "scope": {
+    "case_ids": [
+      "good",
+      "ineffective",
+      "narrow",
+      "regression",
+      "protected",
+      "environment-error",
+      "timeout",
+      "unstable",
+      "already-fixed",
+      "syntax-error"
+    ],
+    "suite_id": "synthetic-clamp-v1",
+    "suite_sha256": "a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e"
+  },
+  "text": "Eight of ten synthetic cases were verified."
+}

@@ -1,0 +1,9 @@
+diff --git a/clamp.py b/clamp.py
+--- a/clamp.py
++++ b/clamp.py
+@@ -1,4 +1,4 @@
+-"""Synthetic bounded-value utility; intentionally buggy lower bound."""
++"""Synthetic bounded-value utility; already corrected lower bound."""
+ 
+ 
+ def clamp(value, lower, upper):

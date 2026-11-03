@@ -1,0 +1,6 @@
+{
+  "engine_matches_source": true,
+  "sha256": "da6f49f9c5c8a79c182d3e80966a2c73b4f43ff7907dc882aaeeecbb67dd3db4",
+  "wheel": "dist\\patchreplay-0.1.0-py3-none-any.whl",
+  "wheel_smoke_status": "VERIFIED_FOR_DECLARED_CHECKS"
+}

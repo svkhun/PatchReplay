@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>$title · PatchReplay</title>
+  <style>
+    :root { color-scheme: light; --ink:#182c32; --muted:#52686f; --line:#cedbdc; --teal:#126b59; --paper:#f5f7f4; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    a { color:#126652; text-underline-offset:3px; }
+    .bar { background:#163c39; color:#fff; padding:19px max(5vw,calc((100vw - 1120px)/2)); display:flex; justify-content:space-between; align-items:center; gap:20px; }
+    .brand { font-size:20px; font-weight:750; letter-spacing:-.6px; }
+    .brand b { color:#c7ee9c; }
+    .bar span { color:#c2d5ce; font:12px ui-monospace,monospace; letter-spacing:1px; }
+    main { max-width:1120px; padding:42px 24px 64px; margin:auto; }
+    .eyebrow { font:700 12px ui-monospace,monospace; letter-spacing:1.6px; text-transform:uppercase; color:var(--muted); }
+    h1 { font-size:clamp(30px,5vw,49px); line-height:1.15; letter-spacing:-1.7px; margin:14px 0; max-width:850px; }
+    h2 { font-size:22px; letter-spacing:-.5px; margin:0 0 16px; }
+    h3 { margin:0 0 8px; font-size:16px; }
+    p { margin:8px 0 14px; }
+    .lede { color:var(--muted); max-width:850px; font-size:18px; }
+    .verdict { background:#fff; border:1px solid var(--line); border-left:5px solid var(--tone); border-radius:8px; padding:23px 26px; margin:28px 0 22px; }
+    .status { color:var(--tone); font:750 14px ui-monospace,monospace; overflow-wrap:anywhere; }
+    .metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border:1px solid var(--line); border-radius:8px; background:#fff; margin-bottom:34px; }
+    .metric { padding:17px 20px; border-right:1px solid var(--line); }
+    .metric:last-child { border:0; }
+    .metric small { color:var(--muted); display:block; font-size:12px; }
+    .metric strong { display:block; font-size:19px; margin-top:4px; }
+    section { margin-top:30px; }
+    .card { background:#fff; padding:24px; border:1px solid var(--line); border-radius:8px; }
+    .scroll { overflow-x:auto; }
+    table { width:100%; border-collapse:collapse; font-size:14px; }
+    th { text-align:left; color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.8px; background:#edf2ef; }
+    th,td { padding:13px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+    td code { white-space:nowrap; }
+    .pill { padding:4px 8px; border-radius:4px; font:700 11px ui-monospace,monospace; display:inline-block; background:#e6f3ed; color:#185d49; }
+    .pill.bad { background:#fbeae6; color:#983e2c; }
+    .pill.uncertain { background:#fff1d7; color:#7f5816; }
+    code,pre { font-family:ui-monospace,"Cascadia Code",Consolas,monospace; font-size:12px; }
+    pre { white-space:pre-wrap; overflow-wrap:anywhere; padding:17px; border-radius:5px; background:#edf2ef; }
+    details { border-top:1px solid var(--line); padding:15px 0; }
+    summary { cursor:pointer; font-weight:650; }
+    .identity { display:grid; grid-template-columns:170px minmax(0,1fr); gap:12px; padding:9px 0; border-bottom:1px solid #e4eae7; font-size:13px; }
+    .identity code { overflow-wrap:anywhere; }
+    .notice { background:#edf2e7; border-radius:8px; padding:22px 25px; }
+    ul { padding-left:20px; } li { margin:8px 0; }
+    footer { border-top:1px solid var(--line); margin-top:36px; padding-top:20px; color:var(--muted); font-size:12px; }
+    .empty { padding:24px; color:var(--muted); background:#f4f6f3; border-radius:6px; }
+    @media(max-width:650px) { main { padding:28px 17px; } .bar { padding:16px 20px; } .bar span { display:none; } .metrics { grid-template-columns:1fr 1fr; } .metric { border-bottom:1px solid var(--line); } .identity { grid-template-columns:1fr; gap:2px; } .card { padding:17px; } }
+    @media print { body { background:white; } .bar { background:white; color:#182c32; } .bar span { color:#52686f; } details { break-inside:avoid; } }
+  </style>
+</head>
+<body>
+<header class="bar"><div class="brand">Patch<b>Replay</b> <small>/ evidence</small></div><span>INSPECT · VERIFY · REPLAY</span></header>
+<main>
+  <div class="eyebrow">Evaluation record / Synthetic fixture</div>
+  <h1>$title</h1>
+  <p class="lede">Did this patch fix the declared bug examples while preserving the behaviors checked by the regression suite?</p>
+  <div class="verdict" style="--tone:$tone"><div class="status">$status</div><p>$reason</p></div>
+  <div class="metrics">$metrics</div>
+  <section class="card"><h2>Before → after</h2><p>Each attempt uses fresh source and evaluator copies. Bug checks and regression checks are evaluated separately.</p>$checks</section>
+  <section class="card"><h2>Declared criteria</h2>$criteria</section>
+  <section class="card"><h2>Inspect the evidence</h2><p><a href="report.json">Structured report</a> · <a href="manifest.json">Artifact hashes</a> · <a href="inputs/case.json">Case specification</a> · <a href="inputs/patch.diff">Evaluated patch</a></p>$logs</section>
+  <section class="card"><h2>Pinned inputs</h2>$identities</section>
+  <section class="notice"><h2>What this result does not establish</h2><ul>$limitations</ul></section>
+  <section class="card"><h2>Replay this evaluation</h2><p>Use the recorded evaluator and environment. Replay creates a new evidence package; it may reveal a different outcome.</p><pre>$replay</pre><p>Verify package consistency first: <code>python -m patchreplay verify &lt;package-directory&gt;</code>. For claims, pin the manifest hash in a separate trusted claim manifest.</p></section>
+  <footer>PatchReplay $version · $run_id · $created_at<br>No model was called. No result cache was used. This report works offline without JavaScript.</footer>
+</main>
+</body>
+</html>

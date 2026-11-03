@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Synthetic clamp / narrow · PatchReplay</title>
+  <style>
+    :root { color-scheme: light; --ink:#182c32; --muted:#52686f; --line:#cedbdc; --teal:#126b59; --paper:#f5f7f4; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    a { color:#126652; text-underline-offset:3px; }
+    .bar { background:#163c39; color:#fff; padding:19px max(5vw,calc((100vw - 1120px)/2)); display:flex; justify-content:space-between; align-items:center; gap:20px; }
+    .brand { font-size:20px; font-weight:750; letter-spacing:-.6px; }
+    .brand b { color:#c7ee9c; }
+    .bar span { color:#c2d5ce; font:12px ui-monospace,monospace; letter-spacing:1px; }
+    main { max-width:1120px; padding:42px 24px 64px; margin:auto; }
+    .eyebrow { font:700 12px ui-monospace,monospace; letter-spacing:1.6px; text-transform:uppercase; color:var(--muted); }
+    h1 { font-size:clamp(30px,5vw,49px); line-height:1.15; letter-spacing:-1.7px; margin:14px 0; max-width:850px; }
+    h2 { font-size:22px; letter-spacing:-.5px; margin:0 0 16px; }
+    h3 { margin:0 0 8px; font-size:16px; }
+    p { margin:8px 0 14px; }
+    .lede { color:var(--muted); max-width:850px; font-size:18px; }
+    .verdict { background:#fff; border:1px solid var(--line); border-left:5px solid var(--tone); border-radius:8px; padding:23px 26px; margin:28px 0 22px; }
+    .status { color:var(--tone); font:750 14px ui-monospace,monospace; overflow-wrap:anywhere; }
+    .metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border:1px solid var(--line); border-radius:8px; background:#fff; margin-bottom:34px; }
+    .metric { padding:17px 20px; border-right:1px solid var(--line); }
+    .metric:last-child { border:0; }
+    .metric small { color:var(--muted); display:block; font-size:12px; }
+    .metric strong { display:block; font-size:19px; margin-top:4px; }
+    section { margin-top:30px; }
+    .card { background:#fff; padding:24px; border:1px solid var(--line); border-radius:8px; }
+    .scroll { overflow-x:auto; }
+    table { width:100%; border-collapse:collapse; font-size:14px; }
+    th { text-align:left; color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.8px; background:#edf2ef; }
+    th,td { padding:13px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+    td code { white-space:nowrap; }
+    .pill { padding:4px 8px; border-radius:4px; font:700 11px ui-monospace,monospace; display:inline-block; background:#e6f3ed; color:#185d49; }
+    .pill.bad { background:#fbeae6; color:#983e2c; }
+    .pill.uncertain { background:#fff1d7; color:#7f5816; }
+    code,pre { font-family:ui-monospace,"Cascadia Code",Consolas,monospace; font-size:12px; }
+    pre { white-space:pre-wrap; overflow-wrap:anywhere; padding:17px; border-radius:5px; background:#edf2ef; }
+    details { border-top:1px solid var(--line); padding:15px 0; }
+    summary { cursor:pointer; font-weight:650; }
+    .identity { display:grid; grid-template-columns:170px minmax(0,1fr); gap:12px; padding:9px 0; border-bottom:1px solid #e4eae7; font-size:13px; }
+    .identity code { overflow-wrap:anywhere; }
+    .notice { background:#edf2e7; border-radius:8px; padding:22px 25px; }
+    ul { padding-left:20px; } li { margin:8px 0; }
+    footer { border-top:1px solid var(--line); margin-top:36px; padding-top:20px; color:var(--muted); font-size:12px; }
+    .empty { padding:24px; color:var(--muted); background:#f4f6f3; border-radius:6px; }
+    @media(max-width:650px) { main { padding:28px 17px; } .bar { padding:16px 20px; } .bar span { display:none; } .metrics { grid-template-columns:1fr 1fr; } .metric { border-bottom:1px solid var(--line); } .identity { grid-template-columns:1fr; gap:2px; } .card { padding:17px; } }
+    @media print { body { background:white; } .bar { background:white; color:#182c32; } .bar span { color:#52686f; } details { break-inside:avoid; } }
+  </style>
+</head>
+<body>
+<header class="bar"><div class="brand">Patch<b>Replay</b> <small>/ evidence</small></div><span>INSPECT · VERIFY · REPLAY</span></header>
+<main>
+  <div class="eyebrow">Evaluation record / Synthetic fixture</div>
+  <h1>Synthetic clamp / narrow</h1>
+  <p class="lede">Did this patch fix the declared bug examples while preserving the behaviors checked by the regression suite?</p>
+  <div class="verdict" style="--tone:#a04030"><div class="status">FIX_FAILED</div><p>The patch does not pass every declared bug example.</p></div>
+  <div class="metrics"><div class="metric"><small>Check groups passing after</small><strong>2 / 4</strong></div><div class="metric"><small>Attempts per phase</small><strong>2</strong></div><div class="metric"><small>Timeout per check</small><strong>10s</strong></div><div class="metric"><small>Total check time</small><strong>8.22s</strong></div></div>
+  <section class="card"><h2>Before → after</h2><p>Each attempt uses fresh source and evaluator copies. Bug checks and regression checks are evaluated separately.</p><div class="scroll"><table><thead><tr><th>Check</th><th>Attempt</th><th>Observation</th><th>Exit</th><th>Time</th><th>Evidence</th></tr></thead><tbody><tr><td>Bug / before</td><td>1</td><td><span class="pill ">EXPECTED_FAILURE</span></td><td>1</td><td>1.06s</td><td><a href="logs/before_bug-1.log">Log</a></td></tr><tr><td>Bug / before</td><td>2</td><td><span class="pill ">EXPECTED_FAILURE</span></td><td>1</td><td>1.06s</td><td><a href="logs/before_bug-2.log">Log</a></td></tr><tr><td>Regression / before</td><td>1</td><td><span class="pill ">PASS</span></td><td>0</td><td>0.97s</td><td><a href="logs/before_regression-1.log">Log</a></td></tr><tr><td>Regression / before</td><td>2</td><td><span class="pill ">PASS</span></td><td>0</td><td>0.95s</td><td><a href="logs/before_regression-2.log">Log</a></td></tr><tr><td>Bug / after</td><td>1</td><td><span class="pill bad">FAIL</span></td><td>1</td><td>1.02s</td><td><a href="logs/after_bug-1.log">Log</a></td></tr><tr><td>Bug / after</td><td>2</td><td><span class="pill bad">FAIL</span></td><td>1</td><td>1.06s</td><td><a href="logs/after_bug-2.log">Log</a></td></tr><tr><td>Regression / after</td><td>1</td><td><span class="pill ">PASS</span></td><td>0</td><td>1.08s</td><td><a href="logs/after_regression-1.log">Log</a></td></tr><tr><td>Regression / after</td><td>2</td><td><span class="pill ">PASS</span></td><td>0</td><td>1.02s</td><td><a href="logs/after_regression-2.log">Log</a></td></tr></tbody></table></div></section>
+  <section class="card"><h2>Declared criteria</h2><p>Human-authored synthetic evaluator, reviewed as project source</p><h3>Bug nodes</h3><ul><li><code>test_bug.py::test_negative_lower_bound</code></li><li><code>test_bug.py::test_nonzero_lower_bound</code></li></ul><h3>Regression nodes</h3><ul><li><code>test_regression.py::test_upper_bound</code></li><li><code>test_regression.py::test_in_range</code></li><li><code>test_regression.py::test_invalid_bounds</code></li></ul><p><strong>Required baseline:</strong> Every bug node must fail in call phase with AssertionError.</p></section>
+  <section class="card"><h2>Inspect the evidence</h2><p><a href="report.json">Structured report</a> · <a href="manifest.json">Artifact hashes</a> · <a href="inputs/case.json">Case specification</a> · <a href="inputs/patch.diff">Evaluated patch</a></p><details><summary>git_init · exit 0 · 0.09s</summary><p>Timeout: False · <a href="logs/git-init.log">Full retained log</a></p><h3>Command (recorded argv)</h3><pre>[&#x27;C:\\Program Files\\Git\\cmd\\git.EXE&#x27;, &#x27;init&#x27;, &#x27;--quiet&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\patched&#x27;]</pre><pre></pre></details><details><summary>patch_check · exit 0 · 0.06s</summary><p>Timeout: False · <a href="logs/patch-check.log">Full retained log</a></p><h3>Command (recorded argv)</h3><pre>[&#x27;C:\\Program Files\\Git\\cmd\\git.EXE&#x27;, &#x27;-c&#x27;, &#x27;core.autocrlf=false&#x27;, &#x27;apply&#x27;, &#x27;--whitespace=error-all&#x27;, &#x27;--check&#x27;, &#x27;D:\\All Project\\open-ai\\examples\\evidence\\narrow-97d10a7005a4\\inputs\\patch.diff&#x27;]</pre><pre></pre></details><details><summary>patch_apply · exit 0 · 0.05s</summary><p>Timeout: False · <a href="logs/patch-apply.log">Full retained log</a></p><h3>Command (recorded argv)</h3><pre>[&#x27;C:\\Program Files\\Git\\cmd\\git.EXE&#x27;, &#x27;-c&#x27;, &#x27;core.autocrlf=false&#x27;, &#x27;apply&#x27;, &#x27;--whitespace=error-all&#x27;, &#x27;D:\\All Project\\open-ai\\examples\\evidence\\narrow-97d10a7005a4\\inputs\\patch.diff&#x27;]</pre><pre></pre></details><details><summary>before_bug-1 · exit 1 · 1.06s</summary><p>Timeout: False · <a href="logs/before_bug-1.log">Full retained log</a></p><h3>Command (recorded argv)</h3><pre>[&#x27;D:\\All Project\\open-ai\\.venv\\Scripts\\python.exe&#x27;, &#x27;-I&#x27;, &#x27;-B&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\before_bug-1\\worker.py&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\before_bug-1\\source&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\before_bug-1\\evaluator&#x27;, &#x27;bug&#x27;, &#x27;D:\\All Project\\open-ai\\examples\\evidence\\narrow-97d10a7005a4\\checks\\before_bug-1.json&#x27;, &#x27;1&#x27;]</pre><pre>FF                                                                       [100%]
+================================== FAILURES ===================================
+__________________________ test_negative_lower_bound __________________________
+evaluator\test_bug.py:5: in test_negative_lower_bound
+    assert clamp(-2, 0, 10) == 0
+E   AssertionError
+__________________________ test_nonzero_lower_bound ___________________________
+evaluator\test_bug.py:9: in test_nonzero_lower_bound
+    assert clamp(1, 5, 10) == 5
+E   AssertionError
+- generated xml file: D:\All Project\open-ai\examples\evidence\narrow-97d10a7005a4\checks\before_bug-1.xml -
+=========================== short test summary info ===========================
+FAILED evaluator\test_bug.py::test_negative_lower_bound - AssertionError
+FAILED evaluator\test_bug.py::test_nonzero_lower_bound - AssertionError
+2 failed in 0.38s
+</pre></details><details><summary>before_regression-1 · exit 0 · 0.97s</summary><p>Timeout: False · <a href="logs/before_regression-1.log">Full retained log</a></p><h3>Command (recorded argv)</h3><pre>[&#x27;D:\\All Project\\open-ai\\.venv\\Scripts\\python.exe&#x27;, &#x27;-I&#x27;, &#x27;-B&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\before_regression-1\\worker.py&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\before_regression-1\\source&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\before_regression-1\\evaluator&#x27;, &#x27;regression&#x27;, &#x27;D:\\All Project\\open-ai\\examples\\evidence\\narrow-97d10a7005a4\\checks\\before_regression-1.json&#x27;, &#x27;1&#x27;]</pre><pre>...                                                                      [100%]
+- generated xml file: D:\All Project\open-ai\examples\evidence\narrow-97d10a7005a4\checks\before_regression-1.xml -
+3 passed in 0.30s
+</pre></details><details><summary>after_bug-1 · exit 1 · 1.02s</summary><p>Timeout: False · <a href="logs/after_bug-1.log">Full retained log</a></p><h3>Command (recorded argv)</h3><pre>[&#x27;D:\\All Project\\open-ai\\.venv\\Scripts\\python.exe&#x27;, &#x27;-I&#x27;, &#x27;-B&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\after_bug-1\\worker.py&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\after_bug-1\\source&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\after_bug-1\\evaluator&#x27;, &#x27;bug&#x27;, &#x27;D:\\All Project\\open-ai\\examples\\evidence\\narrow-97d10a7005a4\\checks\\after_bug-1.json&#x27;, &#x27;1&#x27;]</pre><pre>.F                                                                       [100%]
+================================== FAILURES ===================================
+__________________________ test_nonzero_lower_bound ___________________________
+evaluator\test_bug.py:9: in test_nonzero_lower_bound
+    assert clamp(1, 5, 10) == 5
+E   AssertionError
+- generated xml file: D:\All Project\open-ai\examples\evidence\narrow-97d10a7005a4\checks\after_bug-1.xml -
+=========================== short test summary info ===========================
+FAILED evaluator\test_bug.py::test_nonzero_lower_bound - AssertionError
+1 failed, 1 passed in 0.38s
+</pre></details><details><summary>after_regression-1 · exit 0 · 1.08s</summary><p>Timeout: False · <a href="logs/after_regression-1.log">Full retained log</a></p><h3>Command (recorded argv)</h3><pre>[&#x27;D:\\All Project\\open-ai\\.venv\\Scripts\\python.exe&#x27;, &#x27;-I&#x27;, &#x27;-B&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\after_regression-1\\worker.py&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\after_regression-1\\source&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\after_regression-1\\evaluator&#x27;, &#x27;regression&#x27;, &#x27;D:\\All Project\\open-ai\\examples\\evidence\\narrow-97d10a7005a4\\checks\\after_regression-1.json&#x27;, &#x27;1&#x27;]</pre><pre>...                                                                      [100%]
+- generated xml file: D:\All Project\open-ai\examples\evidence\narrow-97d10a7005a4\checks\after_regression-1.xml -
+3 passed in 0.29s
+</pre></details><details><summary>before_bug-2 · exit 1 · 1.06s</summary><p>Timeout: False · <a href="logs/before_bug-2.log">Full retained log</a></p><h3>Command (recorded argv)</h3><pre>[&#x27;D:\\All Project\\open-ai\\.venv\\Scripts\\python.exe&#x27;, &#x27;-I&#x27;, &#x27;-B&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\before_bug-2\\worker.py&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\before_bug-2\\source&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\before_bug-2\\evaluator&#x27;, &#x27;bug&#x27;, &#x27;D:\\All Project\\open-ai\\examples\\evidence\\narrow-97d10a7005a4\\checks\\before_bug-2.json&#x27;, &#x27;2&#x27;]</pre><pre>FF                                                                       [100%]
+================================== FAILURES ===================================
+__________________________ test_negative_lower_bound __________________________
+evaluator\test_bug.py:5: in test_negative_lower_bound
+    assert clamp(-2, 0, 10) == 0
+E   AssertionError
+__________________________ test_nonzero_lower_bound ___________________________
+evaluator\test_bug.py:9: in test_nonzero_lower_bound
+    assert clamp(1, 5, 10) == 5
+E   AssertionError
+- generated xml file: D:\All Project\open-ai\examples\evidence\narrow-97d10a7005a4\checks\before_bug-2.xml -
+=========================== short test summary info ===========================
+FAILED evaluator\test_bug.py::test_negative_lower_bound - AssertionError
+FAILED evaluator\test_bug.py::test_nonzero_lower_bound - AssertionError
+2 failed in 0.43s
+</pre></details><details><summary>before_regression-2 · exit 0 · 0.95s</summary><p>Timeout: False · <a href="logs/before_regression-2.log">Full retained log</a></p><h3>Command (recorded argv)</h3><pre>[&#x27;D:\\All Project\\open-ai\\.venv\\Scripts\\python.exe&#x27;, &#x27;-I&#x27;, &#x27;-B&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\before_regression-2\\worker.py&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\before_regression-2\\source&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\before_regression-2\\evaluator&#x27;, &#x27;regression&#x27;, &#x27;D:\\All Project\\open-ai\\examples\\evidence\\narrow-97d10a7005a4\\checks\\before_regression-2.json&#x27;, &#x27;2&#x27;]</pre><pre>...                                                                      [100%]
+- generated xml file: D:\All Project\open-ai\examples\evidence\narrow-97d10a7005a4\checks\before_regression-2.xml -
+3 passed in 0.29s
+</pre></details><details><summary>after_bug-2 · exit 1 · 1.06s</summary><p>Timeout: False · <a href="logs/after_bug-2.log">Full retained log</a></p><h3>Command (recorded argv)</h3><pre>[&#x27;D:\\All Project\\open-ai\\.venv\\Scripts\\python.exe&#x27;, &#x27;-I&#x27;, &#x27;-B&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\after_bug-2\\worker.py&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\after_bug-2\\source&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\after_bug-2\\evaluator&#x27;, &#x27;bug&#x27;, &#x27;D:\\All Project\\open-ai\\examples\\evidence\\narrow-97d10a7005a4\\checks\\after_bug-2.json&#x27;, &#x27;2&#x27;]</pre><pre>.F                                                                       [100%]
+================================== FAILURES ===================================
+__________________________ test_nonzero_lower_bound ___________________________
+evaluator\test_bug.py:9: in test_nonzero_lower_bound
+    assert clamp(1, 5, 10) == 5
+E   AssertionError
+- generated xml file: D:\All Project\open-ai\examples\evidence\narrow-97d10a7005a4\checks\after_bug-2.xml -
+=========================== short test summary info ===========================
+FAILED evaluator\test_bug.py::test_nonzero_lower_bound - AssertionError
+1 failed, 1 passed in 0.42s
+</pre></details><details><summary>after_regression-2 · exit 0 · 1.02s</summary><p>Timeout: False · <a href="logs/after_regression-2.log">Full retained log</a></p><h3>Command (recorded argv)</h3><pre>[&#x27;D:\\All Project\\open-ai\\.venv\\Scripts\\python.exe&#x27;, &#x27;-I&#x27;, &#x27;-B&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\after_regression-2\\worker.py&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\after_regression-2\\source&#x27;, &#x27;C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-vj1pgs_n\\after_regression-2\\evaluator&#x27;, &#x27;regression&#x27;, &#x27;D:\\All Project\\open-ai\\examples\\evidence\\narrow-97d10a7005a4\\checks\\after_regression-2.json&#x27;, &#x27;2&#x27;]</pre><pre>...                                                                      [100%]
+- generated xml file: D:\All Project\open-ai\examples\evidence\narrow-97d10a7005a4\checks\after_regression-2.xml -
+3 passed in 0.29s
+</pre></details></section>
+  <section class="card"><h2>Pinned inputs</h2><div class="identity"><span>source_revision</span><code>sha256:dc9af9a73747ed374fbf0cee83132cfa7ba08df954ce421c1cc1fd77456b46d2</code></div><div class="identity"><span>patch_sha256</span><code>9380fd0da9ee369989c4a3df9e94c2518c294fc8ebcb9896503f7cbfe237bf70</code></div><div class="identity"><span>evaluator_sha256</span><code>2fd35a2be6c3362fd95fcca9673a587d7c104b6af3d5b836389e9cf46bce9c47</code></div><div class="identity"><span>suite_sha256</span><code>a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e</code></div><div class="identity"><span>environment_sha256</span><code>08a8fb2bf22263e5117035051d37e764783dd7fb32b96562b9975080e5e9e2e9</code></div><div class="identity"><span>engine_sha256</span><code>3ae2337a4a31bd100856692bb88f5560ae361230359a5bf0710adcede07142d6</code></div><div class="identity"><span>case_sha256</span><code>fcb4e163278627d8d90264e62d7d676a4c924345182daed548d610b9efed0449</code></div><div class="identity"><span>inputs_sha256</span><code>613def47e78d71bf186da225f2f6a3c1dc5ffab16cb1185aedf3e3851d20b2e0</code></div></section>
+  <section class="notice"><h2>What this result does not establish</h2><ul><li>Synthetic controlled fixtures only; this is not a coding-agent benchmark or evidence of general correctness.</li><li>The local executor is not a security sandbox. External repositories and unregistered patches are rejected.</li><li>A clean environment removes inherited credentials; it does not restrict host filesystem access or network access.</li><li>Timeouts and repeated observations bound this evaluation; they cannot prove determinism or absence of flakes.</li><li>SHA-256 detects changes relative to a trusted manifest anchor; it does not authenticate the producer.</li><li>Replay records dependencies and platform identity but does not snapshot the OS, hardware, or scheduling.</li></ul></section>
+  <section class="card"><h2>Replay this evaluation</h2><p>Use the recorded evaluator and environment. Replay creates a new evidence package; it may reveal a different outcome.</p><pre>python -m patchreplay replay &lt;this-package-directory&gt; --output replay-output</pre><p>Verify package consistency first: <code>python -m patchreplay verify &lt;package-directory&gt;</code>. For claims, pin the manifest hash in a separate trusted claim manifest.</p></section>
+  <footer>PatchReplay 0.1.0 · narrow-97d10a7005a4 · 2026-11-03T08:13:24.167591+00:00<br>No model was called. No result cache was used. This report works offline without JavaScript.</footer>
+</main>
+</body>
+</html>

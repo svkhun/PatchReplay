@@ -1,0 +1,304 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "cache": {
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "const": false
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "enabled",
+        "reason"
+      ],
+      "type": "object"
+    },
+    "case_id": {
+      "pattern": "^[a-z0-9][a-z0-9_-]{0,79}$",
+      "type": "string"
+    },
+    "checks": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "attempt": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "command": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "duration_seconds": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "exit_code": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "expected_nodes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "id": {
+            "type": "string"
+          },
+          "junit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "log": {
+            "description": "Relative path; runtime rejects traversal, links, device names and reserved characters.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "outcome": {
+            "enum": [
+              "PASS",
+              "EXPECTED_FAILURE",
+              "FAIL",
+              "CHECK_ERROR",
+              "INFRA_ERROR",
+              "INTEGRITY_ERROR",
+              "TIMEOUT"
+            ]
+          },
+          "phase": {
+            "enum": [
+              "before_bug",
+              "before_regression",
+              "after_bug",
+              "after_regression"
+            ]
+          },
+          "records": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "signature": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "timeout": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "command",
+          "exit_code",
+          "timeout",
+          "duration_seconds",
+          "error",
+          "log",
+          "id",
+          "phase",
+          "attempt",
+          "outcome",
+          "signature",
+          "expected_nodes",
+          "records",
+          "junit"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "created_at": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "evaluator_version": {
+      "type": "string"
+    },
+    "executor": {
+      "const": "controlled-fixtures-v1"
+    },
+    "identities": {
+      "additionalProperties": false,
+      "properties": {
+        "case_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "engine_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "environment_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "evaluator_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "inputs_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "patch_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "source_revision": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "suite_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_revision",
+        "patch_sha256",
+        "evaluator_sha256",
+        "suite_sha256",
+        "environment_sha256",
+        "engine_sha256",
+        "case_sha256",
+        "inputs_sha256"
+      ],
+      "type": "object"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "repeats": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "replay": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "status": {
+      "enum": [
+        "VERIFIED_FOR_DECLARED_CHECKS",
+        "BUG_NOT_REPRODUCED",
+        "FIX_FAILED",
+        "REGRESSION_DETECTED",
+        "EVALUATION_INTEGRITY_FAILED",
+        "INFRA_ERROR",
+        "INCONCLUSIVE"
+      ]
+    },
+    "steps": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "command": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "duration_seconds": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "exit_code": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "kind": {
+            "type": "string"
+          },
+          "log": {
+            "description": "Relative path; runtime rejects traversal, links, device names and reserved characters.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "timeout": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "command",
+          "exit_code",
+          "timeout",
+          "duration_seconds",
+          "error",
+          "log",
+          "kind"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "suite_id": {
+      "pattern": "^[a-z0-9][a-z0-9_-]{0,79}$",
+      "type": "string"
+    },
+    "timeout_seconds": {
+      "minimum": 0.05,
+      "type": "number"
+    },
+    "title": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "case_id",
+    "title",
+    "run_id",
+    "created_at",
+    "evaluator_version",
+    "suite_id",
+    "identities",
+    "executor",
+    "repeats",
+    "timeout_seconds",
+    "checks",
+    "steps",
+    "limitations",
+    "replay",
+    "cache",
+    "status",
+    "reason"
+  ],
+  "title": "PatchReplay report v1",
+  "type": "object"
+}

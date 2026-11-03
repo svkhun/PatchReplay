@@ -1,0 +1,10 @@
+F..                                                                      [100%]
+================================== FAILURES ===================================
+______________________________ test_upper_bound _______________________________
+evaluator\test_regression.py:6: in test_upper_bound
+    assert clamp(20, 0, 10) == 10
+E   AssertionError
+- generated xml file: D:\All Project\open-ai\examples\evidence\regression-c45cdc19a7c1\checks\after_regression-1.xml -
+=========================== short test summary info ===========================
+FAILED evaluator\test_regression.py::test_upper_bound - AssertionError
+1 failed, 2 passed in 0.37s

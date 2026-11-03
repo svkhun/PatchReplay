@@ -1,0 +1,27 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "inputs/case.json": "139e3393a88dd864850427a1a2e40b9dacc04bef60ff873eee5bb3f6da1558c4",
+    "inputs/engine-source/__init__.py": "af8c1b0f7dadc2cfbb2766944879e22e632e9616ea78d4db91449942e1d868ec",
+    "inputs/engine-source/__main__.py": "76fa916e93e0ae1a6c1bb51dcc0bcf289c014e9f760a47165f8a84401ccf41d7",
+    "inputs/engine-source/claims.py": "d49bb22be2d63f5cb3ecd936ddc7ce408787f3b045c563dda6030c9019afdf7e",
+    "inputs/engine-source/cli.py": "d5d2eb23c3c238728276c6ce766126321aa2524b4706500a82e4140f5df7a10d",
+    "inputs/engine-source/contracts.py": "f078e5c12b4a15e49251aa7706cf1c94e187cd34fea52b717d46a43fbc2d82d6",
+    "inputs/engine-source/demo.py": "ffc0a6234e7fd76ed1a255edcdc86401ba6c8c1f90bbcd76958c2b55e2179223",
+    "inputs/engine-source/engine.py": "9bf0098ae82f9569f12d89091281b5704e1fd1dea578c0ad32f4680900a0fd4b",
+    "inputs/engine-source/integrity.py": "03746c4404758050ab249ff6a74a6c4cbc6327b555fd4386d17a3b3c96afb893",
+    "inputs/engine-source/process.py": "a9edfe03aa2d1425c6f25bd27ebc3cd2f63742542043bd182a7815bc37765159",
+    "inputs/engine-source/reporting.py": "90fe6a200d61c05f118447f53e46d6b9d59ce8d3f6ca14308636422f2e259a11",
+    "inputs/engine-source/templates/report.html": "2a23d49c3aa0729691172905fd3cc96960de63e99a07dc5a4fd73467c0645dc0",
+    "inputs/engine-source/windows_job.py": "01766670a177ece43b25c6bd1cfdd6a635c72e067f7d49b4b6a571efb03e0975",
+    "inputs/engine-source/worker.py": "365790b4ad4bcace7ccb4b01eac2da983efe968e8346b8751e8154fe711c2b5f",
+    "inputs/engine.json": "1665fbc24e107147e92d2f6d505f5955e2ace9e96fab092578b99730727586b0",
+    "inputs/environment.json": "44936a8512808acb1c72f328e896471211371e0db07ca764961e82d26db8787b",
+    "inputs/patch.diff": "ad383eb97b8a089a94469dd30bef2a80690ef4a10b00c00cf262ef3f30fdb48d",
+    "inputs/requirements.txt": "c1d1e6e1a02bc33471a8f78798cd358f38f0a430861bfa30f08699bf957186dc",
+    "inputs/suite.json": "0fc12c6409373fc69cba44a9d1d4c42b15d78f461cd7f36dd7ca4bd0fe54c5dc",
+    "report.html": "6f5eab9ba1732ab914c21b42b79cfc1f8fcd9f4d73cd919149c2a3ed0097e3e5",
+    "report.json": "a7749fea6417c2cfcd9de6bceddf9e8e19a6bf2a1c4e1d327e2c126156a6fede"
+  },
+  "schema_version": 1
+}

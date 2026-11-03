@@ -1,0 +1,16 @@
+{
+  "case_id": "good",
+  "evaluator_id": "clamp-v1",
+  "evaluator_sha256": "2fd35a2be6c3362fd95fcca9673a587d7c104b6af3d5b836389e9cf46bce9c47",
+  "patch": "good.diff",
+  "patch_sha256": "f43c8fc4e9eabeb869fd35d303d98d78e7ef840f6abf54aa03821719d69aea7d",
+  "repeats": 2,
+  "required_pytest": "8.3.5",
+  "schema_version": 1,
+  "source_id": "clamp-buggy-v1",
+  "source_revision": "sha256:dc9af9a73747ed374fbf0cee83132cfa7ba08df954ce421c1cc1fd77456b46d2",
+  "suite_id": "synthetic-clamp-v1",
+  "suite_sha256": "a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e",
+  "timeout_seconds": 10.0,
+  "title": "Synthetic clamp / good"
+}

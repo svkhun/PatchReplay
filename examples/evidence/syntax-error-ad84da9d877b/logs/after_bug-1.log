@@ -1,0 +1,35 @@
+ERROR: found no collectors for C:\Users\Acer\AppData\Local\Packages\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\AC\Temp\patchreplay-k_80i7rb\after_bug-1\evaluator\test_bug.py::test_negative_lower_bound
+
+ERROR: found no collectors for C:\Users\Acer\AppData\Local\Packages\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\AC\Temp\patchreplay-k_80i7rb\after_bug-1\evaluator\test_bug.py::test_nonzero_lower_bound
+
+
+=================================== ERRORS ====================================
+________________________ ERROR collecting test_bug.py _________________________
+D:\All Project\open-ai\.venv\Lib\site-packages\_pytest\python.py:493: in importtestmodule
+    mod = import_path(
+D:\All Project\open-ai\.venv\Lib\site-packages\_pytest\pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+C:\Users\Acer\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:999: in exec_module
+    ???
+<frozen importlib._bootstrap>:488: in _call_with_frames_removed
+    ???
+evaluator\test_bug.py:1: in <module>
+    from clamp import clamp
+E     File "C:\Users\Acer\AppData\Local\Packages\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\AC\Temp\patchreplay-k_80i7rb\after_bug-1\source\clamp.py", line 7
+E       return (
+E              ^
+E   SyntaxError: '(' was never closed
+- generated xml file: D:\All Project\open-ai\examples\evidence\syntax-error-ad84da9d877b\checks\after_bug-1.xml -
+=========================== short test summary info ===========================
+ERROR evaluator\test_bug.py
+1 error in 0.43s

@@ -1,0 +1,16 @@
+{
+  "case_id": "already-fixed",
+  "evaluator_id": "clamp-v1",
+  "evaluator_sha256": "2fd35a2be6c3362fd95fcca9673a587d7c104b6af3d5b836389e9cf46bce9c47",
+  "patch": "patch.diff",
+  "patch_sha256": "05d2b017f117b3dfd1c049d9bc2976e3b4201875192ca2c6f7fdfae46360dd02",
+  "repeats": 2,
+  "required_pytest": "8.3.5",
+  "schema_version": 1,
+  "source_id": "clamp-fixed-v1",
+  "source_revision": "sha256:fc46eeb29bbe873d7e6217db2eccecbb7fa20d13e8558ca9bb90c1fd355cd25d",
+  "suite_id": "synthetic-clamp-v1",
+  "suite_sha256": "a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e",
+  "timeout_seconds": 10.0,
+  "title": "Synthetic clamp / already fixed"
+}

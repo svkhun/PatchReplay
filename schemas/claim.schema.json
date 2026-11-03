@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "assertion": {
+      "additionalProperties": false,
+      "properties": {
+        "denominator": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "denominator_policy": {
+          "const": "all_declared_cases"
+        },
+        "numerator": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "numerator",
+        "denominator",
+        "denominator_policy"
+      ],
+      "type": "object"
+    },
+    "claim_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "evidence": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "case_id": {
+            "pattern": "^[a-z0-9][a-z0-9_-]{0,79}$",
+            "type": "string"
+          },
+          "expected": {
+            "additionalProperties": false,
+            "properties": {
+              "case_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "engine_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "environment_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "evaluator_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "inputs_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "patch_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "source_revision": {
+                "pattern": "^sha256:[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "suite_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "source_revision",
+              "patch_sha256",
+              "evaluator_sha256",
+              "suite_sha256",
+              "environment_sha256",
+              "engine_sha256",
+              "case_sha256",
+              "inputs_sha256"
+            ],
+            "type": "object"
+          },
+          "manifest_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "package": {
+            "description": "Relative path; runtime rejects traversal, links, device names and reserved characters.",
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "case_id",
+          "package",
+          "manifest_sha256",
+          "expected"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "kind": {
+      "enum": [
+        "success_count",
+        "regression_all"
+      ]
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "scope": {
+      "additionalProperties": false,
+      "properties": {
+        "case_ids": {
+          "items": {
+            "pattern": "^[a-z0-9][a-z0-9_-]{0,79}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "suite_id": {
+          "type": "string"
+        },
+        "suite_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "suite_id",
+        "suite_sha256",
+        "case_ids"
+      ],
+      "type": "object"
+    },
+    "text": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "claim_id",
+    "text",
+    "kind",
+    "scope",
+    "assertion",
+    "evidence"
+  ],
+  "title": "PatchReplay claim v1",
+  "type": "object"
+}

@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "page": "index",
+      "viewport": 1440,
+      "title": "PatchReplay / Demo evidence",
+      "overflow": false,
+      "links": 12
+    },
+    {
+      "page": "good",
+      "viewport": 1440,
+      "title": "Synthetic clamp / good · PatchReplay",
+      "overflow": false,
+      "links": 23
+    },
+    {
+      "page": "regression",
+      "viewport": 1440,
+      "title": "Synthetic clamp / regression · PatchReplay",
+      "overflow": false,
+      "links": 23
+    },
+    {
+      "page": "protected",
+      "viewport": 1440,
+      "title": "Synthetic clamp / protected · PatchReplay",
+      "overflow": false,
+      "links": 4
+    },
+    {
+      "page": "index",
+      "viewport": 390,
+      "title": "PatchReplay / Demo evidence",
+      "overflow": false,
+      "links": 12
+    },
+    {
+      "page": "good",
+      "viewport": 390,
+      "title": "Synthetic clamp / good · PatchReplay",
+      "overflow": false,
+      "links": 23
+    },
+    {
+      "page": "regression",
+      "viewport": 390,
+      "title": "Synthetic clamp / regression · PatchReplay",
+      "overflow": false,
+      "links": 23
+    },
+    {
+      "page": "protected",
+      "viewport": 390,
+      "title": "Synthetic clamp / protected · PatchReplay",
+      "overflow": false,
+      "links": 4
+    }
+  ]
+}

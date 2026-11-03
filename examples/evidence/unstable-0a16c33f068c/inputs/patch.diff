@@ -1,0 +1,11 @@
+diff --git a/clamp.py b/clamp.py
+--- a/clamp.py
++++ b/clamp.py
+@@ -4,4 +4,7 @@
+ def clamp(value, lower, upper):
+     if lower > upper:
+         raise ValueError("lower must not exceed upper")
++    import os
++    if int(os.environ["PATCHREPLAY_ATTEMPT"]) % 2:
++        return max(lower, min(value, upper))
+     return min(value, upper)

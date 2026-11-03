@@ -1,0 +1,324 @@
+{
+  "cache": {
+    "enabled": false,
+    "reason": "MVP always executes; identities are reserved for future exact-input cache keys."
+  },
+  "case_id": "syntax-error",
+  "checks": [
+    {
+      "attempt": 1,
+      "command": [
+        "D:\\All Project\\open-ai\\.venv\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\before_bug-1\\worker.py",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\before_bug-1\\source",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\before_bug-1\\evaluator",
+        "bug",
+        "D:\\All Project\\open-ai\\examples\\evidence\\syntax-error-ad84da9d877b\\checks\\before_bug-1.json",
+        "1"
+      ],
+      "duration_seconds": 1.094,
+      "error": null,
+      "exit_code": 1,
+      "expected_nodes": [
+        "test_bug.py::test_negative_lower_bound",
+        "test_bug.py::test_nonzero_lower_bound"
+      ],
+      "id": "before_bug-1",
+      "junit": "checks/before_bug-1.xml",
+      "log": "logs/before_bug-1.log",
+      "outcome": "EXPECTED_FAILURE",
+      "phase": "before_bug",
+      "records": "checks/before_bug-1.json",
+      "signature": "15fc4a51fd3b6e424f42a48cc492c40ae7988bfc3aade3b34f474e747e80058f",
+      "timeout": false
+    },
+    {
+      "attempt": 1,
+      "command": [
+        "D:\\All Project\\open-ai\\.venv\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\before_regression-1\\worker.py",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\before_regression-1\\source",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\before_regression-1\\evaluator",
+        "regression",
+        "D:\\All Project\\open-ai\\examples\\evidence\\syntax-error-ad84da9d877b\\checks\\before_regression-1.json",
+        "1"
+      ],
+      "duration_seconds": 0.968,
+      "error": null,
+      "exit_code": 0,
+      "expected_nodes": [
+        "test_regression.py::test_upper_bound",
+        "test_regression.py::test_in_range",
+        "test_regression.py::test_invalid_bounds"
+      ],
+      "id": "before_regression-1",
+      "junit": "checks/before_regression-1.xml",
+      "log": "logs/before_regression-1.log",
+      "outcome": "PASS",
+      "phase": "before_regression",
+      "records": "checks/before_regression-1.json",
+      "signature": "78ee2139b06868d001942da60e99324cdf124baaec187c80376aef3a936baa91",
+      "timeout": false
+    },
+    {
+      "attempt": 1,
+      "command": [
+        "D:\\All Project\\open-ai\\.venv\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\after_bug-1\\worker.py",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\after_bug-1\\source",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\after_bug-1\\evaluator",
+        "bug",
+        "D:\\All Project\\open-ai\\examples\\evidence\\syntax-error-ad84da9d877b\\checks\\after_bug-1.json",
+        "1"
+      ],
+      "duration_seconds": 1.078,
+      "error": null,
+      "exit_code": 4,
+      "expected_nodes": [
+        "test_bug.py::test_negative_lower_bound",
+        "test_bug.py::test_nonzero_lower_bound"
+      ],
+      "id": "after_bug-1",
+      "junit": "checks/after_bug-1.xml",
+      "log": "logs/after_bug-1.log",
+      "outcome": "CHECK_ERROR",
+      "phase": "after_bug",
+      "records": "checks/after_bug-1.json",
+      "signature": "1213fdf99eb906c5c8f7f2396169231791f86702f9da4434ca3346b48d6d8f2f",
+      "timeout": false
+    },
+    {
+      "attempt": 1,
+      "command": [
+        "D:\\All Project\\open-ai\\.venv\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\after_regression-1\\worker.py",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\after_regression-1\\source",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\after_regression-1\\evaluator",
+        "regression",
+        "D:\\All Project\\open-ai\\examples\\evidence\\syntax-error-ad84da9d877b\\checks\\after_regression-1.json",
+        "1"
+      ],
+      "duration_seconds": 1.015,
+      "error": null,
+      "exit_code": 4,
+      "expected_nodes": [
+        "test_regression.py::test_upper_bound",
+        "test_regression.py::test_in_range",
+        "test_regression.py::test_invalid_bounds"
+      ],
+      "id": "after_regression-1",
+      "junit": "checks/after_regression-1.xml",
+      "log": "logs/after_regression-1.log",
+      "outcome": "CHECK_ERROR",
+      "phase": "after_regression",
+      "records": "checks/after_regression-1.json",
+      "signature": "1213fdf99eb906c5c8f7f2396169231791f86702f9da4434ca3346b48d6d8f2f",
+      "timeout": false
+    },
+    {
+      "attempt": 2,
+      "command": [
+        "D:\\All Project\\open-ai\\.venv\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\before_bug-2\\worker.py",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\before_bug-2\\source",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\before_bug-2\\evaluator",
+        "bug",
+        "D:\\All Project\\open-ai\\examples\\evidence\\syntax-error-ad84da9d877b\\checks\\before_bug-2.json",
+        "2"
+      ],
+      "duration_seconds": 1.125,
+      "error": null,
+      "exit_code": 1,
+      "expected_nodes": [
+        "test_bug.py::test_negative_lower_bound",
+        "test_bug.py::test_nonzero_lower_bound"
+      ],
+      "id": "before_bug-2",
+      "junit": "checks/before_bug-2.xml",
+      "log": "logs/before_bug-2.log",
+      "outcome": "EXPECTED_FAILURE",
+      "phase": "before_bug",
+      "records": "checks/before_bug-2.json",
+      "signature": "15fc4a51fd3b6e424f42a48cc492c40ae7988bfc3aade3b34f474e747e80058f",
+      "timeout": false
+    },
+    {
+      "attempt": 2,
+      "command": [
+        "D:\\All Project\\open-ai\\.venv\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\before_regression-2\\worker.py",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\before_regression-2\\source",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\before_regression-2\\evaluator",
+        "regression",
+        "D:\\All Project\\open-ai\\examples\\evidence\\syntax-error-ad84da9d877b\\checks\\before_regression-2.json",
+        "2"
+      ],
+      "duration_seconds": 0.875,
+      "error": null,
+      "exit_code": 0,
+      "expected_nodes": [
+        "test_regression.py::test_upper_bound",
+        "test_regression.py::test_in_range",
+        "test_regression.py::test_invalid_bounds"
+      ],
+      "id": "before_regression-2",
+      "junit": "checks/before_regression-2.xml",
+      "log": "logs/before_regression-2.log",
+      "outcome": "PASS",
+      "phase": "before_regression",
+      "records": "checks/before_regression-2.json",
+      "signature": "78ee2139b06868d001942da60e99324cdf124baaec187c80376aef3a936baa91",
+      "timeout": false
+    },
+    {
+      "attempt": 2,
+      "command": [
+        "D:\\All Project\\open-ai\\.venv\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\after_bug-2\\worker.py",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\after_bug-2\\source",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\after_bug-2\\evaluator",
+        "bug",
+        "D:\\All Project\\open-ai\\examples\\evidence\\syntax-error-ad84da9d877b\\checks\\after_bug-2.json",
+        "2"
+      ],
+      "duration_seconds": 1.031,
+      "error": null,
+      "exit_code": 4,
+      "expected_nodes": [
+        "test_bug.py::test_negative_lower_bound",
+        "test_bug.py::test_nonzero_lower_bound"
+      ],
+      "id": "after_bug-2",
+      "junit": "checks/after_bug-2.xml",
+      "log": "logs/after_bug-2.log",
+      "outcome": "CHECK_ERROR",
+      "phase": "after_bug",
+      "records": "checks/after_bug-2.json",
+      "signature": "1213fdf99eb906c5c8f7f2396169231791f86702f9da4434ca3346b48d6d8f2f",
+      "timeout": false
+    },
+    {
+      "attempt": 2,
+      "command": [
+        "D:\\All Project\\open-ai\\.venv\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\after_regression-2\\worker.py",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\after_regression-2\\source",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\after_regression-2\\evaluator",
+        "regression",
+        "D:\\All Project\\open-ai\\examples\\evidence\\syntax-error-ad84da9d877b\\checks\\after_regression-2.json",
+        "2"
+      ],
+      "duration_seconds": 1.031,
+      "error": null,
+      "exit_code": 4,
+      "expected_nodes": [
+        "test_regression.py::test_upper_bound",
+        "test_regression.py::test_in_range",
+        "test_regression.py::test_invalid_bounds"
+      ],
+      "id": "after_regression-2",
+      "junit": "checks/after_regression-2.xml",
+      "log": "logs/after_regression-2.log",
+      "outcome": "CHECK_ERROR",
+      "phase": "after_regression",
+      "records": "checks/after_regression-2.json",
+      "signature": "1213fdf99eb906c5c8f7f2396169231791f86702f9da4434ca3346b48d6d8f2f",
+      "timeout": false
+    }
+  ],
+  "created_at": "2026-11-03T08:14:14.918243+00:00",
+  "evaluator_version": "0.1.0",
+  "executor": "controlled-fixtures-v1",
+  "identities": {
+    "case_sha256": "1f21b4a556a1f1a8d27efe29011d714a1a97cfaf22aa48446c90e54c8d861a44",
+    "engine_sha256": "3ae2337a4a31bd100856692bb88f5560ae361230359a5bf0710adcede07142d6",
+    "environment_sha256": "08a8fb2bf22263e5117035051d37e764783dd7fb32b96562b9975080e5e9e2e9",
+    "evaluator_sha256": "2fd35a2be6c3362fd95fcca9673a587d7c104b6af3d5b836389e9cf46bce9c47",
+    "inputs_sha256": "6451aaa09971436db94af02e8789bbf18de868461f9bfeb3444ba0bf40b99ffd",
+    "patch_sha256": "80f6a1089f9bf2cac46a776f04e0bb7890d7ab6e8a377ba15939e62320e940c1",
+    "source_revision": "sha256:dc9af9a73747ed374fbf0cee83132cfa7ba08df954ce421c1cc1fd77456b46d2",
+    "suite_sha256": "a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e"
+  },
+  "limitations": [
+    "Synthetic controlled fixtures only; this is not a coding-agent benchmark or evidence of general correctness.",
+    "The local executor is not a security sandbox. External repositories and unregistered patches are rejected.",
+    "A clean environment removes inherited credentials; it does not restrict host filesystem access or network access.",
+    "Timeouts and repeated observations bound this evaluation; they cannot prove determinism or absence of flakes.",
+    "SHA-256 detects changes relative to a trusted manifest anchor; it does not authenticate the producer.",
+    "Replay records dependencies and platform identity but does not snapshot the OS, hardware, or scheduling."
+  ],
+  "reason": "The patch does not pass every declared bug example.",
+  "repeats": 2,
+  "replay": "python -m patchreplay replay <this-package-directory> --output replay-output",
+  "run_id": "syntax-error-ad84da9d877b",
+  "schema_version": 1,
+  "status": "FIX_FAILED",
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\Git\\cmd\\git.EXE",
+        "init",
+        "--quiet",
+        "C:\\Users\\Acer\\AppData\\Local\\Packages\\sandbox.{d986e8ca-dd41-4085-8b32-a674aebaacc6}\\AC\\Temp\\patchreplay-k_80i7rb\\patched"
+      ],
+      "duration_seconds": 0.079,
+      "error": null,
+      "exit_code": 0,
+      "kind": "git_init",
+      "log": "logs/git-init.log",
+      "timeout": false
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Git\\cmd\\git.EXE",
+        "-c",
+        "core.autocrlf=false",
+        "apply",
+        "--whitespace=error-all",
+        "--check",
+        "D:\\All Project\\open-ai\\examples\\evidence\\syntax-error-ad84da9d877b\\inputs\\patch.diff"
+      ],
+      "duration_seconds": 0.046,
+      "error": null,
+      "exit_code": 0,
+      "kind": "patch_check",
+      "log": "logs/patch-check.log",
+      "timeout": false
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Git\\cmd\\git.EXE",
+        "-c",
+        "core.autocrlf=false",
+        "apply",
+        "--whitespace=error-all",
+        "D:\\All Project\\open-ai\\examples\\evidence\\syntax-error-ad84da9d877b\\inputs\\patch.diff"
+      ],
+      "duration_seconds": 0.047,
+      "error": null,
+      "exit_code": 0,
+      "kind": "patch_apply",
+      "log": "logs/patch-apply.log",
+      "timeout": false
+    }
+  ],
+  "suite_id": "synthetic-clamp-v1",
+  "timeout_seconds": 10.0,
+  "title": "Synthetic clamp / syntax error"
+}

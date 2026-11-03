@@ -1,0 +1,35 @@
+{
+  "assertion": {
+    "denominator": 1,
+    "denominator_policy": "all_declared_cases",
+    "numerator": 1
+  },
+  "claim_id": "tampered-evidence",
+  "evidence": [
+    {
+      "case_id": "good",
+      "expected": {
+        "case_sha256": "9532ffaf4208f2ecdc555c86310d2d22b94731ddc003981cea0a9af2054f6f5f",
+        "engine_sha256": "3ae2337a4a31bd100856692bb88f5560ae361230359a5bf0710adcede07142d6",
+        "environment_sha256": "08a8fb2bf22263e5117035051d37e764783dd7fb32b96562b9975080e5e9e2e9",
+        "evaluator_sha256": "2fd35a2be6c3362fd95fcca9673a587d7c104b6af3d5b836389e9cf46bce9c47",
+        "inputs_sha256": "3364e01af4121a57bddc9a343fd64ae765498aa19a55e24817813f4807456091",
+        "patch_sha256": "f43c8fc4e9eabeb869fd35d303d98d78e7ef840f6abf54aa03821719d69aea7d",
+        "source_revision": "sha256:dc9af9a73747ed374fbf0cee83132cfa7ba08df954ce421c1cc1fd77456b46d2",
+        "suite_sha256": "a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e"
+      },
+      "manifest_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "package": "good-712685dc91b8"
+    }
+  ],
+  "kind": "regression_all",
+  "schema_version": 1,
+  "scope": {
+    "case_ids": [
+      "good"
+    ],
+    "suite_id": "synthetic-clamp-v1",
+    "suite_sha256": "a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e"
+  },
+  "text": "The supplied manifest does not match the separately pinned anchor."
+}

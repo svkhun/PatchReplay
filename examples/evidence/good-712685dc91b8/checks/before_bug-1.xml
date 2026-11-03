@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="2" time="0.107" timestamp="2026-11-03T15:13:06.624578+07:00" hostname="LAPTOP-4DRQOD5E"><testcase classname="test_bug" name="test_negative_lower_bound" time="0.001"><failure message="AssertionError">evaluator\test_bug.py:5: in test_negative_lower_bound
+    assert clamp(-2, 0, 10) == 0
+E   AssertionError</failure></testcase><testcase classname="test_bug" name="test_nonzero_lower_bound" time="0.001"><failure message="AssertionError">evaluator\test_bug.py:9: in test_nonzero_lower_bound
+    assert clamp(1, 5, 10) == 5
+E   AssertionError</failure></testcase></testsuite></testsuites>

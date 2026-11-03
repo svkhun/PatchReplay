@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.diff text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+*.html text eol=lf
+# Evidence contains raw platform logs. Preserve every hashed byte on checkout.
+examples/evidence/** -text
+

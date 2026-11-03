@@ -1,0 +1,20 @@
+{
+  "approval": "Human-authored synthetic evaluator, reviewed as project source",
+  "baseline_failure": "Every bug node must fail in call phase with AssertionError",
+  "bug": [
+    "test_bug.py::test_negative_lower_bound",
+    "test_bug.py::test_nonzero_lower_bound"
+  ],
+  "patchable_paths": [
+    "clamp.py"
+  ],
+  "protected_source_paths": [
+    "tests/test_contract.py"
+  ],
+  "regression": [
+    "test_regression.py::test_upper_bound",
+    "test_regression.py::test_in_range",
+    "test_regression.py::test_invalid_bounds"
+  ],
+  "schema_version": 1
+}

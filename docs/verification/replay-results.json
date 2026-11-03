@@ -1,0 +1,6 @@
+{
+  "status": "VERIFIED_FOR_DECLARED_CHECKS",
+  "reason": "The bug reproduced, then all declared bug and regression checks passed.",
+  "package": "D:\\All Project\\open-ai\\test-output\\replay-final\\good-149c3008b32c",
+  "report": "D:\\All Project\\open-ai\\test-output\\replay-final\\good-149c3008b32c\\report.html"
+}
