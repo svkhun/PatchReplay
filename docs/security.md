@@ -34,7 +34,7 @@ Controls implemented:
 
 ## What is not provided
 
-This is **not a sandbox**. Executed Python still has the host user's OS access.
+The local executor is **not a sandbox**. Its Python has the host user's OS access.
 Removing inherited secrets from the environment does not prevent reading host
 files or contacting the network. The local executor has no network restriction,
 filesystem namespace, syscall policy, memory quota, CPU quota or disk quota.

@@ -1,8 +1,8 @@
 # Prioritized roadmap
 
-The controlled-fixture container prototype has passed [local live acceptance](verification/container-acceptance.md),
-including replay and cleanup. The earlier baseline CI passed on Windows/Ubuntu;
-that result does not cover the new adapter. The next P0 gate is independent
+The controlled-fixture container prototype has passed [local and GitHub live acceptance](verification/container-acceptance.md),
+including replay and cleanup. Its commit also passed the four-job Windows/Ubuntu
+CI matrix. The next P0 gate is independent
 observation integrity for external code, not relaxing the existing catalog.
 
 | Priority | User benefit | Deliverable and acceptance gate |
@@ -18,8 +18,8 @@ observation integrity for external code, not relaxing the existing catalog.
 | P3 | Save repeated evaluation cost | Cache keyed by every recorded input and execution policy; validate anchor on retrieval, mark reused observations, never silently treat cached results as new repeats. |
 | P3 | Review inside GitHub | Check-run attachment, artifact retention and access policy, explicit publication authorization; retain the offline path. |
 
-Before inviting external users: complete executor and provenance threat-model
-review, run the checked-in CI on both supported OS families, validate clean
-installation and replay on a second machine, add real-project provenance, and
-test the reporting workflow with at least two maintainers. None of those future
-validation outcomes is claimed by this MVP.
+Before inviting external-code users: complete executor and provenance threat-model
+review, add reviewed real-project provenance, and test the reporting workflow
+with at least two maintainers. CI now covers both supported OS families, installed
+wheel smoke checks and container replay on a separate Ubuntu runner; it does not
+establish a safe arbitrary-code boundary or maintainer usability.

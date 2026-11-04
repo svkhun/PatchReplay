@@ -101,8 +101,9 @@ human review of the source, patch, evaluator, catalog and suite identities
 together; `scripts/build_fixtures.py` is a maintainer authoring tool, not a way
 to approve third-party code automatically.
 
-The published baseline passed its Windows/Linux Python 3.11/3.12
-[CI matrix](https://github.com/svkhun/PatchReplay/actions/runs/41603343984).
-The experimental container adapter has passed [local live acceptance](docs/verification/container-acceptance.md);
-its new GitHub workflow has not run yet. MIT license. Do not submit secrets in fixture files or
+The container-executor commit passed its Windows/Linux Python 3.11/3.12
+[CI matrix](https://github.com/svkhun/PatchReplay/actions/runs/41762035246).
+The experimental container adapter has passed [local live acceptance](docs/verification/container-acceptance.md)
+and [Ubuntu container CI](https://github.com/svkhun/PatchReplay/actions/runs/41762035366).
+MIT license. Do not submit secrets in fixture files or
 logs; the evidence package deliberately preserves them as supplied.

@@ -1,7 +1,8 @@
 # Experimental container executor
 
-Status: live policy checks and three synthetic evaluation cases passed on this
-Windows host's Docker Desktop Linux engine. See [verification](verification/container-acceptance.md).
+Status: live policy checks, three synthetic evaluation cases and replay passed on
+this Windows host's Docker Desktop Linux engine and on GitHub's Ubuntu runner.
+See [verification](verification/container-acceptance.md).
 This is validation of the declared checks, not a sandbox certification. External
 repository/patch admission remains disabled. The local executor remains the default.
 

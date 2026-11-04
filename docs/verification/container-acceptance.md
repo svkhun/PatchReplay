@@ -58,7 +58,18 @@ repository execution remains gated on independent observation capture, adversari
 forgery tests and authenticated producer provenance. A signature alone would not
 make an in-container forged result trustworthy. See the [roadmap](../roadmap.md).
 
-GitHub's earlier four-job success applies to the baseline commit only; see
-[phase 2](phase2.md). The new container workflow is configured for relevant
-`main` pushes, pull requests and manual dispatch. Local acceptance is not a claim
-that the new workflow has passed on GitHub.
+## GitHub acceptance
+
+The container workflow subsequently passed on Ubuntu for commit
+`6853e7d0ecd12510cbd0c7e6a0abd1ad5d2cfe28`:
+[run 41762035366](https://github.com/svkhun/PatchReplay/actions/runs/41762035366).
+It built its own immutable evaluator image and passed the live policy/evaluation
+tests, including good-case replay. The run retains its own image metadata, JUnit
+and evidence artifacts; those build identities need not equal this host's image.
+
+Relevant `main` pushes, pull requests and manual dispatch trigger that workflow.
+The same commit also passed all four Windows/Ubuntu Python 3.11/3.12 jobs in
+[run 41762035246](https://github.com/svkhun/PatchReplay/actions/runs/41762035246),
+including tests, the synthetic demo, claim validation and installed-wheel smoke
+checks. This is additional runtime validation, not external-code admission.
+The earlier baseline's CI record remains in [phase 2](phase2.md).
