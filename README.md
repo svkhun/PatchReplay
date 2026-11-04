@@ -78,6 +78,11 @@ was used by the runtime, and no generated reproducer is automatically accepted.
 
 ## Inspect the implementation
 
+Optional [offline provenance](docs/provenance.md) signs evidence snapshots on the
+host and checks them against a separately trusted public key and expected run.
+Authentication is distinct from test success. A [recorded demo](examples/provenance-evidence/README.md)
+includes a valid signature and seven rejection cases; no private key is published.
+
 The next boundary experiment uses a [host-owned function oracle](docs/observer-boundary.md)
 to compare untrusted numeric answers outside the container. It includes a fixed
 demonstration of why in-process pytest records are not authenticated observations.

@@ -1,0 +1,31 @@
+{
+  "artifacts": {
+    "README.md": "300bdef5d0a8c21fdbc215af215bfbdd0c663b4131301a54da81b68998abf023",
+    "legacy-demonstration/demonstration.json": "b354cf2d86da7beec013bf99c91d44ebe0707d5eed95d05873245ed692554e6f",
+    "legacy-demonstration/legacy.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "legacy-demonstration/records.json": "c3407bc53a43461ed35a22014f7c499e4a4d29909462955a30574ceca8cd8540",
+    "results.json": "f96d7d9efd0e24283825b6fdd76112932578d1bb07e06ef85add48f940bcba68"
+  },
+  "bindings": {
+    "engine_sha256": "a8e49c95d7232f80c681d4b35fda92b39fd8d0160ee067f0d057c83bb2657bd6",
+    "evaluator_sha256": "12e3f389f3e548b453c517ee6dd55313d4a6e9522a65696197a82dffb8cd3277",
+    "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+    "patch_sha256": null,
+    "policy": "experimental-host-oracle-v1",
+    "request_ids_sha256": "8613c2e8baf04ea24ebe6c94872b3cb2a31db62306f741d0fac447360aadb745",
+    "sources": {
+      "buggy": "3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+      "correct": "5e2322eabfe8ee0b149e5527b78a89a7ba47b46666f8b3571be6d7062ac2fd54",
+      "disconnect": "967427b5f859135be1b2717b4db618579d99094bcda9e1fad5a1d1a00167d9e9",
+      "duplicate": "2455525626b8bc3866e03dd68be31f9c1e894554c97f7bab218674d6b3fc2fa4",
+      "flood": "03b636cced087ad95b768ad4f313beffb3082531eb059384dd9339a4b37c2748",
+      "forge_records": "f8c3f98cbce05ffda2695e0bc1fd53c659d3e540e8d002b0b60076e6ed0678ac",
+      "forge_status": "2789b179fcb8192460f44a33382dae6633175f617f1406f79bc1edec79f29147",
+      "timeout": "7bb27269d0ab62348143bd62afd105fa116504f698bda72c86fcece929cc2e4b",
+      "wrong_round": "db403fabec1090fd0bd91afc938b2177f64d10f067a7144cee6f889d72184da9"
+    }
+  },
+  "kind": "observer-v1",
+  "run_id": "observer-8613c2e8baf04ea24ebe6c94872b3cb2a31db62306f741d0fac447360aadb745",
+  "type": "patchreplay.expected-subject.v1"
+}

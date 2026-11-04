@@ -1,0 +1,53 @@
+{
+  "all_expected_outcomes_matched": true,
+  "demo_key_id": "sha256:8092fb3d6a99bc947823b6b9800883e844c6b76a713ded208de7198676bf06fd",
+  "private_key_retained": false,
+  "results": [
+    {
+      "artifact_count": 5,
+      "case": "authentic_expected_subject",
+      "key_id": "sha256:8092fb3d6a99bc947823b6b9800883e844c6b76a713ded208de7198676bf06fd",
+      "kind": "observer-v1",
+      "run_id": "observer-8613c2e8baf04ea24ebe6c94872b3cb2a31db62306f741d0fac447360aadb745",
+      "scope": "Signature, expected-subject binding and artifact integrity; not correctness, freshness or real-world signer identity.",
+      "status": "AUTHENTICATED_FOR_EXPECTED_SUBJECT"
+    },
+    {
+      "case": "tampered_artifact",
+      "reason": "Artifact content or bindings do not match the signed subject",
+      "status": "REJECTED"
+    },
+    {
+      "case": "missing_artifact",
+      "reason": "Artifact content or bindings do not match the signed subject",
+      "status": "REJECTED"
+    },
+    {
+      "case": "added_artifact",
+      "reason": "Artifact content or bindings do not match the signed subject",
+      "status": "REJECTED"
+    },
+    {
+      "case": "invalid_signature",
+      "reason": "Invalid signature",
+      "status": "REJECTED"
+    },
+    {
+      "case": "unknown_key",
+      "reason": "Signer is not the externally trusted Ed25519 key",
+      "status": "REJECTED"
+    },
+    {
+      "case": "wrong_round",
+      "reason": "Attested subject differs from the externally expected run or inputs",
+      "status": "REJECTED"
+    },
+    {
+      "case": "unsigned",
+      "reason": "Bundle must contain only artifacts and attestation.json",
+      "status": "REJECTED"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Random demo identity only; bundled public key/expectation are illustrative trust inputs, not a production trust root."
+}

@@ -11,9 +11,13 @@ requires-python = ">=3.11"
 license = {text = "MIT"}
 dependencies = ["pytest==8.3.5"]
 
+[project.optional-dependencies]
+provenance = ["cryptography==50.0.2"]
+
 [project.scripts]
 patchreplay = "patchreplay.cli:main"
 evidenceci = "patchreplay.cli:evidence_main"
+patchreplay-provenance = "patchreplay_provenance.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

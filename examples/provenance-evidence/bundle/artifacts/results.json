@@ -1,0 +1,462 @@
+{
+  "engine_files": {
+    "__init__.py": "f72c2b50ac1068bd9774b5d73e814e9ab37916b39a786f40573f034218f5a38f",
+    "__main__.py": "23a49c467520ff51d972443334df6c07c3a9b93621d56e439b580abc931568a2",
+    "fixtures.py": "f9c89df2f50e70ecda4155269ab2f4448018666213d1b6e4c5c979878887cd57",
+    "guest.py": "d3067ff4a2da4efbb22a38badc38da9b31394729575987a9958f3b71c0028a6b",
+    "host.py": "194089552d25c3ec5724cc106c3fb5a4a28f8ec818db2d21c400e7adf4cc2bb1"
+  },
+  "expected_outcomes_matched": true,
+  "experiment_sha256": "a8e49c95d7232f80c681d4b35fda92b39fd8d0160ee067f0d057c83bb2657bd6",
+  "legacy_demonstration": {
+    "actual_behavior": "Candidate wrote fake records and exited without executing declared test bodies.",
+    "admission": "Internal test harness only; public evaluator catalog was not changed.",
+    "container_removed": true,
+    "known_weakness_reproduced": true,
+    "legacy_interpretation": "PASS"
+  },
+  "limitations": [
+    "Registered synthetic experiments only; not a production PatchReplay evidence package.",
+    "MATCH means the observed answer equals one host-owned expected value, not internal execution authenticity.",
+    "Request IDs bind responses to requests; they are visible to the guest and are not authentication.",
+    "The Docker daemon, host oracle, reviewed image and kernel are trusted; no escape resistance is established."
+  ],
+  "observations": [
+    {
+      "container_name": "patchreplay-oracle-fa7b9d50612944a19feba49982165ba4",
+      "container_removed": true,
+      "expected": 0,
+      "fixture": "buggy",
+      "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+      "outcome": "MISMATCH",
+      "policy": "experimental-host-oracle-v1",
+      "probe": "negative-lower",
+      "request": {
+        "args": [
+          -2,
+          0,
+          10
+        ],
+        "protocol": 1,
+        "request_id": "fa7b9d50612944a19feba49982165ba4"
+      },
+      "response": "{\"protocol\": 1, \"request_id\": \"fa7b9d50612944a19feba49982165ba4\", \"value\": -2}\n",
+      "source_sha256": "3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+      "transport": {
+        "exit_code": 0,
+        "overflow": false,
+        "response_bytes": 79,
+        "response_sha256": "f60ba2c3a39ba548c8d8487e6aaee6ccfcb512f9ccd4c521fb5aa9d2cb94a15a",
+        "timeout": false
+      },
+      "value": -2
+    },
+    {
+      "container_name": "patchreplay-oracle-a877a394a2254275863d22d4495fb715",
+      "container_removed": true,
+      "expected": 5,
+      "fixture": "buggy",
+      "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+      "outcome": "MISMATCH",
+      "policy": "experimental-host-oracle-v1",
+      "probe": "nonzero-lower",
+      "request": {
+        "args": [
+          1,
+          5,
+          10
+        ],
+        "protocol": 1,
+        "request_id": "a877a394a2254275863d22d4495fb715"
+      },
+      "response": "{\"protocol\": 1, \"request_id\": \"a877a394a2254275863d22d4495fb715\", \"value\": 1}\n",
+      "source_sha256": "3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+      "transport": {
+        "exit_code": 0,
+        "overflow": false,
+        "response_bytes": 78,
+        "response_sha256": "c052212f8eadecb4ac4333d8008cdd4b31e8e7594165e5bb825c316516e1f7d9",
+        "timeout": false
+      },
+      "value": 1
+    },
+    {
+      "container_name": "patchreplay-oracle-ed2d6cc0bcd74d998caef44ed6e60818",
+      "container_removed": true,
+      "expected": 4,
+      "fixture": "buggy",
+      "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+      "outcome": "MATCH",
+      "policy": "experimental-host-oracle-v1",
+      "probe": "in-range",
+      "request": {
+        "args": [
+          4,
+          0,
+          10
+        ],
+        "protocol": 1,
+        "request_id": "ed2d6cc0bcd74d998caef44ed6e60818"
+      },
+      "response": "{\"protocol\": 1, \"request_id\": \"ed2d6cc0bcd74d998caef44ed6e60818\", \"value\": 4}\n",
+      "source_sha256": "3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+      "transport": {
+        "exit_code": 0,
+        "overflow": false,
+        "response_bytes": 78,
+        "response_sha256": "c57340a2d19131eaa310e162d2c2707e87c49bc649fa004c5f2f33fcaec77b77",
+        "timeout": false
+      },
+      "value": 4
+    },
+    {
+      "container_name": "patchreplay-oracle-1534b57ea3bb43d2b3ceb43fb2fb0869",
+      "container_removed": true,
+      "expected": 10,
+      "fixture": "buggy",
+      "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+      "outcome": "MATCH",
+      "policy": "experimental-host-oracle-v1",
+      "probe": "upper",
+      "request": {
+        "args": [
+          12,
+          0,
+          10
+        ],
+        "protocol": 1,
+        "request_id": "1534b57ea3bb43d2b3ceb43fb2fb0869"
+      },
+      "response": "{\"protocol\": 1, \"request_id\": \"1534b57ea3bb43d2b3ceb43fb2fb0869\", \"value\": 10}\n",
+      "source_sha256": "3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+      "transport": {
+        "exit_code": 0,
+        "overflow": false,
+        "response_bytes": 79,
+        "response_sha256": "0daf2f98982690a2fd2d3b1f070eab389e00180b4e1252f47704ec336f356d77",
+        "timeout": false
+      },
+      "value": 10
+    },
+    {
+      "container_name": "patchreplay-oracle-b5eeb11f55fd40ffa49d0354b2db270b",
+      "container_removed": true,
+      "expected": 0,
+      "fixture": "correct",
+      "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+      "outcome": "MATCH",
+      "policy": "experimental-host-oracle-v1",
+      "probe": "negative-lower",
+      "request": {
+        "args": [
+          -2,
+          0,
+          10
+        ],
+        "protocol": 1,
+        "request_id": "b5eeb11f55fd40ffa49d0354b2db270b"
+      },
+      "response": "{\"protocol\": 1, \"request_id\": \"b5eeb11f55fd40ffa49d0354b2db270b\", \"value\": 0}\n",
+      "source_sha256": "5e2322eabfe8ee0b149e5527b78a89a7ba47b46666f8b3571be6d7062ac2fd54",
+      "transport": {
+        "exit_code": 0,
+        "overflow": false,
+        "response_bytes": 78,
+        "response_sha256": "456d866088d0a37e2e60d3f3cc3d01d81cffbcc83f9eb4260141602858a15c9d",
+        "timeout": false
+      },
+      "value": 0
+    },
+    {
+      "container_name": "patchreplay-oracle-399055f6c5754c57a5d81861ea7d0054",
+      "container_removed": true,
+      "expected": 5,
+      "fixture": "correct",
+      "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+      "outcome": "MATCH",
+      "policy": "experimental-host-oracle-v1",
+      "probe": "nonzero-lower",
+      "request": {
+        "args": [
+          1,
+          5,
+          10
+        ],
+        "protocol": 1,
+        "request_id": "399055f6c5754c57a5d81861ea7d0054"
+      },
+      "response": "{\"protocol\": 1, \"request_id\": \"399055f6c5754c57a5d81861ea7d0054\", \"value\": 5}\n",
+      "source_sha256": "5e2322eabfe8ee0b149e5527b78a89a7ba47b46666f8b3571be6d7062ac2fd54",
+      "transport": {
+        "exit_code": 0,
+        "overflow": false,
+        "response_bytes": 78,
+        "response_sha256": "3c366332f6ed93dc29e10ee42d60636a2006371167809a9385ef5184e68477f1",
+        "timeout": false
+      },
+      "value": 5
+    },
+    {
+      "container_name": "patchreplay-oracle-e4aa6c5eb4c040edb37e75b25fb97141",
+      "container_removed": true,
+      "expected": 4,
+      "fixture": "correct",
+      "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+      "outcome": "MATCH",
+      "policy": "experimental-host-oracle-v1",
+      "probe": "in-range",
+      "request": {
+        "args": [
+          4,
+          0,
+          10
+        ],
+        "protocol": 1,
+        "request_id": "e4aa6c5eb4c040edb37e75b25fb97141"
+      },
+      "response": "{\"protocol\": 1, \"request_id\": \"e4aa6c5eb4c040edb37e75b25fb97141\", \"value\": 4}\n",
+      "source_sha256": "5e2322eabfe8ee0b149e5527b78a89a7ba47b46666f8b3571be6d7062ac2fd54",
+      "transport": {
+        "exit_code": 0,
+        "overflow": false,
+        "response_bytes": 78,
+        "response_sha256": "86e19cc1b5436f98c37eab1da7d0974d72fb61d47b0828e1192e656bc30aa811",
+        "timeout": false
+      },
+      "value": 4
+    },
+    {
+      "container_name": "patchreplay-oracle-f684e45d52024827a52e1ffe155f5462",
+      "container_removed": true,
+      "expected": 10,
+      "fixture": "correct",
+      "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+      "outcome": "MATCH",
+      "policy": "experimental-host-oracle-v1",
+      "probe": "upper",
+      "request": {
+        "args": [
+          12,
+          0,
+          10
+        ],
+        "protocol": 1,
+        "request_id": "f684e45d52024827a52e1ffe155f5462"
+      },
+      "response": "{\"protocol\": 1, \"request_id\": \"f684e45d52024827a52e1ffe155f5462\", \"value\": 10}\n",
+      "source_sha256": "5e2322eabfe8ee0b149e5527b78a89a7ba47b46666f8b3571be6d7062ac2fd54",
+      "transport": {
+        "exit_code": 0,
+        "overflow": false,
+        "response_bytes": 79,
+        "response_sha256": "6077955249dc12e58f15f756eed4310c348182db7bc93b972bfc4a1d5b8f0d6b",
+        "timeout": false
+      },
+      "value": 10
+    },
+    {
+      "container_name": "patchreplay-oracle-53c34709e5d849fa99b491813be43008",
+      "container_removed": true,
+      "expected": 0,
+      "fixture": "forge_records",
+      "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+      "outcome": "INVALID_RESPONSE",
+      "policy": "experimental-host-oracle-v1",
+      "probe": "negative-lower",
+      "reason": "Expecting value: line 1 column 1 (char 0)",
+      "request": {
+        "args": [
+          -2,
+          0,
+          10
+        ],
+        "protocol": 1,
+        "request_id": "53c34709e5d849fa99b491813be43008"
+      },
+      "response": "",
+      "source_sha256": "f8c3f98cbce05ffda2695e0bc1fd53c659d3e540e8d002b0b60076e6ed0678ac",
+      "transport": {
+        "exit_code": 0,
+        "overflow": false,
+        "response_bytes": 0,
+        "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "timeout": false
+      }
+    },
+    {
+      "container_name": "patchreplay-oracle-4f2e6ada56ea4d17970505b9eb239000",
+      "container_removed": true,
+      "expected": 0,
+      "fixture": "forge_status",
+      "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+      "outcome": "INVALID_RESPONSE",
+      "policy": "experimental-host-oracle-v1",
+      "probe": "negative-lower",
+      "reason": "Unexpected response shape",
+      "request": {
+        "args": [
+          -2,
+          0,
+          10
+        ],
+        "protocol": 1,
+        "request_id": "4f2e6ada56ea4d17970505b9eb239000"
+      },
+      "response": "{\"protocol\": 1, \"request_id\": \"4f2e6ada56ea4d17970505b9eb239000\", \"value\": 999, \"status\": \"PASS\"}\n",
+      "source_sha256": "2789b179fcb8192460f44a33382dae6633175f617f1406f79bc1edec79f29147",
+      "transport": {
+        "exit_code": 0,
+        "overflow": false,
+        "response_bytes": 98,
+        "response_sha256": "cfac39994ec2fd3a9862ed139d87d0a8dfe5ed0968257330ff18b6ec86362e2c",
+        "timeout": false
+      }
+    },
+    {
+      "container_name": "patchreplay-oracle-7657c1ef2cda4df4940e1d03e6738c98",
+      "container_removed": true,
+      "expected": 0,
+      "fixture": "duplicate",
+      "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+      "outcome": "INVALID_RESPONSE",
+      "policy": "experimental-host-oracle-v1",
+      "probe": "negative-lower",
+      "reason": "Extra data: line 2 column 1 (char 78)",
+      "request": {
+        "args": [
+          -2,
+          0,
+          10
+        ],
+        "protocol": 1,
+        "request_id": "7657c1ef2cda4df4940e1d03e6738c98"
+      },
+      "response": "{\"protocol\": 1, \"request_id\": \"7657c1ef2cda4df4940e1d03e6738c98\", \"value\": 0}\n{\"protocol\": 1, \"request_id\": \"7657c1ef2cda4df4940e1d03e6738c98\", \"value\": 0}\n",
+      "source_sha256": "2455525626b8bc3866e03dd68be31f9c1e894554c97f7bab218674d6b3fc2fa4",
+      "transport": {
+        "exit_code": 0,
+        "overflow": false,
+        "response_bytes": 156,
+        "response_sha256": "6c619d62d4d96f5ec47ecee32002e1fc99213b09ef918aad48a4e4abccf44e20",
+        "timeout": false
+      }
+    },
+    {
+      "container_name": "patchreplay-oracle-69525e3e266a42cda7d76f1b81d0aee4",
+      "container_removed": true,
+      "expected": 0,
+      "fixture": "wrong_round",
+      "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+      "outcome": "INVALID_RESPONSE",
+      "policy": "experimental-host-oracle-v1",
+      "probe": "negative-lower",
+      "reason": "Response belongs to another request",
+      "request": {
+        "args": [
+          -2,
+          0,
+          10
+        ],
+        "protocol": 1,
+        "request_id": "69525e3e266a42cda7d76f1b81d0aee4"
+      },
+      "response": "{\"protocol\": 1, \"request_id\": \"previous-round\", \"value\": 0}\n",
+      "source_sha256": "db403fabec1090fd0bd91afc938b2177f64d10f067a7144cee6f889d72184da9",
+      "transport": {
+        "exit_code": 0,
+        "overflow": false,
+        "response_bytes": 60,
+        "response_sha256": "f0dbd25aed0f7c76b474634fa28b07884b9cacc4b5130622a5a6e232b36fc852",
+        "timeout": false
+      }
+    },
+    {
+      "container_name": "patchreplay-oracle-8c2a48b7d5c147d28198874ab65ab0f7",
+      "container_removed": true,
+      "expected": 0,
+      "fixture": "disconnect",
+      "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+      "outcome": "INVALID_RESPONSE",
+      "policy": "experimental-host-oracle-v1",
+      "probe": "negative-lower",
+      "reason": "Expecting value: line 1 column 1 (char 0)",
+      "request": {
+        "args": [
+          -2,
+          0,
+          10
+        ],
+        "protocol": 1,
+        "request_id": "8c2a48b7d5c147d28198874ab65ab0f7"
+      },
+      "response": "",
+      "source_sha256": "967427b5f859135be1b2717b4db618579d99094bcda9e1fad5a1d1a00167d9e9",
+      "transport": {
+        "exit_code": 0,
+        "overflow": false,
+        "response_bytes": 0,
+        "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "timeout": false
+      }
+    },
+    {
+      "container_name": "patchreplay-oracle-b7e1028316de4daaaaf8d8739a4c229d",
+      "container_removed": true,
+      "expected": 0,
+      "fixture": "timeout",
+      "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+      "outcome": "TIMEOUT",
+      "policy": "experimental-host-oracle-v1",
+      "probe": "negative-lower",
+      "request": {
+        "args": [
+          -2,
+          0,
+          10
+        ],
+        "protocol": 1,
+        "request_id": "b7e1028316de4daaaaf8d8739a4c229d"
+      },
+      "response": "",
+      "source_sha256": "7bb27269d0ab62348143bd62afd105fa116504f698bda72c86fcece929cc2e4b",
+      "transport": {
+        "exit_code": 1,
+        "overflow": false,
+        "response_bytes": 0,
+        "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "timeout": true
+      }
+    },
+    {
+      "container_name": "patchreplay-oracle-a7b0be85edbf4585a8b29a584ebbed98",
+      "container_removed": true,
+      "expected": 0,
+      "fixture": "flood",
+      "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+      "outcome": "INVALID_RESPONSE",
+      "policy": "experimental-host-oracle-v1",
+      "probe": "negative-lower",
+      "reason": "Response limit exceeded",
+      "request": {
+        "args": [
+          -2,
+          0,
+          10
+        ],
+        "protocol": 1,
+        "request_id": "a7b0be85edbf4585a8b29a584ebbed98"
+      },
+      "response": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "source_sha256": "03b636cced087ad95b768ad4f313beffb3082531eb059384dd9339a4b37c2748",
+      "transport": {
+        "exit_code": 1,
+        "overflow": true,
+        "response_bytes": 4097,
+        "response_sha256": "3e97197f4b8d46a893067c94ab15e195e3d97fb5f24eede5ef047b571240d92b",
+        "timeout": false
+      }
+    }
+  ],
+  "policy": "experimental-host-oracle-v1",
+  "schema_version": 1
+}

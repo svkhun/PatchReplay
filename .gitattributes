@@ -6,4 +6,5 @@
 # Evidence contains raw platform logs. Preserve every hashed byte on checkout.
 examples/evidence/** -text
 examples/container-evidence/** -text
+examples/provenance-evidence/** -text
 

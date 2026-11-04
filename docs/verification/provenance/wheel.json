@@ -1,0 +1,13 @@
+{
+  "installed_wheel_cli_verified": true,
+  "wheel_sha256": "edf62376572c5f68bd2d0de0cf6c5300ef2d1a470af2d014f0c3786805d71e34",
+  "result": {
+    "status": "AUTHENTICATED_FOR_EXPECTED_SUBJECT",
+    "key_id": "sha256:8092fb3d6a99bc947823b6b9800883e844c6b76a713ded208de7198676bf06fd",
+    "run_id": "observer-8613c2e8baf04ea24ebe6c94872b3cb2a31db62306f741d0fac447360aadb745",
+    "kind": "observer-v1",
+    "artifact_count": 5,
+    "scope": "Signature, expected-subject binding and artifact integrity; not correctness, freshness or real-world signer identity."
+  },
+  "private_key_in_example": false
+}
