@@ -1,0 +1,97 @@
+{
+  "implementation_commit": "d28052c390c010d5787e8b545cde57551ec513b2",
+  "runs": [
+    {
+      "id": 41801157608,
+      "name": "Container acceptance (experimental)",
+      "head_sha": "d28052c390c010d5787e8b545cde57551ec513b2",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/svkhun/PatchReplay/actions/runs/41801157608",
+      "updated_at": "2026-11-04T08:41:48Z"
+    },
+    {
+      "id": 41801157643,
+      "name": "Evaluate and verify",
+      "head_sha": "d28052c390c010d5787e8b545cde57551ec513b2",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/svkhun/PatchReplay/actions/runs/41801157643",
+      "updated_at": "2026-11-04T08:41:50Z"
+    }
+  ],
+  "jobs": [
+    {
+      "job_id": 126476955501,
+      "name": "controlled-fixtures (ubuntu-latest, 3.12)",
+      "conclusion": "success",
+      "results": [
+        "2026-11-04T08:39:56.3871317Z SKIPPED [1] tests/test_container_live.py:16: Requires built immutable Docker image and Linux daemon",
+        "2026-11-04T08:39:56.3871719Z SKIPPED [3] tests/test_container_live.py:57: Requires built immutable Docker image and Linux daemon",
+        "2026-11-04T08:39:56.3872081Z SKIPPED [13] tests/test_function_live.py:14: Set PATCHREPLAY_TEST_IMAGE for real Docker acceptance",
+        "2026-11-04T08:39:56.3872682Z SKIPPED [1] tests/test_integrity.py:128: Windows Job Object lifecycle",
+        "2026-11-04T08:39:56.3872996Z SKIPPED [1] tests/test_observer_live.py:11: Requires immutable image and Linux Docker daemon",
+        "2026-11-04T08:39:56.3873256Z 261 passed, 19 skipped in 30.09s",
+        "2026-11-04T08:40:16.2801673Z       \"status\": \"AUTHENTICATED_FOR_EXPECTED_SUBJECT\",",
+        "2026-11-04T08:40:18.9821300Z   \"status\": \"AUTHENTICATED_FOR_EXPECTED_SUBJECT\",",
+        "2026-11-04T08:40:19.1940382Z   \"module_origin\": \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/patchreplay/__init__.py\","
+      ]
+    },
+    {
+      "job_id": 126476955836,
+      "name": "controlled-fixtures (windows-latest, 3.12)",
+      "conclusion": "success",
+      "results": [
+        "2026-11-04T08:41:00.9341482Z SKIPPED [1] tests\\test_container_live.py:16: Requires built immutable Docker image and Linux daemon\r",
+        "2026-11-04T08:41:00.9342091Z SKIPPED [3] tests\\test_container_live.py:57: Requires built immutable Docker image and Linux daemon\r",
+        "2026-11-04T08:41:00.9342691Z SKIPPED [13] tests\\test_function_live.py:14: Set PATCHREPLAY_TEST_IMAGE for real Docker acceptance\r",
+        "2026-11-04T08:41:00.9343257Z SKIPPED [1] tests\\test_observer_live.py:11: Requires immutable image and Linux Docker daemon\r",
+        "2026-11-04T08:41:00.9343702Z 262 passed, 18 skipped in 78.18s (0:01:18)\r",
+        "2026-11-04T08:41:35.4270390Z       \"status\": \"AUTHENTICATED_FOR_EXPECTED_SUBJECT\",\r",
+        "2026-11-04T08:41:43.3797782Z   \"status\": \"AUTHENTICATED_FOR_EXPECTED_SUBJECT\",\r",
+        "2026-11-04T08:41:43.7908011Z   \"module_origin\": \"C:\\\\hostedtoolcache\\\\windows\\\\Python\\\\3.12.10\\\\x64\\\\Lib\\\\site-packages\\\\patchreplay\\\\__init__.py\",\r"
+      ]
+    },
+    {
+      "job_id": 126476955939,
+      "name": "controlled-fixtures (ubuntu-latest, 3.11)",
+      "conclusion": "success",
+      "results": [
+        "2026-11-04T08:39:51.1309095Z SKIPPED [1] tests/test_container_live.py:16: Requires built immutable Docker image and Linux daemon",
+        "2026-11-04T08:39:51.1309946Z SKIPPED [3] tests/test_container_live.py:57: Requires built immutable Docker image and Linux daemon",
+        "2026-11-04T08:39:51.1310518Z SKIPPED [13] tests/test_function_live.py:14: Set PATCHREPLAY_TEST_IMAGE for real Docker acceptance",
+        "2026-11-04T08:39:51.1310991Z SKIPPED [1] tests/test_integrity.py:128: Windows Job Object lifecycle",
+        "2026-11-04T08:39:51.1311465Z SKIPPED [1] tests/test_observer_live.py:11: Requires immutable image and Linux Docker daemon",
+        "2026-11-04T08:39:51.1311856Z 261 passed, 19 skipped in 25.75s",
+        "2026-11-04T08:40:09.4021897Z       \"status\": \"AUTHENTICATED_FOR_EXPECTED_SUBJECT\",",
+        "2026-11-04T08:40:11.7500491Z   \"status\": \"AUTHENTICATED_FOR_EXPECTED_SUBJECT\",",
+        "2026-11-04T08:40:11.9355290Z   \"module_origin\": \"/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/patchreplay/__init__.py\","
+      ]
+    },
+    {
+      "job_id": 126476956044,
+      "name": "controlled-fixtures (windows-latest, 3.11)",
+      "conclusion": "success",
+      "results": [
+        "2026-11-04T08:40:39.9516733Z SKIPPED [1] tests\\test_container_live.py:16: Requires built immutable Docker image and Linux daemon\r",
+        "2026-11-04T08:40:39.9517087Z SKIPPED [3] tests\\test_container_live.py:57: Requires built immutable Docker image and Linux daemon\r",
+        "2026-11-04T08:40:39.9517434Z SKIPPED [13] tests\\test_function_live.py:14: Set PATCHREPLAY_TEST_IMAGE for real Docker acceptance\r",
+        "2026-11-04T08:40:39.9518710Z SKIPPED [1] tests\\test_observer_live.py:11: Requires immutable image and Linux Docker daemon\r",
+        "2026-11-04T08:40:39.9518977Z 262 passed, 18 skipped in 55.19s\r",
+        "2026-11-04T08:41:03.5307869Z       \"status\": \"AUTHENTICATED_FOR_EXPECTED_SUBJECT\",\r",
+        "2026-11-04T08:41:15.3753745Z   \"status\": \"AUTHENTICATED_FOR_EXPECTED_SUBJECT\",\r",
+        "2026-11-04T08:41:15.6323540Z   \"module_origin\": \"C:\\\\hostedtoolcache\\\\windows\\\\Python\\\\3.11.9\\\\x64\\\\Lib\\\\site-packages\\\\patchreplay\\\\__init__.py\",\r"
+      ]
+    },
+    {
+      "job_id": 126476955312,
+      "name": "linux-container",
+      "conclusion": "success",
+      "results": [
+        "2026-11-04T08:41:29.8688004Z 18 passed in 122.29s (0:02:02)",
+        "2026-11-04T08:41:43.4576857Z   \"module_origin\": \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/patchreplay/__init__.py\","
+      ]
+    }
+  ],
+  "scope": "GitHub Actions observations for the exact Phase 3 implementation commit; not arbitrary-code safety or production approval."
+}

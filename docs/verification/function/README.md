@@ -72,5 +72,29 @@ provenance and dependency environments fitting this limited function interface.
 
 ## Remote acceptance
 
-Pending the exact implementation commit's Windows/Ubuntu Python 3.11/3.12 matrix
-and separate Ubuntu container workflow. Local passes are not remote CI results.
+Implementation commit `d28052c390c010d5787e8b545cde57551ec513b2` passed both workflows:
+
+- [Evaluate and verify, run 41801157643](https://github.com/svkhun/PatchReplay/actions/runs/41801157643):
+  all four Windows/Ubuntu Python 3.11/3.12 jobs passed, including the final archive
+  guards, legacy synthetic demo/claims, provenance demo and installed-wheel checks.
+- [Container acceptance, run 41801157608](https://github.com/svkhun/PatchReplay/actions/runs/41801157608):
+  18 live tests passed in 122.29 seconds, followed by an installed-wheel good run,
+  verification, new-ID replay and second verification using real Docker.
+
+| Matrix job | Test result |
+| --- | --- |
+| Ubuntu, Python 3.11 | 261 passed, 19 skipped, 25.75 s |
+| Ubuntu, Python 3.12 | 261 passed, 19 skipped, 30.09 s |
+| Windows, Python 3.11 | 262 passed, 18 skipped, 55.19 s |
+| Windows, Python 3.12 | 262 passed, 18 skipped, 78.18 s |
+
+All ordinary-matrix jobs skip the 18 opt-in Docker tests executed in the separate
+container workflow. Ubuntu additionally skips the Windows Job Object lifecycle
+test. These skipped checks are not counted as live passes. Windows CI could execute
+both symlink guards that lacked privileges locally. Counts across jobs overlap.
+
+[Remote record](remote-acceptance.json) retains exact run SHA/URLs, job IDs and
+relevant observed log lines. Workflow artifacts retain generated evidence, JUnit,
+wheel output and immutable image metadata. The Ubuntu image was independently built;
+its identity need not match the local Windows-hosted Docker image. This remains
+scoped synthetic acceptance, not sandbox or cryptographic certification.
