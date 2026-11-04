@@ -7,4 +7,6 @@
 examples/evidence/** -text
 examples/container-evidence/** -text
 examples/provenance-evidence/** -text
+examples/function-evidence/** -text
+docs/verification/function/** -text
 

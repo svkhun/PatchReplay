@@ -43,6 +43,7 @@ jobs:
           python -c "import pathlib,subprocess,sys; subprocess.check_call([sys.executable,'-m','pip','install','--no-deps','--force-reinstall',str(next(pathlib.Path('dist').glob('*.whl')))])"
           python -m patchreplay run good --output wheel-output
           python -m patchreplay_provenance verify --bundle provenance-output/bundle --trusted-key provenance-output/trust/demo-public.pem --expectation provenance-output/trust/observer.expected.json
+          python -I scripts/function_wheel_smoke.py --output function-wheel-output
       - name: Retain evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -54,4 +55,5 @@ jobs:
             dist/
             wheel-output/
             provenance-output/
+            function-wheel-output/
           retention-days: 14

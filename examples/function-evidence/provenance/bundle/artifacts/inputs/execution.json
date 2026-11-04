@@ -1,0 +1,12 @@
+{
+  "case_sha256": "d3c3e7bd5fd61342a8dfadc554480483e24a50b6b49b18b568fee42c7281235b",
+  "engine_sha256": "61843f3e5e6f713f1dfc43c75dcf8839f65a1c8964d6baf3e25f499686778b8a",
+  "environment_sha256": "ac7f6dab0b0bd0f76121c9526c0f74d0f4c25b729b8d465ce115c5988012ecb6",
+  "evaluator_sha256": "fda9d9a7a299ffbd5272d7f84fdc1e868e29216a49a5ab42c5e52bdd0be09e4c",
+  "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+  "inputs_sha256": "331dbfbaf5648efb65d63b7167bf589608239000beb68afcc65f84899f2c9d40",
+  "patch_sha256": "a44a43d4ce4f62fb34809bf07b59e781c9bbfadaeb0b4faa878d9f03a72a2626",
+  "policy": "docker-host-function-v1",
+  "source_revision": "sha256:3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+  "suite_sha256": "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd"
+}

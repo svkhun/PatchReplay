@@ -1,5 +1,11 @@
 # Prioritized roadmap
 
+Phase 3 integrates the [registered host-function workflow](function-workflow.md):
+versioned contracts, Docker-only observations, strict host decisions, JSON/HTML
+packages, replay and external-trust provenance. The synthetic function scope is
+implemented; external-code and real-project gates remain future work.
+See [acceptance evidence](verification/function/README.md).
+
 The controlled-fixture container prototype has passed [local and GitHub live acceptance](verification/container-acceptance.md),
 including replay and cleanup. Its commit also passed the four-job Windows/Ubuntu
 CI matrix. The next P0 gate is independent

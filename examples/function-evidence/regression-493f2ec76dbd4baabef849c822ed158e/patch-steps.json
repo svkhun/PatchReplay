@@ -1,0 +1,48 @@
+{
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\Git\\cmd\\git.EXE",
+        "init",
+        "--quiet",
+        "D:\\All Project\\open-ai\\test-output\\phase3-final-live\\test_real_function_workflow_re0\\.function-work-bx_odroz\\apply-awn2p7f4"
+      ],
+      "duration_seconds": 0.141,
+      "error": null,
+      "exit_code": 0,
+      "log": "logs/patch-0.log",
+      "timeout": false
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Git\\cmd\\git.EXE",
+        "-c",
+        "core.autocrlf=false",
+        "apply",
+        "--check",
+        "--whitespace=error-all",
+        "D:\\All Project\\open-ai\\test-output\\phase3-final-live\\test_real_function_workflow_re0\\regression-493f2ec76dbd4baabef849c822ed158e\\inputs\\patch.diff"
+      ],
+      "duration_seconds": 0.125,
+      "error": null,
+      "exit_code": 0,
+      "log": "logs/patch-1.log",
+      "timeout": false
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Git\\cmd\\git.EXE",
+        "-c",
+        "core.autocrlf=false",
+        "apply",
+        "--whitespace=error-all",
+        "D:\\All Project\\open-ai\\test-output\\phase3-final-live\\test_real_function_workflow_re0\\regression-493f2ec76dbd4baabef849c822ed158e\\inputs\\patch.diff"
+      ],
+      "duration_seconds": 0.141,
+      "error": null,
+      "exit_code": 0,
+      "log": "logs/patch-2.log",
+      "timeout": false
+    }
+  ]
+}

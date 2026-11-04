@@ -1,0 +1,8 @@
+{
+  "artifact_count": 37,
+  "key_id": "sha256:a84729f7d7564e8d20db294f7f6d2ac95cc7a619e949b9d7b74a9d0cf6d5af2f",
+  "kind": "host-function-v1",
+  "run_id": "good-1e7684a0ce2d47c8966118d2bdc2ce6b",
+  "scope": "Signature, expected-subject binding and artifact integrity; not correctness, freshness or real-world signer identity.",
+  "status": "AUTHENTICATED_FOR_EXPECTED_SUBJECT"
+}

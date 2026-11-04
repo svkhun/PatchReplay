@@ -1,0 +1,31 @@
+{
+  "module_origin": "D:\\All Project\\open-ai\\.patchreplay\\function-wheel-venv\\Lib\\site-packages\\patchreplay\\__init__.py",
+  "registered_cases": [
+    "already-fixed",
+    "baseline-regression",
+    "disconnect",
+    "duplicate",
+    "flood",
+    "forge-records",
+    "forge-status",
+    "good",
+    "incorrect",
+    "narrow",
+    "regression",
+    "timeout",
+    "wrong-round"
+  ],
+  "live": true,
+  "first": {
+    "status": "VERIFIED_FOR_DECLARED_CHECKS",
+    "reason": "Every declared bug reproduced; all patched bug and regression probes matched across repeats.",
+    "package": "D:\\All Project\\open-ai\\test-output\\function-wheel-final\\test-output\\function-wheel-final\\runs\\good-c008c964cb9748ad929cdc474a6fc82c",
+    "report": "D:\\All Project\\open-ai\\test-output\\function-wheel-final\\test-output\\function-wheel-final\\runs\\good-c008c964cb9748ad929cdc474a6fc82c\\report.html"
+  },
+  "replay": {
+    "status": "VERIFIED_FOR_DECLARED_CHECKS",
+    "reason": "Every declared bug reproduced; all patched bug and regression probes matched across repeats.",
+    "package": "D:\\All Project\\open-ai\\test-output\\function-wheel-final\\test-output\\function-wheel-final\\replays\\good-8f220896086442a1a47511bc1627290a",
+    "report": "D:\\All Project\\open-ai\\test-output\\function-wheel-final\\test-output\\function-wheel-final\\replays\\good-8f220896086442a1a47511bc1627290a\\report.html"
+  }
+}

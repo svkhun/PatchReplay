@@ -1,0 +1,14 @@
+{
+  "case_id": "good",
+  "evaluator_sha256": "fda9d9a7a299ffbd5272d7f84fdc1e868e29216a49a5ab42c5e52bdd0be09e4c",
+  "interface": "candidate.clamp(int,int,int)->int",
+  "patch_sha256": "a44a43d4ce4f62fb34809bf07b59e781c9bbfadaeb0b4faa878d9f03a72a2626",
+  "patched_sha256": "5e2322eabfe8ee0b149e5527b78a89a7ba47b46666f8b3571be6d7062ac2fd54",
+  "policy_sha256": "93c78c1e15e9653f7f683378d199fe26fa0c439c3e906a3a6bb04166525e0923",
+  "repeats": 2,
+  "schema_version": 1,
+  "source_sha256": "3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+  "suite_id": "synthetic-function-v1",
+  "suite_sha256": "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd",
+  "timeout_seconds": 10
+}

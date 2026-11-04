@@ -118,7 +118,7 @@ def expectation(root, kind):
 def validate_expected(value):
     if not isinstance(value, dict) or set(value) != {"type", "kind", "run_id", "bindings", "artifacts"}:
         raise ValueError("Invalid expected-subject fields")
-    if value["type"] != EXPECTED_TYPE or value["kind"] not in {"observer-v1", "patchreplay-v1"}:
+    if value["type"] != EXPECTED_TYPE or value["kind"] not in {"observer-v1", "patchreplay-v1", "host-function-v1"}:
         raise ValueError("Unsupported expected-subject type")
     if not isinstance(value["run_id"], str) or not re.fullmatch(r"[A-Za-z0-9_-]{1,100}", value["run_id"]):
         raise ValueError("Invalid run ID")

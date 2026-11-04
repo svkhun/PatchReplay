@@ -60,6 +60,10 @@ def observer(root):
 
 
 def describe(root, kind):
+    if kind == "host-function-v1":
+        from patchreplay.function.evidence import verify
+        report = verify(root)
+        return report["run_id"], report["identities"]
     if kind == "observer-v1":
         return observer(root)
     if kind == "patchreplay-v1":

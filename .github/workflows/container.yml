@@ -12,6 +12,8 @@ on:
       - 'tests/test_executors.py'
       - 'experiments/observer_boundary/**'
       - 'tests/test_observer*.py'
+      - 'tests/test_function*.py'
+      - 'scripts/function_wheel_smoke.py'
       - '.github/workflows/container.yml'
   pull_request:
     paths:
@@ -23,13 +25,15 @@ on:
       - 'tests/test_executors.py'
       - 'experiments/observer_boundary/**'
       - 'tests/test_observer*.py'
+      - 'tests/test_function*.py'
+      - 'scripts/function_wheel_smoke.py'
       - '.github/workflows/container.yml'
 permissions:
   contents: read
 jobs:
   linux-container:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -47,7 +51,13 @@ jobs:
           echo "PATCHREPLAY_TEST_IMAGE=$IMAGE" >> "$GITHUB_ENV"
           docker image inspect "$IMAGE" > container-evidence/image.json
       - name: Exercise declared controls and evaluation lifecycle
-        run: python -m pytest tests/test_container_live.py tests/test_observer_live.py -q --basetemp=container-evidence/runs --junitxml=container-evidence/tests.xml
+        run: python -m pytest tests/test_container_live.py tests/test_observer_live.py tests/test_function_live.py -q --basetemp=container-evidence/runs --junitxml=container-evidence/tests.xml
+      - name: Build and exercise installed wheel with real Docker
+        run: |
+          python -m pip install setuptools==75.8.2 wheel==0.45.1
+          python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist
+          python -c "import pathlib,subprocess,sys; subprocess.check_call([sys.executable,'-m','pip','install','--no-deps','--force-reinstall',str(next(pathlib.Path('dist').glob('*.whl')))])"
+          python -I scripts/function_wheel_smoke.py --image "$PATCHREPLAY_TEST_IMAGE" --output container-evidence/wheel
       - uses: actions/upload-artifact@v4
         if: always()
         with:

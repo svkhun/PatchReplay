@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "evaluator_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "interface": {
+      "const": "candidate.clamp(int,int,int)->int"
+    },
+    "patch_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "patched_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "policy_sha256": {
+      "const": "93c78c1e15e9653f7f683378d199fe26fa0c439c3e906a3a6bb04166525e0923"
+    },
+    "repeats": {
+      "maximum": 5,
+      "minimum": 2,
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "source_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "suite_id": {
+      "type": "string"
+    },
+    "suite_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "timeout_seconds": {
+      "maximum": 30,
+      "minimum": 1,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "case_id",
+    "evaluator_sha256",
+    "interface",
+    "patch_sha256",
+    "patched_sha256",
+    "policy_sha256",
+    "repeats",
+    "schema_version",
+    "source_sha256",
+    "suite_id",
+    "suite_sha256",
+    "timeout_seconds"
+  ],
+  "title": "Registered function case v1",
+  "type": "object"
+}

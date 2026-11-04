@@ -1,0 +1,7 @@
+diff --git a/candidate.py b/candidate.py
+--- a/candidate.py
++++ b/candidate.py
+@@ -1,2 +1,3 @@
+ def clamp(value, lower, upper):
+     return min(value, upper)
++# Ineffective reviewed patch.

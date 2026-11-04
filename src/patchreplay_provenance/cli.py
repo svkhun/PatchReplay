@@ -20,7 +20,7 @@ def main(argv=None):
     key.add_argument("--password-env", required=True)
     prep = commands.add_parser("prepare", help="Draft an expectation to review and store separately")
     prep.add_argument("--subject", required=True)
-    prep.add_argument("--kind", choices=["observer-v1", "patchreplay-v1"], required=True)
+    prep.add_argument("--kind", choices=["observer-v1", "patchreplay-v1", "host-function-v1"], required=True)
     prep.add_argument("--output", required=True)
     signing = commands.add_parser("sign")
     signing.add_argument("--subject", required=True)

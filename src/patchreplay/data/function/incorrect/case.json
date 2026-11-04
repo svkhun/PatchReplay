@@ -1,0 +1,14 @@
+{
+  "case_id": "incorrect",
+  "evaluator_sha256": "fda9d9a7a299ffbd5272d7f84fdc1e868e29216a49a5ab42c5e52bdd0be09e4c",
+  "interface": "candidate.clamp(int,int,int)->int",
+  "patch_sha256": "f91a47f8aef7c4c228affc1664c03b8711571873397add8bfeb4c5db57af547d",
+  "patched_sha256": "0da52245f23417e640e661e60fea59536257bb59ca68c6035772067b0c28eef5",
+  "policy_sha256": "93c78c1e15e9653f7f683378d199fe26fa0c439c3e906a3a6bb04166525e0923",
+  "repeats": 2,
+  "schema_version": 1,
+  "source_sha256": "3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+  "suite_id": "synthetic-function-v1",
+  "suite_sha256": "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd",
+  "timeout_seconds": 10
+}

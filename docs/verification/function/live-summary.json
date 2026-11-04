@@ -1,0 +1,286 @@
+{
+  "evaluation_kind": "host-function-v1",
+  "note": "Function runs from final real-Docker acceptance; legacy live tests have separate results in the JUnit.",
+  "runs": [
+    {
+      "case_id": "already-fixed",
+      "containers_removed": true,
+      "identities": {
+        "case_sha256": "f3c9482639d779b304b3528a6f6b98556da052fc563da277c52e57f5c99c7455",
+        "engine_sha256": "61843f3e5e6f713f1dfc43c75dcf8839f65a1c8964d6baf3e25f499686778b8a",
+        "environment_sha256": "ac7f6dab0b0bd0f76121c9526c0f74d0f4c25b729b8d465ce115c5988012ecb6",
+        "evaluator_sha256": "fda9d9a7a299ffbd5272d7f84fdc1e868e29216a49a5ab42c5e52bdd0be09e4c",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "318b66505d3808f53d96c8356ea0f4001c8d93b368f7714b400ed82b1ce218c5",
+        "patch_sha256": "0496c06a9131a738aee80a4e6c829118c4b6776ccf2d03b73887e88e079ecb22",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:5e2322eabfe8ee0b149e5527b78a89a7ba47b46666f8b3571be6d7062ac2fd54",
+        "suite_sha256": "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd"
+      },
+      "manifest_sha256": "3b8952e8f4ec55924114c99616d40dc5b60944b30322ad77af5469d2ae412419",
+      "observation_count": 16,
+      "run_id": "already-fixed-a49d927b996245cc8188832607c2d82f",
+      "status": "BUG_NOT_REPRODUCED"
+    },
+    {
+      "case_id": "baseline-regression",
+      "containers_removed": true,
+      "identities": {
+        "case_sha256": "ab59cf78c73308f213a22d5bfff4490d9006776ed2e974b2a0e65b9fc4231d1f",
+        "engine_sha256": "61843f3e5e6f713f1dfc43c75dcf8839f65a1c8964d6baf3e25f499686778b8a",
+        "environment_sha256": "ac7f6dab0b0bd0f76121c9526c0f74d0f4c25b729b8d465ce115c5988012ecb6",
+        "evaluator_sha256": "fda9d9a7a299ffbd5272d7f84fdc1e868e29216a49a5ab42c5e52bdd0be09e4c",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "f3d6fe94c03f8b2124031c692ab2516b2b6f0ec3679535ddd1e69de589dfa8aa",
+        "patch_sha256": "b922f50b8c6d0dd01535904eabf8967245d1f18b2c09f4869b3474fc08be2c7e",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:e6f62755049336d1247f1e7002904677578a5a7070d3840e1666203e7b9b46c1",
+        "suite_sha256": "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd"
+      },
+      "manifest_sha256": "54cf828be1010ee5b4ee3a605b9de18062bf06d9094daa547edd87b0358ce6d9",
+      "observation_count": 16,
+      "run_id": "baseline-regression-2af23d061e994024b19f363d4a98b5fb",
+      "status": "BASELINE_REGRESSION_FAILED"
+    },
+    {
+      "case_id": "disconnect",
+      "containers_removed": true,
+      "identities": {
+        "case_sha256": "1fd6c8402642e23620853616487030e48ed6fb2cf84454d31c1217e94c173978",
+        "engine_sha256": "61843f3e5e6f713f1dfc43c75dcf8839f65a1c8964d6baf3e25f499686778b8a",
+        "environment_sha256": "ac7f6dab0b0bd0f76121c9526c0f74d0f4c25b729b8d465ce115c5988012ecb6",
+        "evaluator_sha256": "fda9d9a7a299ffbd5272d7f84fdc1e868e29216a49a5ab42c5e52bdd0be09e4c",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "fdf736531d2a344b6b22ecd246200232b8eb9f865e60b49e89bb5dd2f2cf9bcd",
+        "patch_sha256": "7277198c8c0b0607658adda4919791d16c8a81a3c7e24061d905c7a753939962",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+        "suite_sha256": "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd"
+      },
+      "manifest_sha256": "b8b4fab1da18587f1fa26763012c0f8b2e40bc26e7a9f0960039e59088d918f4",
+      "observation_count": 16,
+      "run_id": "disconnect-869d82cb09d845148984090b12348ae2",
+      "status": "INVALID_RESPONSE"
+    },
+    {
+      "case_id": "duplicate",
+      "containers_removed": true,
+      "identities": {
+        "case_sha256": "bcd4d9ff06c0442a9df7c4f3962423db237fc9661db90a3cb822b48cde9e3f64",
+        "engine_sha256": "61843f3e5e6f713f1dfc43c75dcf8839f65a1c8964d6baf3e25f499686778b8a",
+        "environment_sha256": "ac7f6dab0b0bd0f76121c9526c0f74d0f4c25b729b8d465ce115c5988012ecb6",
+        "evaluator_sha256": "fda9d9a7a299ffbd5272d7f84fdc1e868e29216a49a5ab42c5e52bdd0be09e4c",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "f4354d7a4b316d0422bdd387fb59f8a5d31e61606528a046608cb00e848b23e3",
+        "patch_sha256": "6008e1dd6026b7986d6868cac535d09643755d22e76b3e0c55a1a760bb2ff0c5",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+        "suite_sha256": "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd"
+      },
+      "manifest_sha256": "9746aa65481b11b5ff9218d95a2f5963f09564bbd2a3702a6e60bdbd4d6db9c8",
+      "observation_count": 16,
+      "run_id": "duplicate-ef07dabbc74d4c759bab1c349a5626c2",
+      "status": "INVALID_RESPONSE"
+    },
+    {
+      "case_id": "flood",
+      "containers_removed": true,
+      "identities": {
+        "case_sha256": "d9b280517749d7a106cf7ed2224efa079b1c8bf802acfbbe182a98db70aa4721",
+        "engine_sha256": "61843f3e5e6f713f1dfc43c75dcf8839f65a1c8964d6baf3e25f499686778b8a",
+        "environment_sha256": "ac7f6dab0b0bd0f76121c9526c0f74d0f4c25b729b8d465ce115c5988012ecb6",
+        "evaluator_sha256": "fda9d9a7a299ffbd5272d7f84fdc1e868e29216a49a5ab42c5e52bdd0be09e4c",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "fff90737176d6f4e400e9507665c723994955a0314ba12670547ba124ce1efcc",
+        "patch_sha256": "193bf8edbffc42dbe9e58d993646336de12ade16694ada7382028dc436272a88",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+        "suite_sha256": "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd"
+      },
+      "manifest_sha256": "731fcbbe9bdacc646f835456278fcbf5f319186d39cbbe1542ea396b1cfece78",
+      "observation_count": 16,
+      "run_id": "flood-fd0fa103835d466fb62748f8ee2c40fe",
+      "status": "INVALID_RESPONSE"
+    },
+    {
+      "case_id": "forge-records",
+      "containers_removed": true,
+      "identities": {
+        "case_sha256": "f821e9a6802bc0c7f5875b4ce831881765574e569cb65108646d1e3dd3bd0176",
+        "engine_sha256": "61843f3e5e6f713f1dfc43c75dcf8839f65a1c8964d6baf3e25f499686778b8a",
+        "environment_sha256": "ac7f6dab0b0bd0f76121c9526c0f74d0f4c25b729b8d465ce115c5988012ecb6",
+        "evaluator_sha256": "fda9d9a7a299ffbd5272d7f84fdc1e868e29216a49a5ab42c5e52bdd0be09e4c",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "3b7a914a13060d8e5a418d01d4ab5c4bb80667edd4c92e8c866c2d0c43430d63",
+        "patch_sha256": "5c7eaa9984c1f11c107d8c252208eaf1b498c2982ab19b8e9331d2f8b56fd448",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+        "suite_sha256": "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd"
+      },
+      "manifest_sha256": "dfeb9d5ee544c22f8474391b1185c307e9f60cff7742477324ce6efea968fea1",
+      "observation_count": 16,
+      "run_id": "forge-records-c3718b459bd846d681fcf8b295b27ab4",
+      "status": "INVALID_RESPONSE"
+    },
+    {
+      "case_id": "forge-status",
+      "containers_removed": true,
+      "identities": {
+        "case_sha256": "a46d61f3df5ba19085f133b6d6476fa0cf65d2c0acfaf6926349f13e12cef9e2",
+        "engine_sha256": "61843f3e5e6f713f1dfc43c75dcf8839f65a1c8964d6baf3e25f499686778b8a",
+        "environment_sha256": "ac7f6dab0b0bd0f76121c9526c0f74d0f4c25b729b8d465ce115c5988012ecb6",
+        "evaluator_sha256": "fda9d9a7a299ffbd5272d7f84fdc1e868e29216a49a5ab42c5e52bdd0be09e4c",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "daf0a2981de8529b7fa59ad669bbf59d10e3c340869e891b1547e3a946d705c2",
+        "patch_sha256": "4496b54c460c0bb5fd688d2603282cd750eb37af30c3c1c28d5d7a3d7e4c6743",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+        "suite_sha256": "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd"
+      },
+      "manifest_sha256": "22ce05c78b5dc6922c211b358c0d3d51b1e3c08d4dab46233e24f0ed095f056f",
+      "observation_count": 16,
+      "run_id": "forge-status-d171336374e94487a785d8143b0612b8",
+      "status": "INVALID_RESPONSE"
+    },
+    {
+      "case_id": "good",
+      "containers_removed": true,
+      "identities": {
+        "case_sha256": "d3c3e7bd5fd61342a8dfadc554480483e24a50b6b49b18b568fee42c7281235b",
+        "engine_sha256": "61843f3e5e6f713f1dfc43c75dcf8839f65a1c8964d6baf3e25f499686778b8a",
+        "environment_sha256": "ac7f6dab0b0bd0f76121c9526c0f74d0f4c25b729b8d465ce115c5988012ecb6",
+        "evaluator_sha256": "fda9d9a7a299ffbd5272d7f84fdc1e868e29216a49a5ab42c5e52bdd0be09e4c",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "331dbfbaf5648efb65d63b7167bf589608239000beb68afcc65f84899f2c9d40",
+        "patch_sha256": "a44a43d4ce4f62fb34809bf07b59e781c9bbfadaeb0b4faa878d9f03a72a2626",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+        "suite_sha256": "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd"
+      },
+      "manifest_sha256": "d05de1daf4e471eeb537d5abc44ab0669941b8a95da672830b5617d865057dfa",
+      "observation_count": 16,
+      "run_id": "good-1e7684a0ce2d47c8966118d2bdc2ce6b",
+      "status": "VERIFIED_FOR_DECLARED_CHECKS"
+    },
+    {
+      "case_id": "good",
+      "containers_removed": true,
+      "identities": {
+        "case_sha256": "d3c3e7bd5fd61342a8dfadc554480483e24a50b6b49b18b568fee42c7281235b",
+        "engine_sha256": "61843f3e5e6f713f1dfc43c75dcf8839f65a1c8964d6baf3e25f499686778b8a",
+        "environment_sha256": "ac7f6dab0b0bd0f76121c9526c0f74d0f4c25b729b8d465ce115c5988012ecb6",
+        "evaluator_sha256": "fda9d9a7a299ffbd5272d7f84fdc1e868e29216a49a5ab42c5e52bdd0be09e4c",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "331dbfbaf5648efb65d63b7167bf589608239000beb68afcc65f84899f2c9d40",
+        "patch_sha256": "a44a43d4ce4f62fb34809bf07b59e781c9bbfadaeb0b4faa878d9f03a72a2626",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+        "suite_sha256": "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd"
+      },
+      "manifest_sha256": "e145d05629b50d4050ebf738bc265ef6ec026d30e6ff4eac78be503a5c818453",
+      "observation_count": 16,
+      "run_id": "good-4fe5a60d14b24c2b8a3dc709532465f7",
+      "status": "VERIFIED_FOR_DECLARED_CHECKS"
+    },
+    {
+      "case_id": "incorrect",
+      "containers_removed": true,
+      "identities": {
+        "case_sha256": "59feb5038bb5b5c26c921ffc6b44b0731e8968a37d50c6ae818b88f05892c0d5",
+        "engine_sha256": "61843f3e5e6f713f1dfc43c75dcf8839f65a1c8964d6baf3e25f499686778b8a",
+        "environment_sha256": "ac7f6dab0b0bd0f76121c9526c0f74d0f4c25b729b8d465ce115c5988012ecb6",
+        "evaluator_sha256": "fda9d9a7a299ffbd5272d7f84fdc1e868e29216a49a5ab42c5e52bdd0be09e4c",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "dbc74242505fe9a7ac162bed9dd597fcc28c7e304591f978768752cf2d0c27c1",
+        "patch_sha256": "f91a47f8aef7c4c228affc1664c03b8711571873397add8bfeb4c5db57af547d",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+        "suite_sha256": "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd"
+      },
+      "manifest_sha256": "1f903aa7c81b7ae452d9dd38967631508fa697eb662ed072c54236ab0543d5fb",
+      "observation_count": 16,
+      "run_id": "incorrect-970ae46db2ec4aa889cc6bea882fbe62",
+      "status": "FIX_FAILED"
+    },
+    {
+      "case_id": "narrow",
+      "containers_removed": true,
+      "identities": {
+        "case_sha256": "8710afbf9e97ab8111db79c950a5f29e8ffea81dc63133f3a0cc790ad5051d6f",
+        "engine_sha256": "61843f3e5e6f713f1dfc43c75dcf8839f65a1c8964d6baf3e25f499686778b8a",
+        "environment_sha256": "ac7f6dab0b0bd0f76121c9526c0f74d0f4c25b729b8d465ce115c5988012ecb6",
+        "evaluator_sha256": "fda9d9a7a299ffbd5272d7f84fdc1e868e29216a49a5ab42c5e52bdd0be09e4c",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "2abb2b3ccccc088877f9e794f16d72148a4bda717b351a4ad6700e328daa0ed0",
+        "patch_sha256": "20cd4c79db904149bf4763571c185054801b114c205637a0a035dde7cb46cb74",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+        "suite_sha256": "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd"
+      },
+      "manifest_sha256": "b1f428c818b518a3cef1520cdad62825fafcceb59faa131d89d2f5918218b8c0",
+      "observation_count": 16,
+      "run_id": "narrow-6676445086a348c2add7ff9894967075",
+      "status": "FIX_FAILED"
+    },
+    {
+      "case_id": "regression",
+      "containers_removed": true,
+      "identities": {
+        "case_sha256": "1a3def596d6ec1dc6ff9586d8bd5ee727087ab056c3ba539d57aacc504ab224e",
+        "engine_sha256": "61843f3e5e6f713f1dfc43c75dcf8839f65a1c8964d6baf3e25f499686778b8a",
+        "environment_sha256": "ac7f6dab0b0bd0f76121c9526c0f74d0f4c25b729b8d465ce115c5988012ecb6",
+        "evaluator_sha256": "fda9d9a7a299ffbd5272d7f84fdc1e868e29216a49a5ab42c5e52bdd0be09e4c",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "f1ceef4ff84528b1e26612f1b70b175f086aff300fc6977179474c8a01ce1979",
+        "patch_sha256": "0add0011ba903ccd78f448348a0f42836adf307de21f5028c09b3f86f91268d2",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+        "suite_sha256": "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd"
+      },
+      "manifest_sha256": "e66b578c0f67ab8f51e550e1c0cf2de29e48647ae17b570ec7aa76f294059470",
+      "observation_count": 16,
+      "run_id": "regression-493f2ec76dbd4baabef849c822ed158e",
+      "status": "REGRESSION_DETECTED"
+    },
+    {
+      "case_id": "timeout",
+      "containers_removed": true,
+      "identities": {
+        "case_sha256": "589ab8e7445781a63baaa6c6849ef78b0a9f9164ffa1cbe863d3d69d30718162",
+        "engine_sha256": "61843f3e5e6f713f1dfc43c75dcf8839f65a1c8964d6baf3e25f499686778b8a",
+        "environment_sha256": "ac7f6dab0b0bd0f76121c9526c0f74d0f4c25b729b8d465ce115c5988012ecb6",
+        "evaluator_sha256": "fda9d9a7a299ffbd5272d7f84fdc1e868e29216a49a5ab42c5e52bdd0be09e4c",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "f474d92117327baf8ace25eb500381be6c7d3014bf2ea1ab97f94ad7420626ab",
+        "patch_sha256": "71239054c3c62323b92ea463fc4b3f7da5748c22765bdd851c3bd6439a030d47",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+        "suite_sha256": "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd"
+      },
+      "manifest_sha256": "6d7318cf8b97cb1794f16345073583987076a0f82e4bc6932aa603e91baf68bd",
+      "observation_count": 16,
+      "run_id": "timeout-ae23829038a04659a37b8e8663ee7af2",
+      "status": "TIMEOUT"
+    },
+    {
+      "case_id": "wrong-round",
+      "containers_removed": true,
+      "identities": {
+        "case_sha256": "d5f5ad4546f707693a230af83f7986e319d3bf07b3c467cdaebc951884f30eaa",
+        "engine_sha256": "61843f3e5e6f713f1dfc43c75dcf8839f65a1c8964d6baf3e25f499686778b8a",
+        "environment_sha256": "ac7f6dab0b0bd0f76121c9526c0f74d0f4c25b729b8d465ce115c5988012ecb6",
+        "evaluator_sha256": "fda9d9a7a299ffbd5272d7f84fdc1e868e29216a49a5ab42c5e52bdd0be09e4c",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "5c4f138dcfa272a29a62b4c7f5ea763c9df8056f9f1dbbda93a6311578aa17d2",
+        "patch_sha256": "3e696b205a12045e49139b7e45a1a5ed715e6fb2eb05726cd9a45f5e58427765",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+        "suite_sha256": "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd"
+      },
+      "manifest_sha256": "fba9c1dcac4ceee4f13b80953907f1e6f27ca37ef9e371502f4b2ad278338522",
+      "observation_count": 16,
+      "run_id": "wrong-round-7752facf54a24a8ca05869ad5074d4e0",
+      "status": "INVALID_RESPONSE"
+    }
+  ]
+}

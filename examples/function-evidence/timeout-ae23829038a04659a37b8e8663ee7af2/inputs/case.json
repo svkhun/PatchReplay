@@ -1,0 +1,14 @@
+{
+  "case_id": "timeout",
+  "evaluator_sha256": "fda9d9a7a299ffbd5272d7f84fdc1e868e29216a49a5ab42c5e52bdd0be09e4c",
+  "interface": "candidate.clamp(int,int,int)->int",
+  "patch_sha256": "71239054c3c62323b92ea463fc4b3f7da5748c22765bdd851c3bd6439a030d47",
+  "patched_sha256": "7bb27269d0ab62348143bd62afd105fa116504f698bda72c86fcece929cc2e4b",
+  "policy_sha256": "93c78c1e15e9653f7f683378d199fe26fa0c439c3e906a3a6bb04166525e0923",
+  "repeats": 2,
+  "schema_version": 1,
+  "source_sha256": "3a2fe2662497265d0d17d57f08b5d298448f010215baab3f9a93ae442fee296c",
+  "suite_id": "synthetic-function-v1",
+  "suite_sha256": "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd",
+  "timeout_seconds": 2
+}

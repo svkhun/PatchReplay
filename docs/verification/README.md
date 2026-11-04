@@ -1,5 +1,7 @@
 # Local verification record
 
+The current Phase 3 integration has its own [function acceptance record](function/README.md).
+
 Historical MVP record. Later baseline publication/CI is recorded in
 [phase 2](phase2.md), and current Docker results in
 [container acceptance](container-acceptance.md). Statements below describe the

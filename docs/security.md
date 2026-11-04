@@ -1,5 +1,12 @@
 # Security boundary and limitations
 
+The [Phase 3 host-function workflow](function-workflow.md) keeps numeric comparison
+and aggregate decisions on the host for registered integer-function cases. It
+addresses guest verdict forgery for that interface only; it does not authenticate
+internal execution or fix the legacy pytest observer's trust boundary. Optional
+signatures bind a key to expected artifacts, not truthful code behavior. External
+sources and patches remain disabled in both workflows.
+
 ## What is supported
 
 The local executor admits only this release's controlled, registered synthetic

@@ -24,6 +24,11 @@ def parser() -> argparse.ArgumentParser:
     sub = p.add_subparsers(dest="command", required=True)
     sub.add_parser("doctor", help="Inspect Python, pytest, Git and available container engines")
     sub.add_parser("list", help="List bundled cases")
+    sub.add_parser("function-list", help="List reviewed host-function cases (Docker only)")
+    function = sub.add_parser("function-run", help="Evaluate a registered integer function with a host-owned oracle")
+    function.add_argument("case", help="Registered function case name; external paths are rejected")
+    function.add_argument("--image", required=True, help="Immutable local Docker image ID")
+    function.add_argument("--output", type=Path, default=Path(".patchreplay/function-runs"))
     export = sub.add_parser("examples", help="Copy editable case specifications and patches for inspection")
     export.add_argument("destination", type=Path)
     run = sub.add_parser("run", help="Evaluate a bundled name or case JSON file")
@@ -77,6 +82,20 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "list":
             print("\n".join(p.stem for p in sorted((DATA / "cases").glob("*.json"))))
             return 0
+        if args.command == "function-list":
+            from .function.workflow import DATA as FUNCTION_DATA, load_registered
+            names = sorted(read_json(FUNCTION_DATA / "suite.json")["members"])
+            for name in names:
+                load_registered(name)
+            print("\n".join(names))
+            return 0
+        if args.command == "function-run":
+            from .function.workflow import evaluate as evaluate_function
+            folder = evaluate_function(args.case, args.image, args.output)
+            report = read_json(folder / "report.json")
+            print(json.dumps({"status": report["status"], "reason": report["reason"], "package": str(folder),
+                              "report": str(folder / "report.html")}, indent=2))
+            return 0 if report["status"] == Status.VERIFIED.value else 1
         if args.command == "examples":
             if args.destination.exists():
                 raise ValueError("Destination already exists; choose a new directory")
@@ -98,13 +117,22 @@ def main(argv: list[str] | None = None) -> int:
                     raise ValueError("--image requires --executor docker")
                 folder = evaluate(candidate, args.output, DockerExecutor(args.image) if args.executor == "docker" else None)
             else:
-                folder = replay(args.package.resolve(), args.output)
+                recorded = verify_package(args.package.resolve())
+                if recorded.get("evaluation_kind") == "host-function-v1":
+                    from .function.workflow import replay as replay_function
+                    folder = replay_function(args.package, args.output)
+                else:
+                    folder = replay(args.package.resolve(), args.output)
             report = read_json(folder / "report.json")
             print(json.dumps({"status": report["status"], "reason": report["reason"], "package": str(folder), "report": str(folder / "report.html")}, indent=2))
             return 0 if report["status"] == Status.VERIFIED.value else 1
         if args.command == "verify":
             report = verify_package(args.package.resolve(), args.manifest_sha256)
-            validate_report(args.package.resolve(), report)
+            if report.get("evaluation_kind") == "host-function-v1":
+                from .function.evidence import validate
+                validate(args.package.resolve(), report)
+            else:
+                validate_report(args.package.resolve(), report)
             print(json.dumps({"integrity": "CONSISTENT", "anchored": bool(args.manifest_sha256), "status": report["status"]}))
             return 0
         if args.command == "check":

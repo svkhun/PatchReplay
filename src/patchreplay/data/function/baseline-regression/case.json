@@ -1,0 +1,14 @@
+{
+  "case_id": "baseline-regression",
+  "evaluator_sha256": "fda9d9a7a299ffbd5272d7f84fdc1e868e29216a49a5ab42c5e52bdd0be09e4c",
+  "interface": "candidate.clamp(int,int,int)->int",
+  "patch_sha256": "b922f50b8c6d0dd01535904eabf8967245d1f18b2c09f4869b3474fc08be2c7e",
+  "patched_sha256": "5e2322eabfe8ee0b149e5527b78a89a7ba47b46666f8b3571be6d7062ac2fd54",
+  "policy_sha256": "93c78c1e15e9653f7f683378d199fe26fa0c439c3e906a3a6bb04166525e0923",
+  "repeats": 2,
+  "schema_version": 1,
+  "source_sha256": "e6f62755049336d1247f1e7002904677578a5a7070d3840e1666203e7b9b46c1",
+  "suite_id": "synthetic-function-v1",
+  "suite_sha256": "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd",
+  "timeout_seconds": 10
+}

@@ -5,7 +5,8 @@ two external trust inputs: an explicitly trusted public key and an expected-subj
 file reviewed by the recipient. Successful verification returns
 `AUTHENTICATED_FOR_EXPECTED_SUBJECT`. This is separate from any test verdict.
 
-It supports `patchreplay-v1` sealed packages and `observer-v1` experiment output.
+It supports `patchreplay-v1` sealed packages, `observer-v1` experiment output and
+`host-function-v1` [integrated function packages](function-workflow.md).
 It never executes evidence content, starts Docker, or fetches keys from a network.
 The installed `patchreplay` and `evidenceci` commands keep their existing behavior.
 

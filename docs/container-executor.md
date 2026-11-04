@@ -1,5 +1,9 @@
 # Experimental container executor
 
+The [Phase 3 host-function workflow](function-workflow.md) reuses these Docker
+controls with a separate bounded numeric-response transport and host-owned oracle.
+The pytest adapter described below retains its original observation limitations.
+
 Status: live policy checks, three synthetic evaluation cases and replay passed on
 this Windows host's Docker Desktop Linux engine and on GitHub's Ubuntu runner.
 See [verification](verification/container-acceptance.md).

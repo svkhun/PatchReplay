@@ -1,5 +1,11 @@
 # Contracts and artifacts (schema version 1)
 
+This page describes legacy pytest case/report/claim version 1. Phase 3 adds
+separate `function-case.schema.json` (case version 1) and
+`function-report.schema.json` (report version 2, `host-function-v1`). See the
+[function contract and validator](function-workflow.md). The manifest stays version 1;
+legacy EvidenceCI claims do not silently accept the new evaluation kind.
+
 `CaseSpec` is a frozen dataclass with strict runtime validation. Claim manifests
 are validated with closed key sets and typed predicates in `claims.py`.
 Public JSON Schemas under `schemas/` support editor integration; runtime

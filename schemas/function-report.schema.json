@@ -1,0 +1,336 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Separate from legacy report schema 1. Offline validator also checks snapshots, raw transport, host decisions, HTML and manifest.",
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "evaluation_kind": {
+      "const": "host-function-v1"
+    },
+    "failure": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "detail": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "kind": {
+              "enum": [
+                "INTEGRITY_ERROR",
+                "INFRA_ERROR"
+              ]
+            },
+            "stage": {
+              "enum": [
+                "preflight",
+                "patch",
+                "execution"
+              ]
+            }
+          },
+          "required": [
+            "stage",
+            "kind",
+            "detail"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "identities": {
+      "additionalProperties": false,
+      "properties": {
+        "case_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "engine_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "environment_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "evaluator_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "inputs_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "patch_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "policy": {
+          "type": "string"
+        },
+        "source_revision": {
+          "type": "string"
+        },
+        "suite_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_revision",
+        "patch_sha256",
+        "evaluator_sha256",
+        "suite_sha256",
+        "case_sha256",
+        "environment_sha256",
+        "engine_sha256",
+        "policy",
+        "image",
+        "inputs_sha256"
+      ],
+      "type": "object"
+    },
+    "limitations": {
+      "const": [
+        "Registered synthetic function cases only; no arbitrary repository, command or patch intake.",
+        "MATCH proves only the declared numeric response, not which internal implementation executed.",
+        "Request IDs correlate responses; they are visible to the guest and do not authenticate it.",
+        "The host oracle, engine, reviewed image, Docker daemon and kernel are trusted.",
+        "No generic pytest isolation, container escape resistance or production readiness is established.",
+        "Replay pins recorded software and policy identities, not hardware, host load, scheduling or randomness.",
+        "Hashes check consistency; signatures authenticate an expected subject, not truthful observations or correct code."
+      ]
+    },
+    "observations": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "attempt": {
+            "maximum": 5,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "cleanup_error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "command": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "container_name": {
+            "type": "string"
+          },
+          "container_removed": {
+            "type": "boolean"
+          },
+          "duration_seconds": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "exit_code": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "input_changed": {
+            "type": "boolean"
+          },
+          "observation": {
+            "oneOf": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "outcome": {
+                    "enum": [
+                      "MATCH",
+                      "MISMATCH"
+                    ]
+                  },
+                  "value": {
+                    "maximum": 9007199254740991,
+                    "minimum": -9007199254740991,
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "outcome",
+                  "value"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "outcome": {
+                    "const": "INVALID_RESPONSE"
+                  },
+                  "reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "outcome",
+                  "reason"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "outcome": {
+                    "enum": [
+                      "INTEGRITY_ERROR",
+                      "INFRA_ERROR",
+                      "TIMEOUT",
+                      "EXECUTION_ERROR"
+                    ]
+                  }
+                },
+                "required": [
+                  "outcome"
+                ],
+                "type": "object"
+              }
+            ]
+          },
+          "overflow": {
+            "type": "boolean"
+          },
+          "phase": {
+            "enum": [
+              "before",
+              "after"
+            ]
+          },
+          "probe_id": {
+            "type": "string"
+          },
+          "raw_base64": {
+            "maxLength": 5464,
+            "type": "string"
+          },
+          "request": {
+            "additionalProperties": false,
+            "properties": {
+              "args": {
+                "items": {
+                  "maximum": 9007199254740991,
+                  "minimum": -9007199254740991,
+                  "type": "integer"
+                },
+                "maxItems": 3,
+                "minItems": 3,
+                "type": "array"
+              },
+              "protocol": {
+                "const": 1
+              },
+              "request_id": {
+                "pattern": "^[0-9a-f]{32}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "protocol",
+              "request_id",
+              "args"
+            ],
+            "type": "object"
+          },
+          "response_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "timeout": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "attempt",
+          "cleanup_error",
+          "command",
+          "container_name",
+          "container_removed",
+          "duration_seconds",
+          "error",
+          "exit_code",
+          "input_changed",
+          "observation",
+          "overflow",
+          "phase",
+          "probe_id",
+          "raw_base64",
+          "request",
+          "response_sha256",
+          "timeout"
+        ],
+        "type": "object"
+      },
+      "maxItems": 200,
+      "type": "array"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 2
+    },
+    "status": {
+      "enum": [
+        "VERIFIED_FOR_DECLARED_CHECKS",
+        "BUG_NOT_REPRODUCED",
+        "BASELINE_REGRESSION_FAILED",
+        "FIX_FAILED",
+        "REGRESSION_DETECTED",
+        "REPEAT_DISAGREEMENT",
+        "INVALID_RESPONSE",
+        "EXECUTION_ERROR",
+        "TIMEOUT",
+        "INFRA_ERROR",
+        "INTEGRITY_ERROR"
+      ]
+    }
+  },
+  "required": [
+    "case_id",
+    "created_at",
+    "evaluation_kind",
+    "failure",
+    "identities",
+    "limitations",
+    "observations",
+    "reason",
+    "run_id",
+    "schema_version",
+    "status"
+  ],
+  "title": "Host-function report v1 (report schema 2)",
+  "type": "object"
+}

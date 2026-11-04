@@ -1,5 +1,9 @@
 # Host-owned observation experiment
 
+Historical Phase 1 experiment. Phase 3 provides an independent installed
+[host-function workflow](function-workflow.md), preserving this experiment and its
+recorded artifacts. The new report format does not reinterpret these results.
+
 Status: a repository-only prototype for registered integer function probes.
 It is not a new public executor, arbitrary pytest isolation, or external repository
 admission. Existing PatchReplay commands retain their reviewed source/patch catalog.

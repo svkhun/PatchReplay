@@ -9,7 +9,7 @@ resulting packages. Python + pytest, local CLI, offline HTML, no API key.
 [Inspect recorded demo evidence](examples/evidence/index.html) ·
 [Read the verification record](docs/verification/README.md)
 
-The next iteration adds an experimental Docker adapter for approved fixtures.
+An experimental Docker adapter is available for approved fixtures.
 See [container setup and acceptance gates](docs/container-executor.md) and
 [phase 2 verification](docs/verification/phase2.md). External patches remain disabled.
 
@@ -83,7 +83,18 @@ host and checks them against a separately trusted public key and expected run.
 Authentication is distinct from test success. A [recorded demo](examples/provenance-evidence/README.md)
 includes a valid signature and seven rejection cases; no private key is published.
 
-The next boundary experiment uses a [host-owned function oracle](docs/observer-boundary.md)
+Phase 3 integrates a [host-owned function workflow](docs/function-workflow.md) into
+the installed CLI with versioned evidence, replay and optional offline provenance.
+Docker is required; only thirteen reviewed synthetic cases are admitted.
+
+```sh
+python -m patchreplay function-list
+python -m patchreplay function-run good --image sha256:<immutable-image-id> --output function-runs
+python -m patchreplay verify function-runs/<run-id>
+python -m patchreplay replay function-runs/<run-id> --output function-replays
+```
+
+The earlier boundary experiment uses a [host-owned function oracle](docs/observer-boundary.md)
 to compare untrusted numeric answers outside the container. It includes a fixed
 demonstration of why in-process pytest records are not authenticated observations.
 This repository-only experiment does not enable external patch execution.
