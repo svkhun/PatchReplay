@@ -78,6 +78,11 @@ was used by the runtime, and no generated reproducer is automatically accepted.
 
 ## Inspect the implementation
 
+The next boundary experiment uses a [host-owned function oracle](docs/observer-boundary.md)
+to compare untrusted numeric answers outside the container. It includes a fixed
+demonstration of why in-process pytest records are not authenticated observations.
+This repository-only experiment does not enable external patch execution.
+
 | Area | Source |
 | --- | --- |
 | Typed case contract and decision rules | `src/patchreplay/contracts.py` |

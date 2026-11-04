@@ -5,6 +5,10 @@ including replay and cleanup. Its commit also passed the four-job Windows/Ubuntu
 CI matrix. The next P0 gate is independent
 observation integrity for external code, not relaxing the existing catalog.
 
+The [host-owned observation experiment](observer-boundary.md) explores this gate
+for a limited integer-function interface and reproduces the current in-process
+pytest weakness. It does not admit arbitrary external code or replace pytest.
+
 | Priority | User benefit | Deliverable and acceptance gate |
 | --- | --- | --- |
 | P0 | Safely review an external patch | Extend the tested fixture executor with independent observation capture and adversarial escape/forgery tests. Keep signing authority and verdict computation outside evaluated code. Reject forged, missing, duplicated or cross-run observations. No catalog bypass before this gate. |

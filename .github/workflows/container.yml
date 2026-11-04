@@ -10,6 +10,8 @@ on:
       - '.dockerignore'
       - 'tests/test_container_live.py'
       - 'tests/test_executors.py'
+      - 'experiments/observer_boundary/**'
+      - 'tests/test_observer*.py'
       - '.github/workflows/container.yml'
   pull_request:
     paths:
@@ -19,6 +21,8 @@ on:
       - '.dockerignore'
       - 'tests/test_container_live.py'
       - 'tests/test_executors.py'
+      - 'experiments/observer_boundary/**'
+      - 'tests/test_observer*.py'
       - '.github/workflows/container.yml'
 permissions:
   contents: read
@@ -43,7 +47,7 @@ jobs:
           echo "PATCHREPLAY_TEST_IMAGE=$IMAGE" >> "$GITHUB_ENV"
           docker image inspect "$IMAGE" > container-evidence/image.json
       - name: Exercise declared controls and evaluation lifecycle
-        run: python -m pytest tests/test_container_live.py -q --basetemp=container-evidence/runs --junitxml=container-evidence/tests.xml
+        run: python -m pytest tests/test_container_live.py tests/test_observer_live.py -q --basetemp=container-evidence/runs --junitxml=container-evidence/tests.xml
       - uses: actions/upload-artifact@v4
         if: always()
         with:
