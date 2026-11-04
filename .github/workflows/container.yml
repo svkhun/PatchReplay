@@ -1,0 +1,51 @@
+name: Container acceptance (experimental)
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/patchreplay/**'
+      - 'containers/**'
+      - 'requirements.lock'
+      - '.dockerignore'
+      - 'tests/test_container_live.py'
+      - 'tests/test_executors.py'
+      - '.github/workflows/container.yml'
+  pull_request:
+    paths:
+      - 'src/patchreplay/**'
+      - 'containers/**'
+      - 'requirements.lock'
+      - '.dockerignore'
+      - 'tests/test_container_live.py'
+      - 'tests/test_executors.py'
+      - '.github/workflows/container.yml'
+permissions:
+  contents: read
+jobs:
+  linux-container:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.lock && python -m pip install -e .
+      - name: Resolve base image and record immutable build inputs
+        run: |
+          mkdir -p container-evidence
+          docker pull python:3.12-slim
+          BASE=$(docker image inspect python:3.12-slim --format '{{index .RepoDigests 0}}')
+          echo "$BASE" > container-evidence/base-image.txt
+          docker build --build-arg BASE_IMAGE="$BASE" -f containers/Dockerfile -t patchreplay-evaluator .
+          IMAGE=$(docker image inspect patchreplay-evaluator --format '{{.Id}}')
+          echo "PATCHREPLAY_TEST_IMAGE=$IMAGE" >> "$GITHUB_ENV"
+          docker image inspect "$IMAGE" > container-evidence/image.json
+      - name: Exercise declared controls and evaluation lifecycle
+        run: python -m pytest tests/test_container_live.py -q --basetemp=container-evidence/runs --junitxml=container-evidence/tests.xml
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: container-evidence
+          path: container-evidence/

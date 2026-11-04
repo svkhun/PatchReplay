@@ -1,0 +1,15 @@
+{
+  "server_version": "29.9.2",
+  "kernel_version": "6.6.87.2-microsoft-standard-WSL2",
+  "operating_system": "Docker Desktop",
+  "os_type": "linux",
+  "cgroup_version": "2",
+  "security_options": [
+    "name=seccomp,profile=builtin",
+    "name=cgroupns"
+  ],
+  "image_id": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+  "image_os": "linux",
+  "image_architecture": "amd64",
+  "base_image": "python@sha256:b18b261e1b4974b4f321451ad5251ded85abb22c2b8b262da527dda1d031ab30"
+}

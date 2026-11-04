@@ -1,0 +1,35 @@
+{
+  "assertion": {
+    "denominator": 1,
+    "denominator_policy": "all_declared_cases",
+    "numerator": 1
+  },
+  "claim_id": "container-regressions",
+  "evidence": [
+    {
+      "case_id": "good",
+      "expected": {
+        "case_sha256": "9532ffaf4208f2ecdc555c86310d2d22b94731ddc003981cea0a9af2054f6f5f",
+        "engine_sha256": "1ac30357e8635eb493f6f75d4b2296897b21be1283e9e427eee401da20847d31",
+        "environment_sha256": "ce8600144c42dd82ae382d185e870d8293b7b8ddfef986f49204567a44593f6c",
+        "evaluator_sha256": "2fd35a2be6c3362fd95fcca9673a587d7c104b6af3d5b836389e9cf46bce9c47",
+        "inputs_sha256": "86be5b5b6031d5784cb4cb1e4237602268e6bfd4c9c0d2aa9a764a8884a80fa4",
+        "patch_sha256": "f43c8fc4e9eabeb869fd35d303d98d78e7ef840f6abf54aa03821719d69aea7d",
+        "source_revision": "sha256:dc9af9a73747ed374fbf0cee83132cfa7ba08df954ce421c1cc1fd77456b46d2",
+        "suite_sha256": "a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e"
+      },
+      "manifest_sha256": "35c2cae2072e921d509cd6a5e623e952b2bad28c8b92256438657051701c8b4a",
+      "package": "good-88d4b8780666"
+    }
+  ],
+  "kind": "regression_all",
+  "schema_version": 1,
+  "scope": {
+    "case_ids": [
+      "good"
+    ],
+    "suite_id": "synthetic-clamp-v1",
+    "suite_sha256": "a9b330b7deebc08216f019951a4956c4e1f94179efd9207e8b2c725ad7fefd8e"
+  },
+  "text": "The registered good patch passes all declared regression checks in the recorded container environment."
+}

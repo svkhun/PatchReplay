@@ -14,6 +14,7 @@ from . import __version__
 from .claims import check_claim, validate_report
 from .contracts import Status
 from .engine import DATA, environment, evaluate, replay
+from .executors import DockerExecutor
 from .integrity import read_json, verify_package, write_json
 
 
@@ -27,6 +28,8 @@ def parser() -> argparse.ArgumentParser:
     export.add_argument("destination", type=Path)
     run = sub.add_parser("run", help="Evaluate a bundled name or case JSON file")
     run.add_argument("case")
+    run.add_argument("--executor", choices=["local", "docker"], default="local")
+    run.add_argument("--image", help="Immutable local Docker image ID; required for --executor docker")
     run.add_argument("--output", type=Path, default=Path(".patchreplay/runs"))
     rep = sub.add_parser("replay", help="Verify and rerun a package under identical recorded inputs")
     rep.add_argument("package", type=Path)
@@ -60,7 +63,7 @@ def doctor() -> dict:
         engines[name] = detail
     return {"environment": state, "container_engines": engines, "selected_executor": "controlled-fixtures-v1",
             "external_repositories_supported": False,
-            "note": "Container availability is diagnostic only. This MVP has no container executor.",
+            "note": "Docker fixture executor is experimental; external repositories remain disabled.",
             "ready": state["packages"].get("pytest") == "8.3.5" and bool(state["git"])}
 
 
@@ -89,7 +92,11 @@ def main(argv: list[str] | None = None) -> int:
                     if args.case not in available:
                         raise ValueError(f"Unknown case: {args.case}. Use 'patchreplay list'.")
                     candidate = available[args.case]
-                folder = evaluate(candidate, args.output)
+                if args.executor == "docker" and not args.image:
+                    raise ValueError("--executor docker requires --image sha256:<local immutable image ID>")
+                if args.executor == "local" and args.image:
+                    raise ValueError("--image requires --executor docker")
+                folder = evaluate(candidate, args.output, DockerExecutor(args.image) if args.executor == "docker" else None)
             else:
                 folder = replay(args.package.resolve(), args.output)
             report = read_json(folder / "report.json")

@@ -1,5 +1,10 @@
 # Local verification record
 
+Historical MVP record. Later baseline publication/CI is recorded in
+[phase 2](phase2.md), and current Docker results in
+[container acceptance](container-acceptance.md). Statements below describe the
+initial local verification session, before those later actions.
+
 Date: **2026-11-03 (Asia/Bangkok)**. Scope: the local PatchReplay 0.1.0 MVP in
 this repository, controlled synthetic fixtures only. No commit, push, pull
 request, deployment, remote CI run or model call was performed.
@@ -31,7 +36,7 @@ Python setting was changed. For this prepared workspace, run commands using
 | Dependency compatibility | `pip check`: no broken requirements | Command result observed locally |
 | JSON Schemas | 4 schemas checked; 46 case/report/manifest/claim artifacts validated | [Schema results](schema-results.json) |
 | Workflow YAML | Parsed; expected events, read-only permission and two-OS matrix checked | Same schema results; not remote execution |
-| Git clean-filter portability | 545 identity-bearing files unchanged with `core.autocrlf=true` | [Checkout-byte check](checkout-bytes.json) |
+| Git clean-filter portability | Initially 545 identity-bearing files unchanged with `core.autocrlf=true`; expanded check now covers 721 | [Checkout-byte check](checkout-bytes.json) |
 | Browser QA | Chrome: 4 pages × 2 widths (1440px and 390px), no document overflow, broken local evidence links, page errors or remote requests; details controls opened | [Browser checks](screenshots/results.json) |
 
 The skipped test attempts to create a symlink. This Windows environment does

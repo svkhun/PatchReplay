@@ -133,7 +133,10 @@
       "type": "string"
     },
     "executor": {
-      "const": "controlled-fixtures-v1"
+      "enum": [
+        "controlled-fixtures-v1",
+        "docker-fixtures-v1"
+      ]
     },
     "identities": {
       "additionalProperties": false,

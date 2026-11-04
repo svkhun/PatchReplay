@@ -1,0 +1,20 @@
+{
+  "files": {
+    "__init__.py": "af8c1b0f7dadc2cfbb2766944879e22e632e9616ea78d4db91449942e1d868ec",
+    "__main__.py": "76fa916e93e0ae1a6c1bb51dcc0bcf289c014e9f760a47165f8a84401ccf41d7",
+    "claims.py": "d49bb22be2d63f5cb3ecd936ddc7ce408787f3b045c563dda6030c9019afdf7e",
+    "cli.py": "28e107918fa7fe2c236adcd04dbe3a9e6d013ff717d75a75728e6aba0d71c2ed",
+    "container_bridge.py": "9eedf77aa09809cc0bd5ef857088cbdf42b904f234ccc7bd546fd648e1f97b5f",
+    "contracts.py": "f078e5c12b4a15e49251aa7706cf1c94e187cd34fea52b717d46a43fbc2d82d6",
+    "demo.py": "ffc0a6234e7fd76ed1a255edcdc86401ba6c8c1f90bbcd76958c2b55e2179223",
+    "engine.py": "80f053365c31f1fec33e83cc9fe64618dbdd3eadf60d737c75daaf060d2a51cf",
+    "executors.py": "b55b0b1c88c87c431e2239a4d5eec72db89989010de19b806ae9f7ebf89f928c",
+    "integrity.py": "03746c4404758050ab249ff6a74a6c4cbc6327b555fd4386d17a3b3c96afb893",
+    "process.py": "a9edfe03aa2d1425c6f25bd27ebc3cd2f63742542043bd182a7815bc37765159",
+    "reporting.py": "90fe6a200d61c05f118447f53e46d6b9d59ce8d3f6ca14308636422f2e259a11",
+    "templates/report.html": "2a23d49c3aa0729691172905fd3cc96960de63e99a07dc5a4fd73467c0645dc0",
+    "windows_job.py": "01766670a177ece43b25c6bd1cfdd6a635c72e067f7d49b4b6a571efb03e0975",
+    "worker.py": "365790b4ad4bcace7ccb4b01eac2da983efe968e8346b8751e8154fe711c2b5f"
+  },
+  "version": "0.1.0"
+}

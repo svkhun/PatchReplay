@@ -12,7 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     files = sorted(p.relative_to(ROOT).as_posix() for folder in
-                   (ROOT / "src" / "patchreplay" / "data", ROOT / "examples" / "evidence")
+                   (ROOT / "src" / "patchreplay" / "data", ROOT / "examples" / "evidence",
+                    ROOT / "examples" / "container-evidence")
                    for p in folder.rglob("*") if p.is_file() and "__pycache__" not in p.parts)
     names = "\n".join(files) + "\n"
     base = ["git", "-c", "core.autocrlf=true", "hash-object", "--stdin-paths"]

@@ -9,6 +9,10 @@ resulting packages. Python + pytest, local CLI, offline HTML, no API key.
 [Inspect recorded demo evidence](examples/evidence/index.html) ·
 [Read the verification record](docs/verification/README.md)
 
+The next iteration adds an experimental Docker adapter for approved fixtures.
+See [container setup and acceptance gates](docs/container-executor.md) and
+[phase 2 verification](docs/verification/phase2.md). External patches remain disabled.
+
 > MVP boundary: only the bundled, registered synthetic sources and patches may
 > execute. The local executor is **not a sandbox**. External repositories are
 > deliberately unsupported until a hardened executor is implemented.
@@ -97,7 +101,8 @@ human review of the source, patch, evaluator, catalog and suite identities
 together; `scripts/build_fixtures.py` is a maintainer authoring tool, not a way
 to approve third-party code automatically.
 
-The CI workflow runs tests and the full demo on Windows and Linux, and retains
-the evidence packages when run on GitHub. The supplied workflow has not yet been
-executed remotely. MIT license. Do not submit secrets in fixture files or
+The published baseline passed its Windows/Linux Python 3.11/3.12
+[CI matrix](https://github.com/svkhun/PatchReplay/actions/runs/41603343984).
+The experimental container adapter has passed [local live acceptance](docs/verification/container-acceptance.md);
+its new GitHub workflow has not run yet. MIT license. Do not submit secrets in fixture files or
 logs; the evidence package deliberately preserves them as supplied.

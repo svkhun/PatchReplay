@@ -1,0 +1,11 @@
+diff --git a/clamp.py b/clamp.py
+--- a/clamp.py
++++ b/clamp.py
+@@ -4,4 +4,6 @@
+ def clamp(value, lower, upper):
+     if lower > upper:
+         raise ValueError("lower must not exceed upper")
+-    return min(value, upper)
++    import time
++    time.sleep(10)
++    return max(lower, min(value, upper))

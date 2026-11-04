@@ -10,7 +10,8 @@ required to run the demo.
 
 Before choosing the executor, `doctor` probes Python, pytest, Git, Docker and
 Podman. Container presence does not enable external code execution. A container
-executor is not implemented in this MVP.
+executor is experimental and available only for approved fixtures; see
+[its policy and remaining gates](container-executor.md). Local execution remains the default.
 
 Controls implemented:
 

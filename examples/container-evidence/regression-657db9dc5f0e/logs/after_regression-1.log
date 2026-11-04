@@ -1,0 +1,10 @@
+F..                                                                      [100%]
+=================================== FAILURES ===================================
+_______________________________ test_upper_bound _______________________________
+/input/evaluator/test_regression.py:6: in test_upper_bound
+    assert clamp(20, 0, 10) == 10
+E   AssertionError
+-------------------- generated xml file: /work/records.xml ---------------------
+=========================== short test summary info ============================
+FAILED ../input/evaluator/test_regression.py::test_upper_bound - AssertionError
+1 failed, 2 passed in 0.15s

@@ -1,0 +1,23 @@
+{
+  "container": {
+    "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+    "policy": "docker-fixtures-v1"
+  },
+  "executor": "controlled-fixtures-v1",
+  "git": "git version 2.52.0.windows.1",
+  "implementation": "CPython",
+  "machine": "AMD64",
+  "packages": {
+    "colorama": "0.4.6",
+    "iniconfig": "2.3.0",
+    "packaging": "25.0",
+    "patchreplay": "0.1.0",
+    "pip": "25.0.1",
+    "pluggy": "1.6.0",
+    "pytest": "8.3.5",
+    "setuptools": "75.8.2",
+    "wheel": "0.45.1"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.14"
+}

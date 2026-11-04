@@ -16,6 +16,7 @@ from . import __version__
 from .contracts import CaseSpec, PHASES, Status, decide
 from .integrity import IntegrityError, digest, fixture_hash, identity, patch_paths, read_json, safe_path, seal_package, tree_files, tree_hash, write_json
 from .process import clean_environment, execute
+from .executors import LocalExecutor, DockerExecutor
 
 PACKAGE = Path(__file__).resolve().parent
 DATA = PACKAGE / "data"
@@ -120,20 +121,22 @@ def interpret(result: dict, expected: list[str], phase: str, exit_code: int) -> 
 
 
 def run_check(root: Path, work: Path, source: Path, evaluator: Path, contract: dict, case: CaseSpec,
-              phase: str, attempt: int) -> dict:
+              phase: str, attempt: int, executor=None) -> dict:
+    executor = executor or LocalExecutor()
     check_id = f"{phase}-{attempt}"
     folder = work / check_id
     folder.mkdir()
     shutil.copytree(source, folder / "source")
     shutil.copytree(evaluator, folder / "evaluator", ignore=shutil.ignore_patterns("__pycache__"))
     shutil.copy2(PACKAGE / "worker.py", folder / "worker.py")
+    executor.prepare(folder)
     baseline = tree_files(folder)
     result_path = root / "checks" / f"{check_id}.json"
     log = root / "logs" / f"{check_id}.log"
     selection = "bug" if phase.endswith("bug") else "regression"
     command = [sys.executable, "-I", "-B", str(folder / "worker.py"), str(folder / "source"),
                str(folder / "evaluator"), selection, str(result_path), str(attempt)]
-    result = execute(command, folder, clean_environment(work / "homes" / check_id), case.timeout_seconds, log)
+    result = executor.check(command, folder, clean_environment(work / "homes" / check_id), case.timeout_seconds, log)
     outcome = "INFRA_ERROR"
     signature = identity({"process_error": result["error"]})
     if result["timeout"]:
@@ -152,7 +155,8 @@ def run_check(root: Path, work: Path, source: Path, evaluator: Path, contract: d
             "junit": result_path.with_suffix(".xml").relative_to(root).as_posix() if result_path.with_suffix(".xml").exists() else None}
 
 
-def evaluate(case_path: Path, output: Path) -> Path:
+def evaluate(case_path: Path, output: Path, executor=None) -> Path:
+    executor = executor or LocalExecutor()
     case, patch = load_case(case_path.resolve())
     output = output.resolve()
     if output.is_relative_to(PACKAGE):
@@ -164,6 +168,8 @@ def evaluate(case_path: Path, output: Path) -> Path:
     root.mkdir(parents=True, exist_ok=False)
     (root / "checks").mkdir()
     env = environment()
+    if isinstance(executor, DockerExecutor):
+        env["container"] = executor.identity()
     inputs = root / "inputs"
     inputs.mkdir()
     normalized = {**case.as_dict(), "patch": "patch.diff"}
@@ -187,13 +193,18 @@ def evaluate(case_path: Path, output: Path) -> Path:
     ids["inputs_sha256"] = identity(ids)
     report = {"schema_version": 1, "case_id": case.case_id, "title": case.title, "run_id": run_id,
               "created_at": datetime.now(timezone.utc).isoformat(), "evaluator_version": __version__,
-              "suite_id": case.suite_id, "identities": ids, "executor": POLICY,
+              "suite_id": case.suite_id, "identities": ids, "executor": executor.policy,
               "repeats": case.repeats, "timeout_seconds": case.timeout_seconds,
               "checks": [], "steps": [], "limitations": LIMITATIONS,
               "replay": "python -m patchreplay replay <this-package-directory> --output replay-output",
               "cache": {"enabled": False, "reason": "MVP always executes; identities are reserved for future exact-input cache keys."}}
     try:
         source, evaluator, contract = approved_inputs(case, patch)
+        if isinstance(executor, DockerExecutor):
+            executor.preflight()
+            report["limitations"] = [line for line in LIMITATIONS if "local executor" not in line and "clean environment" not in line] + [
+                "Container policy is experimental and admitted fixtures only. Same-container code can forge pytest observations; external patches remain disabled.",
+                "Container checks use a read-only fixture mount, disabled network and resource limits. These controls are not a security certification."]
         shutil.copytree(source, inputs / "source", ignore=shutil.ignore_patterns("__pycache__"))
         shutil.copytree(evaluator, inputs / "evaluator", ignore=shutil.ignore_patterns("__pycache__"))
         if env["packages"].get("pytest") != case.required_pytest or not env["git"]:
@@ -235,7 +246,7 @@ def evaluate(case_path: Path, output: Path) -> Path:
                         for attempt in range(1, case.repeats + 1):
                             for phase in PHASES:
                                 selected = pristine if phase.startswith("before") else patched_clean
-                                report["checks"].append(run_check(root, work, selected, evaluator, contract, case, phase, attempt))
+                                report["checks"].append(run_check(root, work, selected, evaluator, contract, case, phase, attempt, executor))
                         status, reason = decide(report["checks"], case.repeats)
                         report.update(status=status.value, reason=reason)
     except IntegrityError as exc:
@@ -256,6 +267,12 @@ def replay(package: Path, output: Path) -> Path:
     validate_report(package, report)
     if report["identities"]["engine_sha256"] != identity(engine_files()):
         raise IntegrityError("Evaluator engine changed. Restore the recorded version before exact-input replay.")
-    if report["identities"]["environment_sha256"] != identity(environment()):
+    current_env = environment()
+    executor = None
+    recorded = read_json(package / "inputs" / "environment.json")
+    if "container" in recorded:
+        executor = DockerExecutor(recorded["container"]["image"])
+        current_env["container"] = executor.identity()
+    if report["identities"]["environment_sha256"] != identity(current_env):
         raise IntegrityError("Environment changed. Restore recorded Python, packages, Git and platform before exact-input replay.")
-    return evaluate(package / "inputs" / "case.json", output)
+    return evaluate(package / "inputs" / "case.json", output, executor)

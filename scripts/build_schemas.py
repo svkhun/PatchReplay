@@ -51,7 +51,7 @@ def main():
                  "signature": HASH, "expected_nodes": array(STRING), "records": {"type": ["string", "null"]}, "junit": {"type": ["string", "null"]}})
     save("report", obj({"schema_version": {"const": 1}, "case_id": NAME, "title": STRING, "run_id": STRING,
         "created_at": {"type": "string", "format": "date-time"}, "evaluator_version": STRING, "suite_id": NAME,
-        "identities": ids, "executor": {"const": "controlled-fixtures-v1"}, "repeats": {"type": "integer", "minimum": 1},
+        "identities": ids, "executor": {"enum": ["controlled-fixtures-v1", "docker-fixtures-v1"]}, "repeats": {"type": "integer", "minimum": 1},
         "timeout_seconds": {"type": "number", "minimum": 0.05}, "checks": array(check), "steps": array(obj({**process, "kind": STRING})),
         "limitations": array(STRING), "replay": STRING, "cache": obj({"enabled": {"const": False}, "reason": STRING}),
         "status": {"enum": [s.value for s in Status]}, "reason": STRING}))

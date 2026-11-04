@@ -1,0 +1,17 @@
+{
+  "asserted": {
+    "denominator": 1,
+    "denominator_policy": "all_declared_cases",
+    "numerator": 1
+  },
+  "claim_id": "container-regressions",
+  "excluded_from_numerator": {},
+  "observed": {
+    "denominator": 1,
+    "denominator_policy": "all_declared_cases",
+    "numerator": 1
+  },
+  "reason": "Observed 1/1 within the declared scope. All declared cases remain in the denominator.",
+  "schema_version": 1,
+  "status": "SUPPORTED_FOR_SCOPE"
+}
