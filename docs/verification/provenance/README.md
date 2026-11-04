@@ -53,6 +53,16 @@ correctness, uncompromised host, or truthful pytest observer. Existing arbitrary
 repository admission remains disabled. Private keys/trust anchors must stay
 outside the subject and bundle and under the operator's control.
 
-GitHub acceptance must be recorded against the exact pushed implementation commit.
-The workflow now runs the provenance tests/demo and verifies the demo again after
-installing the built wheel on Windows/Ubuntu with Python 3.11/3.12.
+## Remote acceptance
+
+Implementation commit `a245cc10d3f84ef24e4e0b05186fa912fe9c8bae` passed all four
+Windows/Ubuntu Python 3.11/3.12 jobs in
+[GitHub run 41794985873](https://github.com/svkhun/PatchReplay/actions/runs/41794985873).
+Each job ran the final test suite, original synthetic demo/claim checks, offline
+provenance demo, wheel build and verification using the installed wheel. Workflow
+artifacts retain the JUnit, wheel and independently generated demo evidence.
+
+This run covers the final streaming-directory guard and extra count-limit test.
+No new live container workflow was required for this host-only change; the
+evaluator/observer/container source and image inputs were unchanged. This remains
+scoped provenance acceptance, not sandbox or cryptographic certification.

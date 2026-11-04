@@ -132,3 +132,6 @@ operational error, 2 for invalid CLI syntax or missing optional dependency.
 Implementation uses PyCA's [Ed25519 signing/verification](https://cryptography.io/en/50.0.2/hazmat/primitives/asymmetric/ed25519/)
 and [encrypted key serialization](https://cryptography.io/en/50.0.2/hazmat/primitives/asymmetric/serialization/).
 No signature primitive is implemented in this project.
+
+See the [phase 2 verification record](verification/provenance/README.md) for local
+tests, installed-wheel verification and the exact implementation commit's CI run.
