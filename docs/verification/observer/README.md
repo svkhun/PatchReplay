@@ -49,6 +49,17 @@ repository-only experiment does not invalidate existing engine identities or
 enable external repositories. Next work is the host-observation provenance
 contract and selection of reviewed real cases that fit this limited interface.
 
-The container workflow now includes the observer live test. Remote results for
-this milestone must be checked on its exact pushed commit; earlier CI results
-do not establish acceptance of this new experiment.
+## Remote acceptance
+
+The container workflow, including the observer live test, passed on GitHub's
+Ubuntu runner for `5b081a859e406dc9bddedb655a8eed57ef2dee4c`:
+[run 41764292012](https://github.com/svkhun/PatchReplay/actions/runs/41764292012).
+It built its own immutable image and retained JUnit, image metadata and the
+experiment results as workflow artifacts. Its image identity may differ from
+the local image above. Passing these declared tests is not sandbox certification.
+
+The same commit passed all four Windows/Ubuntu Python 3.11/3.12 jobs in
+[run 41764291998](https://github.com/svkhun/PatchReplay/actions/runs/41764291998),
+including the regression suite, synthetic demo, claim checks and installed-wheel
+smoke test. The live Docker tests run in the separate container workflow above;
+their skips in the ordinary matrix are not counted as live acceptance.
