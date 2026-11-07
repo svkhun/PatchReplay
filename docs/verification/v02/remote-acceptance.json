@@ -1,0 +1,106 @@
+{
+  "implementation_commit": "9c01a8e5507c13022077ba6358766974ae8d7251",
+  "runs": [
+    {
+      "id": 42385326060,
+      "name": "Evaluate and verify",
+      "head_sha": "9c01a8e5507c13022077ba6358766974ae8d7251",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/svkhun/PatchReplay/actions/runs/42385326060",
+      "updated_at": "2026-11-07T15:16:16Z"
+    },
+    {
+      "id": 42385326095,
+      "name": "Container acceptance (experimental)",
+      "head_sha": "9c01a8e5507c13022077ba6358766974ae8d7251",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/svkhun/PatchReplay/actions/runs/42385326095",
+      "updated_at": "2026-11-07T15:16:29Z"
+    }
+  ],
+  "jobs": [
+    {
+      "id": 128441369888,
+      "name": "controlled-fixtures (windows-latest, 3.11)",
+      "status": "completed",
+      "conclusion": "success",
+      "observed_log_lines": [
+        "2026-11-07T15:15:26.2541970Z SKIPPED [1] tests\\test_container_live.py:16: Requires built immutable Docker image and Linux daemon\r",
+        "2026-11-07T15:15:26.2543211Z SKIPPED [3] tests\\test_container_live.py:57: Requires built immutable Docker image and Linux daemon\r",
+        "2026-11-07T15:15:26.2544466Z SKIPPED [13] tests\\test_function_live.py:14: Set PATCHREPLAY_TEST_IMAGE for real Docker acceptance\r",
+        "2026-11-07T15:15:26.2545779Z SKIPPED [1] tests\\test_observer_live.py:11: Requires immutable image and Linux Docker daemon\r",
+        "2026-11-07T15:15:26.2546904Z SKIPPED [1] tests\\test_real_live.py:7: Requires real Docker and pinned evaluator image\r",
+        "2026-11-07T15:15:26.2547735Z 289 passed, 19 skipped in 86.78s (0:01:26)\r",
+        "2026-11-07T15:16:00.1300487Z   \"all_expected_outcomes_matched\": true,\r",
+        "2026-11-07T15:16:08.3007636Z   \"reason\": \"The bug reproduced, then all declared bug and regression checks passed.\",\r",
+        "2026-11-07T15:16:08.9969459Z   \"module_origin\": \"C:\\\\hostedtoolcache\\\\windows\\\\Python\\\\3.11.9\\\\x64\\\\Lib\\\\site-packages\\\\patchreplay\\\\__init__.py\",\r"
+      ]
+    },
+    {
+      "id": 128441369949,
+      "name": "controlled-fixtures (ubuntu-latest, 3.11)",
+      "status": "completed",
+      "conclusion": "success",
+      "observed_log_lines": [
+        "2026-11-07T15:14:13.2545419Z SKIPPED [1] tests/test_container_live.py:16: Requires built immutable Docker image and Linux daemon",
+        "2026-11-07T15:14:13.2546839Z SKIPPED [3] tests/test_container_live.py:57: Requires built immutable Docker image and Linux daemon",
+        "2026-11-07T15:14:13.2548496Z SKIPPED [13] tests/test_function_live.py:14: Set PATCHREPLAY_TEST_IMAGE for real Docker acceptance",
+        "2026-11-07T15:14:13.2550012Z SKIPPED [1] tests/test_integrity.py:128: Windows Job Object lifecycle",
+        "2026-11-07T15:14:13.2551328Z SKIPPED [1] tests/test_observer_live.py:11: Requires immutable image and Linux Docker daemon",
+        "2026-11-07T15:14:13.2552385Z SKIPPED [1] tests/test_real_live.py:7: Requires real Docker and pinned evaluator image",
+        "2026-11-07T15:14:13.2553182Z 288 passed, 20 skipped in 33.46s",
+        "2026-11-07T15:14:34.1116697Z   \"all_expected_outcomes_matched\": true,",
+        "2026-11-07T15:14:37.1409325Z   \"reason\": \"The bug reproduced, then all declared bug and regression checks passed.\",",
+        "2026-11-07T15:14:37.5153858Z   \"module_origin\": \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/patchreplay/__init__.py\","
+      ]
+    },
+    {
+      "id": 128441369997,
+      "name": "controlled-fixtures (windows-latest, 3.12)",
+      "status": "completed",
+      "conclusion": "success",
+      "observed_log_lines": [
+        "2026-11-07T15:15:24.1077668Z SKIPPED [1] tests\\test_container_live.py:16: Requires built immutable Docker image and Linux daemon\r",
+        "2026-11-07T15:15:24.1079253Z SKIPPED [3] tests\\test_container_live.py:57: Requires built immutable Docker image and Linux daemon\r",
+        "2026-11-07T15:15:24.1079969Z SKIPPED [13] tests\\test_function_live.py:14: Set PATCHREPLAY_TEST_IMAGE for real Docker acceptance\r",
+        "2026-11-07T15:15:24.1080664Z SKIPPED [1] tests\\test_observer_live.py:11: Requires immutable image and Linux Docker daemon\r",
+        "2026-11-07T15:15:24.1081300Z SKIPPED [1] tests\\test_real_live.py:7: Requires real Docker and pinned evaluator image\r",
+        "2026-11-07T15:15:24.1081779Z 289 passed, 19 skipped in 88.65s (0:01:28)\r",
+        "2026-11-07T15:15:59.4852346Z   \"all_expected_outcomes_matched\": true,\r",
+        "2026-11-07T15:16:09.1330153Z   \"reason\": \"The bug reproduced, then all declared bug and regression checks passed.\",\r",
+        "2026-11-07T15:16:09.8687525Z   \"module_origin\": \"C:\\\\hostedtoolcache\\\\windows\\\\Python\\\\3.12.10\\\\x64\\\\Lib\\\\site-packages\\\\patchreplay\\\\__init__.py\",\r"
+      ]
+    },
+    {
+      "id": 128441370095,
+      "name": "controlled-fixtures (ubuntu-latest, 3.12)",
+      "status": "completed",
+      "conclusion": "success",
+      "observed_log_lines": [
+        "2026-11-07T15:14:20.9727891Z SKIPPED [1] tests/test_container_live.py:16: Requires built immutable Docker image and Linux daemon",
+        "2026-11-07T15:14:21.0120982Z SKIPPED [3] tests/test_container_live.py:57: Requires built immutable Docker image and Linux daemon",
+        "2026-11-07T15:14:21.0122086Z SKIPPED [13] tests/test_function_live.py:14: Set PATCHREPLAY_TEST_IMAGE for real Docker acceptance",
+        "2026-11-07T15:14:21.0122676Z SKIPPED [1] tests/test_integrity.py:128: Windows Job Object lifecycle",
+        "2026-11-07T15:14:21.0123195Z SKIPPED [1] tests/test_observer_live.py:11: Requires immutable image and Linux Docker daemon",
+        "2026-11-07T15:14:21.0123769Z SKIPPED [1] tests/test_real_live.py:7: Requires real Docker and pinned evaluator image",
+        "2026-11-07T15:14:21.0124202Z 288 passed, 20 skipped in 39.28s",
+        "2026-11-07T15:14:44.3814903Z   \"all_expected_outcomes_matched\": true,",
+        "2026-11-07T15:14:47.8655154Z   \"reason\": \"The bug reproduced, then all declared bug and regression checks passed.\",",
+        "2026-11-07T15:14:48.2861461Z   \"module_origin\": \"/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/patchreplay/__init__.py\","
+      ]
+    },
+    {
+      "id": 128441370016,
+      "name": "linux-container",
+      "status": "completed",
+      "conclusion": "success",
+      "observed_log_lines": [
+        "2026-11-07T15:15:43.6677397Z 19 passed in 124.06s (0:02:04)",
+        "2026-11-07T15:16:23.9219152Z   \"module_origin\": \"/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/patchreplay/__init__.py\",",
+        "2026-11-07T15:16:23.9245132Z     \"expected_outcomes_matched\": true,"
+      ]
+    }
+  ]
+}

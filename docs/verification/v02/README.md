@@ -36,6 +36,8 @@ comprehension or task-time result is claimed. See [simulated trials](simulated-t
 | Published schemas | 6 case contracts, 8 archived reports and 2 claims validated using separate QA dependencies | [Record](schema-checks.json) |
 | Host-only signing of real evidence | Authenticated expected boltons-fix subject; temporary private key removed | [Signed example](../../../examples/v02-evidence/provenance/result.json) |
 | Simulated maintainer and recipient roles | 2 passed; 0 human participants | [Record](simulated-trials.json) |
+| Offline review ZIP | 405 files matched the manifest; an altered ZIP was rejected | [Release record](release.json) |
+| Checkout byte preservation | 563 new files preserved bytes with `core.autocrlf=true` | [Record](checkout-bytes.json) |
 
 Counts overlap and must not be added. Nineteen full-suite skips are opt-in live
 Docker tests, run separately. Two local skips require Windows symlink privileges.
@@ -74,5 +76,27 @@ and generic pytest observer integrity remain separate future work.
 The frozen-source Docker run passed all 19 tests, including both upstream fixes,
 four synthetic controls, supported claims and fresh-ID replays. It reused immutable
 image `sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e`.
-Exact implementation SHA and GitHub Actions links are added when remote workflows
-complete. Local passes are not remote CI results.
+Implementation commit `9c01a8e5507c13022077ba6358766974ae8d7251` passed both workflows:
+
+- [Evaluate and verify, run 42385326060](https://github.com/svkhun/PatchReplay/actions/runs/42385326060): all four Windows/Ubuntu Python 3.11/3.12 jobs passed the final test set, legacy demo/claims, provenance demo and installed-wheel checks.
+- [Container acceptance, run 42385326095](https://github.com/svkhun/PatchReplay/actions/runs/42385326095): 19 live tests passed in 124.06 s, followed by installed-wheel synthetic/upstream demos, function claims and fresh-ID replays.
+
+| Matrix job | Observed tests |
+| --- | --- |
+| Ubuntu, Python 3.11 | 288 passed, 20 skipped, 33.46 s |
+| Ubuntu, Python 3.12 | 288 passed, 20 skipped, 39.28 s |
+| Windows, Python 3.11 | 289 passed, 19 skipped, 86.78 s |
+| Windows, Python 3.12 | 289 passed, 19 skipped, 88.65 s |
+
+The ordinary matrix skips 19 opt-in live tests executed in the separate container
+workflow. Ubuntu additionally skips the Windows Job Object lifecycle test. Windows
+CI executed the symlink guards unavailable locally. Counts across jobs overlap.
+[Remote acceptance](remote-acceptance.json) retains exact SHAs, run/job IDs and
+relevant observed logs. CI artifacts retain evidence, JUnit, wheel output and image
+metadata. The Ubuntu image was independently built and need not equal the local ID.
+
+The prepared local review bundle is `.patchreplay/releases/patchreplay-0.2.0-review-9c01a8e.zip`.
+SHA-256: `9770ddadfb8e39c98247c98abfc523ebb93380bb449074bf3c4656b11acf856b`.
+Its manifest pins the runtime source commit and all 405 included files. It contains
+no private signing key and was not published to a package registry or GitHub Release.
+The final documentation commit records acceptance without changing runtime source.

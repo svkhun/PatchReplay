@@ -1,0 +1,11 @@
+{
+  "file_count": 405,
+  "human_participants": 0,
+  "publication": "LOCAL_REVIEW_BUNDLE",
+  "release": "D:\\All Project\\open-ai\\.patchreplay\\releases\\patchreplay-0.2.0-review-9c01a8e.zip",
+  "runtime_source_commit": "9c01a8e5507c13022077ba6358766974ae8d7251",
+  "sha256": "9770ddadfb8e39c98247c98abfc523ebb93380bb449074bf3c4656b11acf856b",
+  "simulated_roles": 2,
+  "tampered_zip_rejected": true,
+  "wheel_sha256": "f3060998c0ce2c497ea043c37d6667c52a9d7b5a7debc8b6197db050cd026cdf"
+}
