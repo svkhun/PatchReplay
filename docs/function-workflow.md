@@ -1,5 +1,10 @@
 # Integrated host-function workflow (Phase 3)
 
+This page records the Phase 3 synthetic scope in version 0.1. Version 0.2 adds
+[registered upstream extracts](real-cases.md) using case schema 2 and the same numeric
+observation protocol, plus [function claim schema 2](function-claims.md). Existing
+case schema 1 and historical packages retain their meanings and bytes.
+
 Phase 3 exposes the reviewed integer-function observer through the installed CLI.
 It retains the source/patch admission gate and preserves the local/pytest commands.
 All bundled cases are synthetic. There is no arbitrary repository, command, source

@@ -1,0 +1,50 @@
+{
+  "probes": [
+    {
+      "args": [
+        7,
+        0,
+        0
+      ],
+      "baseline": -9007199254740991,
+      "expected": 7,
+      "group": "bug",
+      "id": "default-positive"
+    },
+    {
+      "args": [
+        42,
+        0,
+        0
+      ],
+      "baseline": -9007199254740991,
+      "expected": 42,
+      "group": "bug",
+      "id": "default-large"
+    },
+    {
+      "args": [
+        4,
+        1,
+        10
+      ],
+      "baseline": 4,
+      "expected": 4,
+      "group": "regression",
+      "id": "bounded"
+    },
+    {
+      "args": [
+        12,
+        1,
+        10
+      ],
+      "baseline": 10,
+      "expected": 10,
+      "group": "regression",
+      "id": "upper"
+    }
+  ],
+  "rule": "all-declared-baseline-mismatches-v1",
+  "schema_version": 1
+}

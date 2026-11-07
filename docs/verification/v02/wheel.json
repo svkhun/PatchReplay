@@ -1,0 +1,41 @@
+{
+  "module_origin": "D:\\All Project\\open-ai\\.patchreplay\\function-wheel-venv\\Lib\\site-packages\\patchreplay\\__init__.py",
+  "registered_cases": [
+    "already-fixed",
+    "baseline-regression",
+    "boltons-fix",
+    "boltons-noop",
+    "boltons-regression",
+    "disconnect",
+    "duplicate",
+    "flood",
+    "forge-records",
+    "forge-status",
+    "good",
+    "incorrect",
+    "lcm-fix",
+    "lcm-noop",
+    "lcm-regression",
+    "narrow",
+    "regression",
+    "timeout",
+    "wrong-round"
+  ],
+  "live": true,
+  "first": {
+    "status": "VERIFIED_FOR_DECLARED_CHECKS",
+    "reason": "Every declared bug reproduced; all patched bug and regression probes matched across repeats.",
+    "package": "D:\\All Project\\open-ai\\test-output\\v02-wheel-accepted\\runs\\good-ae80fe27a40d41a180bdd2e65f441fd0",
+    "report": "D:\\All Project\\open-ai\\test-output\\v02-wheel-accepted\\runs\\good-ae80fe27a40d41a180bdd2e65f441fd0\\report.html"
+  },
+  "replay": {
+    "status": "VERIFIED_FOR_DECLARED_CHECKS",
+    "reason": "Every declared bug reproduced; all patched bug and regression probes matched across repeats.",
+    "package": "D:\\All Project\\open-ai\\test-output\\v02-wheel-accepted\\replays\\good-112dd20e682d4fad9a3d368b9f65fcc6",
+    "report": "D:\\All Project\\open-ai\\test-output\\v02-wheel-accepted\\replays\\good-112dd20e682d4fad9a3d368b9f65fcc6\\report.html"
+  },
+  "upstream": {
+    "expected_outcomes_matched": true,
+    "report": "D:\\All Project\\open-ai\\test-output\\v02-wheel-accepted\\upstream\\index.html"
+  }
+}

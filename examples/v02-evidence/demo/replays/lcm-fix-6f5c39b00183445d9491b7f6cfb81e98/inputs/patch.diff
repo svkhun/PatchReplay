@@ -1,0 +1,48 @@
+diff --git a/candidate.py b/candidate.py
+--- a/candidate.py
++++ b/candidate.py
+@@ -42,7 +42,15 @@
+     10
+     >>> least_common_multiple_slow(12, 76)
+     228
++    >>> least_common_multiple_slow(0, 5)
++    0
++    >>> least_common_multiple_slow(5, 0)
++    0
++    >>> least_common_multiple_slow(0, 0)
++    0
+     """
++    if first_num == 0 or second_num == 0:
++        return 0
+     max_num = first_num if first_num >= second_num else second_num
+     common_mult = max_num
+     while (common_mult % first_num > 0) or (common_mult % second_num > 0):
+@@ -58,7 +66,15 @@
+     10
+     >>> least_common_multiple_fast(12,76)
+     228
++    >>> least_common_multiple_fast(0, 5)
++    0
++    >>> least_common_multiple_fast(5, 0)
++    0
++    >>> least_common_multiple_fast(0, 0)
++    0
+     """
++    if 0 in {first_num, second_num}:
++        return 0
+     return first_num // greatest_common_divisor(first_num, second_num) * second_num
+ 
+ 
+@@ -87,8 +103,11 @@
+         (12, 25),
+         (10, 25),
+         (6, 9),
++        (0, 5),
++        (5, 0),
++        (0, 0),
+     )
+-    expected_results = (20, 195, 124, 210, 1462, 60, 300, 50, 18)
++    expected_results = (20, 195, 124, 210, 1462, 60, 300, 50, 18, 0, 0, 0)
+ 
+     def test_lcm_function(self) -> None:
+         for i, (first_num, second_num) in enumerate(self.test_inputs):

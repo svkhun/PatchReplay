@@ -1,0 +1,7 @@
+
+# Reviewed nonnegative-domain observation adapter.
+def clamp(first, second, unused):
+    try:
+        return least_common_multiple_fast(first, second)
+    except ZeroDivisionError:
+        return -1

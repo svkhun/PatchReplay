@@ -1,0 +1,48 @@
+{
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\Git\\cmd\\git.EXE",
+        "init",
+        "--quiet",
+        "D:\\All Project\\open-ai\\test-output\\v02-wheel-accepted\\upstream\\runs\\.function-work-5ozy1lpo\\apply-nwoor8xv"
+      ],
+      "duration_seconds": 0.141,
+      "error": null,
+      "exit_code": 0,
+      "log": "logs/patch-0.log",
+      "timeout": false
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Git\\cmd\\git.EXE",
+        "-c",
+        "core.autocrlf=false",
+        "apply",
+        "--check",
+        "--whitespace=error-all",
+        "D:\\All Project\\open-ai\\test-output\\v02-wheel-accepted\\upstream\\runs\\lcm-noop-be39cc8b46a84bccbdafcb36ed0246e5\\inputs\\patch.diff"
+      ],
+      "duration_seconds": 0.109,
+      "error": null,
+      "exit_code": 0,
+      "log": "logs/patch-1.log",
+      "timeout": false
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Git\\cmd\\git.EXE",
+        "-c",
+        "core.autocrlf=false",
+        "apply",
+        "--whitespace=error-all",
+        "D:\\All Project\\open-ai\\test-output\\v02-wheel-accepted\\upstream\\runs\\lcm-noop-be39cc8b46a84bccbdafcb36ed0246e5\\inputs\\patch.diff"
+      ],
+      "duration_seconds": 0.141,
+      "error": null,
+      "exit_code": 0,
+      "log": "logs/patch-2.log",
+      "timeout": false
+    }
+  ]
+}

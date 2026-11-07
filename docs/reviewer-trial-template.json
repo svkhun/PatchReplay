@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "status": "NOT_EXECUTED",
+  "reviewer_alias": null,
+  "date": null,
+  "release_commit": null,
+  "os": null,
+  "python": null,
+  "docker": null,
+  "tasks_completed": [],
+  "minutes_spent": null,
+  "failures_and_confusing_steps": [],
+  "authentication_vs_test_success_explanation": null,
+  "evidence_paths": [],
+  "reviewer_conclusion": null
+}

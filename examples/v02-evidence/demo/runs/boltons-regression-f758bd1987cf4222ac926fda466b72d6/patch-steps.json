@@ -1,0 +1,48 @@
+{
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\Git\\cmd\\git.EXE",
+        "init",
+        "--quiet",
+        "D:\\All Project\\open-ai\\test-output\\v02-wheel-accepted\\upstream\\runs\\.function-work-71bnb8cn\\apply-32spaz6p"
+      ],
+      "duration_seconds": 0.14,
+      "error": null,
+      "exit_code": 0,
+      "log": "logs/patch-0.log",
+      "timeout": false
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Git\\cmd\\git.EXE",
+        "-c",
+        "core.autocrlf=false",
+        "apply",
+        "--check",
+        "--whitespace=error-all",
+        "D:\\All Project\\open-ai\\test-output\\v02-wheel-accepted\\upstream\\runs\\boltons-regression-f758bd1987cf4222ac926fda466b72d6\\inputs\\patch.diff"
+      ],
+      "duration_seconds": 0.125,
+      "error": null,
+      "exit_code": 0,
+      "log": "logs/patch-1.log",
+      "timeout": false
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Git\\cmd\\git.EXE",
+        "-c",
+        "core.autocrlf=false",
+        "apply",
+        "--whitespace=error-all",
+        "D:\\All Project\\open-ai\\test-output\\v02-wheel-accepted\\upstream\\runs\\boltons-regression-f758bd1987cf4222ac926fda466b72d6\\inputs\\patch.diff"
+      ],
+      "duration_seconds": 0.125,
+      "error": null,
+      "exit_code": 0,
+      "log": "logs/patch-2.log",
+      "timeout": false
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "adaptation": "Full upstream module retained, replacing only the gcd import with the exact pinned gcd function body. Append fixed wrapper for nonnegative integer inputs. ZeroDivisionError is encoded as -1, outside the declared nonnegative result domain.",
+  "before_commit": "d9027b034699aa60f3e89e1344211b686274af27",
+  "dependency_policy": "Python standard library only; no installation during evaluation",
+  "fix_commit": "4aca14b650a238e4906c3d753b075cc324774e67",
+  "fix_url": "https://github.com/TheAlgorithms/Python/commit/4aca14b650a238e4906c3d753b075cc324774e67",
+  "origin": "upstream-function-extract",
+  "repository": "TheAlgorithms/Python",
+  "schema_version": 1,
+  "scope": "Declared function probes through a reviewed wrapper; not the complete upstream project/test suite.",
+  "upstream_path": "maths/least_common_multiple.py",
+  "variant": "regression",
+  "variant_origin": "synthetic-control"
+}

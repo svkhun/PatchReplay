@@ -30,8 +30,9 @@ def equal(actual, expected, message):
 
 
 def parse_case(data):
-    require_keys(data, CASE_KEYS, "Function case")
-    if type(data["schema_version"]) is not int or data["schema_version"] != 1:
+    version = data.get("schema_version")
+    require_keys(data, CASE_KEYS | ({"provenance_sha256"} if version == 2 else set()), "Function case")
+    if type(version) is not int or version not in (1, 2):
         raise IntegrityError("Unsupported function case version")
     import re
     for key in ("case_id", "suite_id"):
@@ -46,6 +47,14 @@ def parse_case(data):
     if type(data["timeout_seconds"]) is not int or not 1 <= data["timeout_seconds"] <= 30:
         raise IntegrityError("Invalid function timeout")
     return data
+
+
+def limitations(case):
+    if case["schema_version"] == 1:
+        return LIMITATIONS
+    return ["Registered upstream function extracts with reviewed adapters; synthetic controls are labeled in provenance.",
+            "Exception sentinels encode only the specific exception declared by the adapter on the declared domain.",
+            *LIMITATIONS[1:]]
 
 
 def parse_oracle(data):

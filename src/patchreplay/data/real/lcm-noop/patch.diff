@@ -1,0 +1,8 @@
+diff --git a/candidate.py b/candidate.py
+--- a/candidate.py
++++ b/candidate.py
+@@ -109,3 +109,4 @@
+         return least_common_multiple_fast(first, second)
+     except ZeroDivisionError:
+         return -1
++# Synthetic ineffective control.

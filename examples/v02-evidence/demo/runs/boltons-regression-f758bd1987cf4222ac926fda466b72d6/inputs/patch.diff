@@ -1,0 +1,20 @@
+diff --git a/candidate.py b/candidate.py
+--- a/candidate.py
++++ b/candidate.py
+@@ -5,7 +5,7 @@
+ import bisect
+ 
+ 
+-def clamp(x, lower=None, upper=None):
++def clamp(x, lower=float('-inf'), upper=float('inf')):
+     """Limit a value to a given range.
+ 
+     Args:
+@@ -93,3 +93,7 @@
+         return _upstream_clamp(value) if lower == upper == 0 else _upstream_clamp(value, lower, upper)
+     except TypeError:
+         return -9007199254740991
++
++# Synthetic regressive control; not an upstream patch.
++def clamp(a, b, c):
++    return 99

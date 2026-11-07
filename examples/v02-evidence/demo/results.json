@@ -1,0 +1,92 @@
+{
+  "cases": [
+    {
+      "case_id": "boltons-fix",
+      "expected": "VERIFIED_FOR_DECLARED_CHECKS",
+      "report": "runs/boltons-fix-e8dbcc5a67424c7a8fe19aa4ca8c555b/report.html",
+      "run_id": "boltons-fix-e8dbcc5a67424c7a8fe19aa4ca8c555b",
+      "status": "VERIFIED_FOR_DECLARED_CHECKS"
+    },
+    {
+      "case_id": "boltons-noop",
+      "expected": "FIX_FAILED",
+      "report": "runs/boltons-noop-f55248397d664a5c9a8057e3f7b35974/report.html",
+      "run_id": "boltons-noop-f55248397d664a5c9a8057e3f7b35974",
+      "status": "FIX_FAILED"
+    },
+    {
+      "case_id": "boltons-regression",
+      "expected": "REGRESSION_DETECTED",
+      "report": "runs/boltons-regression-f758bd1987cf4222ac926fda466b72d6/report.html",
+      "run_id": "boltons-regression-f758bd1987cf4222ac926fda466b72d6",
+      "status": "REGRESSION_DETECTED"
+    },
+    {
+      "case_id": "lcm-fix",
+      "expected": "VERIFIED_FOR_DECLARED_CHECKS",
+      "report": "runs/lcm-fix-8fe9faccb7184067a9d40002c769527f/report.html",
+      "run_id": "lcm-fix-8fe9faccb7184067a9d40002c769527f",
+      "status": "VERIFIED_FOR_DECLARED_CHECKS"
+    },
+    {
+      "case_id": "lcm-noop",
+      "expected": "FIX_FAILED",
+      "report": "runs/lcm-noop-be39cc8b46a84bccbdafcb36ed0246e5/report.html",
+      "run_id": "lcm-noop-be39cc8b46a84bccbdafcb36ed0246e5",
+      "status": "FIX_FAILED"
+    },
+    {
+      "case_id": "lcm-regression",
+      "expected": "REGRESSION_DETECTED",
+      "report": "runs/lcm-regression-4ba6e642cbc240058cddbb68e3e9a3f5/report.html",
+      "run_id": "lcm-regression-4ba6e642cbc240058cddbb68e3e9a3f5",
+      "status": "REGRESSION_DETECTED"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "success_count",
+      "evaluation_kind": "host-function-v1",
+      "excluded_from_numerator": {
+        "FIX_FAILED": 2,
+        "REGRESSION_DETECTED": 2
+      },
+      "observed": {
+        "denominator": 6,
+        "denominator_policy": "all_declared_cases",
+        "numerator": 2
+      },
+      "reason": "Computed from host observations within the explicitly pinned scope",
+      "schema_version": 2,
+      "status": "SUPPORTED_FOR_SCOPE"
+    },
+    {
+      "claim_id": "regression_all",
+      "evaluation_kind": "host-function-v1",
+      "excluded_from_numerator": {},
+      "observed": {
+        "denominator": 2,
+        "denominator_policy": "all_declared_cases",
+        "numerator": 2
+      },
+      "reason": "Computed from host observations within the explicitly pinned scope",
+      "schema_version": 2,
+      "status": "SUPPORTED_FOR_SCOPE"
+    }
+  ],
+  "expected_outcomes_matched": true,
+  "replays": [
+    {
+      "case_id": "boltons-fix",
+      "run_id": "boltons-fix-edd032e0c0444ed6a39424fa9de5f5be",
+      "status": "VERIFIED_FOR_DECLARED_CHECKS"
+    },
+    {
+      "case_id": "lcm-fix",
+      "run_id": "lcm-fix-6f5c39b00183445d9491b7f6cfb81e98",
+      "status": "VERIFIED_FOR_DECLARED_CHECKS"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Two upstream function fixes plus four synthetic controls. The 2/6 count is a demo decision check, not a coding-agent effectiveness estimate."
+}

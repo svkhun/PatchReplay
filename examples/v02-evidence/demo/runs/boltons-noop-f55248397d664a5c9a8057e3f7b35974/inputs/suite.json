@@ -1,0 +1,89 @@
+{
+  "members": {
+    "boltons-fix": {
+      "case_id": "boltons-fix",
+      "evaluator_sha256": "7ab163d44dbef3a9b5dd8f1213608443ced10663874f2a77e1a15d5a7c4261ed",
+      "interface": "candidate.clamp(int,int,int)->int",
+      "patch_sha256": "207c1847f04c24559bcb502bf01c53f0639fd3de341289f593f3cef39ff2df38",
+      "patched_sha256": "b98e476622ae5bf930075580e21bcdf77f0ed3e88400662d85b89e3cd6f7c305",
+      "policy_sha256": "93c78c1e15e9653f7f683378d199fe26fa0c439c3e906a3a6bb04166525e0923",
+      "provenance_sha256": "2a77aa428ca40a47cb051e557eb4ce2dadc4787200f9d5233d13aba46d4163d4",
+      "repeats": 2,
+      "schema_version": 2,
+      "source_sha256": "dda507889c2eb3e94903c1cf8f01733c909bae4a3ff767b3510a79c0b497dfd0",
+      "suite_id": "reviewed-upstream-functions-v1",
+      "timeout_seconds": 10
+    },
+    "boltons-noop": {
+      "case_id": "boltons-noop",
+      "evaluator_sha256": "7ab163d44dbef3a9b5dd8f1213608443ced10663874f2a77e1a15d5a7c4261ed",
+      "interface": "candidate.clamp(int,int,int)->int",
+      "patch_sha256": "101abed81e491ff8d2ee616a27576c0a463cfe5ef833433f26247f54453f47ee",
+      "patched_sha256": "44a7433033e5de26864ed942588a385fb6fc06bc40522042dfe462759e21e8f3",
+      "policy_sha256": "93c78c1e15e9653f7f683378d199fe26fa0c439c3e906a3a6bb04166525e0923",
+      "provenance_sha256": "e89cf615605c983adc5ea8affc3f0c4277117340ba5975202290642e85a846f6",
+      "repeats": 2,
+      "schema_version": 2,
+      "source_sha256": "dda507889c2eb3e94903c1cf8f01733c909bae4a3ff767b3510a79c0b497dfd0",
+      "suite_id": "reviewed-upstream-functions-v1",
+      "timeout_seconds": 10
+    },
+    "boltons-regression": {
+      "case_id": "boltons-regression",
+      "evaluator_sha256": "7ab163d44dbef3a9b5dd8f1213608443ced10663874f2a77e1a15d5a7c4261ed",
+      "interface": "candidate.clamp(int,int,int)->int",
+      "patch_sha256": "a565357118f4b380284b6fb11ceeb90b19fb208b8155b0a0600df5fd3d702c1f",
+      "patched_sha256": "d4398efef7bfe1cfce611c657b33ab0df2f37aa36f0681e145a00e02d0ed01b8",
+      "policy_sha256": "93c78c1e15e9653f7f683378d199fe26fa0c439c3e906a3a6bb04166525e0923",
+      "provenance_sha256": "ab60a7b93081b8f2e5ca0acd1fa82b0d58419d5b1733ac6a73183dd081d42e7a",
+      "repeats": 2,
+      "schema_version": 2,
+      "source_sha256": "dda507889c2eb3e94903c1cf8f01733c909bae4a3ff767b3510a79c0b497dfd0",
+      "suite_id": "reviewed-upstream-functions-v1",
+      "timeout_seconds": 10
+    },
+    "lcm-fix": {
+      "case_id": "lcm-fix",
+      "evaluator_sha256": "5e1b6a83d9791a68a79f6dfacf85b4fa793a98a0dd859bc9c855aec9858b1882",
+      "interface": "candidate.clamp(int,int,int)->int",
+      "patch_sha256": "c3aef23985678cfab5940d80b31016e0358572c5d722da7cc8bfc642cd0c84a9",
+      "patched_sha256": "c059dc9f8b55875eb8077af57bb898d747f9082f0f4d0ad3580fceb6e851f902",
+      "policy_sha256": "93c78c1e15e9653f7f683378d199fe26fa0c439c3e906a3a6bb04166525e0923",
+      "provenance_sha256": "65c208287325f8f48b2ef257f7c8b53ec3e52dbe016a79b4d07195f176132671",
+      "repeats": 2,
+      "schema_version": 2,
+      "source_sha256": "95981d7729ebab3fa6f28a322b2d69b829c83663b12d237edb4189eba4de4c45",
+      "suite_id": "reviewed-upstream-functions-v1",
+      "timeout_seconds": 10
+    },
+    "lcm-noop": {
+      "case_id": "lcm-noop",
+      "evaluator_sha256": "5e1b6a83d9791a68a79f6dfacf85b4fa793a98a0dd859bc9c855aec9858b1882",
+      "interface": "candidate.clamp(int,int,int)->int",
+      "patch_sha256": "791db2cf5f48565daa810d38b9b5338194be6cdef6405a88df3cfadf5711a697",
+      "patched_sha256": "cfc426d036295a46ec3fc53ec1b3db83e75648680a422cdee661aab4d42e6a76",
+      "policy_sha256": "93c78c1e15e9653f7f683378d199fe26fa0c439c3e906a3a6bb04166525e0923",
+      "provenance_sha256": "620f6b34b125bb5afd39320eee0dd89d6a55f08a920609ce74dfe246ad02464b",
+      "repeats": 2,
+      "schema_version": 2,
+      "source_sha256": "95981d7729ebab3fa6f28a322b2d69b829c83663b12d237edb4189eba4de4c45",
+      "suite_id": "reviewed-upstream-functions-v1",
+      "timeout_seconds": 10
+    },
+    "lcm-regression": {
+      "case_id": "lcm-regression",
+      "evaluator_sha256": "5e1b6a83d9791a68a79f6dfacf85b4fa793a98a0dd859bc9c855aec9858b1882",
+      "interface": "candidate.clamp(int,int,int)->int",
+      "patch_sha256": "225ed8cf8f6a8db1b2216504396d768448acf1a7080bdbd59ba65639ca9fae21",
+      "patched_sha256": "a14b42156ca8c88f96dd7f4488f847579bb7e6a32c46d0badd1398dd81679224",
+      "policy_sha256": "93c78c1e15e9653f7f683378d199fe26fa0c439c3e906a3a6bb04166525e0923",
+      "provenance_sha256": "f850e227bccfbbf67ba390b390a814572324a25be9488c3a445c8caa5b934592",
+      "repeats": 2,
+      "schema_version": 2,
+      "source_sha256": "95981d7729ebab3fa6f28a322b2d69b829c83663b12d237edb4189eba4de4c45",
+      "suite_id": "reviewed-upstream-functions-v1",
+      "timeout_seconds": 10
+    }
+  },
+  "suite_id": "reviewed-upstream-functions-v1"
+}

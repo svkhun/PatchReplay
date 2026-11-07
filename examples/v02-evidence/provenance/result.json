@@ -1,0 +1,8 @@
+{
+  "artifact_count": 47,
+  "key_id": "sha256:c296a59266ba8c7b418bdd8a56326e912525d461658127551abd6ca1f5e03211",
+  "kind": "host-function-v1",
+  "run_id": "boltons-fix-e8dbcc5a67424c7a8fe19aa4ca8c555b",
+  "scope": "Signature, expected-subject binding and artifact integrity; not correctness, freshness or real-world signer identity.",
+  "status": "AUTHENTICATED_FOR_EXPECTED_SUBJECT"
+}

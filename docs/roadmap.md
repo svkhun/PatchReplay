@@ -1,5 +1,21 @@
 # Prioritized roadmap
 
+## Version 0.2 milestone scope
+
+- Phase 4: two pinned upstream function extracts (boltons default clamp bounds and
+  TheAlgorithms zero-input LCM), explicit adapters/license snapshots and synthetic
+  noop/regression controls. Runtime admission remains registered-bytes only.
+- Phase 5: separate function claim schema 2, complete-roster success counts,
+  baseline-aware regression claims and unreviewed claim drafting.
+- Phase 6: reviewer/trust guides, isolated installed-wheel rehearsal and local
+  release/demo packaging. The user authorized two simulated roles instead of human
+  trials; automated results must never be called human usability acceptance.
+
+See [0.2 verification](verification/v02/README.md) for actual acceptance, skipped
+checks and remaining boundaries. General arbitrary-code intake, generic pytest
+observation integrity, AI assistance, caching and GitHub check integration remain
+separate future milestones below.
+
 Phase 3 integrates the [registered host-function workflow](function-workflow.md):
 versioned contracts, Docker-only observations, strict host decisions, JSON/HTML
 packages, replay and external-trust provenance. The synthetic function scope is

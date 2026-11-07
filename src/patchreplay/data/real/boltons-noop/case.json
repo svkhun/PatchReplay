@@ -1,0 +1,15 @@
+{
+  "case_id": "boltons-noop",
+  "evaluator_sha256": "7ab163d44dbef3a9b5dd8f1213608443ced10663874f2a77e1a15d5a7c4261ed",
+  "interface": "candidate.clamp(int,int,int)->int",
+  "patch_sha256": "101abed81e491ff8d2ee616a27576c0a463cfe5ef833433f26247f54453f47ee",
+  "patched_sha256": "44a7433033e5de26864ed942588a385fb6fc06bc40522042dfe462759e21e8f3",
+  "policy_sha256": "93c78c1e15e9653f7f683378d199fe26fa0c439c3e906a3a6bb04166525e0923",
+  "provenance_sha256": "e89cf615605c983adc5ea8affc3f0c4277117340ba5975202290642e85a846f6",
+  "repeats": 2,
+  "schema_version": 2,
+  "source_sha256": "dda507889c2eb3e94903c1cf8f01733c909bae4a3ff767b3510a79c0b497dfd0",
+  "suite_id": "reviewed-upstream-functions-v1",
+  "suite_sha256": "ce24a56d3335e09081d61ffd28aa51d6e48f9315cc258e166e17183485c2880d",
+  "timeout_seconds": 10
+}

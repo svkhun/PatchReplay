@@ -1,0 +1,129 @@
+{
+  "approval": "APPROVED_FOR_DECLARED_RULE",
+  "assertion": {
+    "denominator": 6,
+    "denominator_policy": "all_declared_cases",
+    "numerator": 2
+  },
+  "claim_id": "success_count",
+  "evaluation_kind": "host-function-v1",
+  "evidence": [
+    {
+      "case_id": "boltons-fix",
+      "expected": {
+        "case_sha256": "f132f7b17fddbab5d2cb118b6880d39f9b550d37ee84697e224a5bace2c3e2e8",
+        "engine_sha256": "73aeb3069e536b367be3918e07786351ea441a55d354c1bbff9414df46cc0eef",
+        "environment_sha256": "7fba7c0261c146e8e9f9fa6549bf57c7afcd94bbd6b965536c7ae74048175342",
+        "evaluator_sha256": "7ab163d44dbef3a9b5dd8f1213608443ced10663874f2a77e1a15d5a7c4261ed",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "9cdab540b84214ebd9a459489a6a77c7fac7fe455c05b3b78c2192c6eb5ef9ce",
+        "patch_sha256": "207c1847f04c24559bcb502bf01c53f0639fd3de341289f593f3cef39ff2df38",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:dda507889c2eb3e94903c1cf8f01733c909bae4a3ff767b3510a79c0b497dfd0",
+        "suite_sha256": "ce24a56d3335e09081d61ffd28aa51d6e48f9315cc258e166e17183485c2880d"
+      },
+      "manifest_sha256": "039a68477a93ec8834b9062a67fdb610a345552b2644b2ee601d89899b4d37d4",
+      "package": "runs/boltons-fix-e8dbcc5a67424c7a8fe19aa4ca8c555b"
+    },
+    {
+      "case_id": "boltons-noop",
+      "expected": {
+        "case_sha256": "965393bfe9d24b218f7f52c6557a6d3330786c580e92be5462d2d606c268d915",
+        "engine_sha256": "73aeb3069e536b367be3918e07786351ea441a55d354c1bbff9414df46cc0eef",
+        "environment_sha256": "7fba7c0261c146e8e9f9fa6549bf57c7afcd94bbd6b965536c7ae74048175342",
+        "evaluator_sha256": "7ab163d44dbef3a9b5dd8f1213608443ced10663874f2a77e1a15d5a7c4261ed",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "b61a72e1fa2775c8c9b9fcf361a02c825394d9d7a84d3ee40693203e9b5dd72f",
+        "patch_sha256": "101abed81e491ff8d2ee616a27576c0a463cfe5ef833433f26247f54453f47ee",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:dda507889c2eb3e94903c1cf8f01733c909bae4a3ff767b3510a79c0b497dfd0",
+        "suite_sha256": "ce24a56d3335e09081d61ffd28aa51d6e48f9315cc258e166e17183485c2880d"
+      },
+      "manifest_sha256": "ff284c867782ee978256a54359a1e37314a725ad6e4730aa9f5e1bacff045c74",
+      "package": "runs/boltons-noop-f55248397d664a5c9a8057e3f7b35974"
+    },
+    {
+      "case_id": "boltons-regression",
+      "expected": {
+        "case_sha256": "bba2d414fe51edefede6ad629883c46eda257d982f4fe527373b72db6699615d",
+        "engine_sha256": "73aeb3069e536b367be3918e07786351ea441a55d354c1bbff9414df46cc0eef",
+        "environment_sha256": "7fba7c0261c146e8e9f9fa6549bf57c7afcd94bbd6b965536c7ae74048175342",
+        "evaluator_sha256": "7ab163d44dbef3a9b5dd8f1213608443ced10663874f2a77e1a15d5a7c4261ed",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "6175ce801f1378f973c58bdc67f4cd14a1e9a0b59c3f749d5b60dd3d3a53e32c",
+        "patch_sha256": "a565357118f4b380284b6fb11ceeb90b19fb208b8155b0a0600df5fd3d702c1f",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:dda507889c2eb3e94903c1cf8f01733c909bae4a3ff767b3510a79c0b497dfd0",
+        "suite_sha256": "ce24a56d3335e09081d61ffd28aa51d6e48f9315cc258e166e17183485c2880d"
+      },
+      "manifest_sha256": "abaf11b112d8a3b6d4bfa76e9d9da3bcae73023f7e829acf385665ededaa7bad",
+      "package": "runs/boltons-regression-f758bd1987cf4222ac926fda466b72d6"
+    },
+    {
+      "case_id": "lcm-fix",
+      "expected": {
+        "case_sha256": "2d903c382245e9416bb106dc1bb62cd6dcbe906e9a4dca3a311066d4e91d6a2f",
+        "engine_sha256": "73aeb3069e536b367be3918e07786351ea441a55d354c1bbff9414df46cc0eef",
+        "environment_sha256": "7fba7c0261c146e8e9f9fa6549bf57c7afcd94bbd6b965536c7ae74048175342",
+        "evaluator_sha256": "5e1b6a83d9791a68a79f6dfacf85b4fa793a98a0dd859bc9c855aec9858b1882",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "364e8b494d8d186380c839dee1eb10e1507d4e9268ecd352223502acbc234827",
+        "patch_sha256": "c3aef23985678cfab5940d80b31016e0358572c5d722da7cc8bfc642cd0c84a9",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:95981d7729ebab3fa6f28a322b2d69b829c83663b12d237edb4189eba4de4c45",
+        "suite_sha256": "ce24a56d3335e09081d61ffd28aa51d6e48f9315cc258e166e17183485c2880d"
+      },
+      "manifest_sha256": "8cb094cb37d808f9438b8b26783587eec9631e8eebbb5b5b9c70429f3f9675c2",
+      "package": "runs/lcm-fix-8fe9faccb7184067a9d40002c769527f"
+    },
+    {
+      "case_id": "lcm-noop",
+      "expected": {
+        "case_sha256": "52ba492c0ec63c44ce07b70ca50e9fef2729a333cef45024671e9fbdb4ef2c84",
+        "engine_sha256": "73aeb3069e536b367be3918e07786351ea441a55d354c1bbff9414df46cc0eef",
+        "environment_sha256": "7fba7c0261c146e8e9f9fa6549bf57c7afcd94bbd6b965536c7ae74048175342",
+        "evaluator_sha256": "5e1b6a83d9791a68a79f6dfacf85b4fa793a98a0dd859bc9c855aec9858b1882",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "12d8b9fb1313d23e8deadfa18215ccb47f51cf913fb21c0db0d71bc2044a3742",
+        "patch_sha256": "791db2cf5f48565daa810d38b9b5338194be6cdef6405a88df3cfadf5711a697",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:95981d7729ebab3fa6f28a322b2d69b829c83663b12d237edb4189eba4de4c45",
+        "suite_sha256": "ce24a56d3335e09081d61ffd28aa51d6e48f9315cc258e166e17183485c2880d"
+      },
+      "manifest_sha256": "6c82aaa5f76957c0ee1786a7351bc5de79e89ca3de675bdfa755bd0d4888ad28",
+      "package": "runs/lcm-noop-be39cc8b46a84bccbdafcb36ed0246e5"
+    },
+    {
+      "case_id": "lcm-regression",
+      "expected": {
+        "case_sha256": "826ea47eab524dfe8eb0c23b149bcb3a272d22a0b929b9f07afea7fd3feeb4d8",
+        "engine_sha256": "73aeb3069e536b367be3918e07786351ea441a55d354c1bbff9414df46cc0eef",
+        "environment_sha256": "7fba7c0261c146e8e9f9fa6549bf57c7afcd94bbd6b965536c7ae74048175342",
+        "evaluator_sha256": "5e1b6a83d9791a68a79f6dfacf85b4fa793a98a0dd859bc9c855aec9858b1882",
+        "image": "sha256:6234ccbd3a3481bd5c878f06c7714e0a4b98d46e07c4341d5bf4ca76a06fdf6e",
+        "inputs_sha256": "fde3936e9a912d81faa1f1671ec252e94dfa720e4f81235c60ee44de78bba8f0",
+        "patch_sha256": "225ed8cf8f6a8db1b2216504396d768448acf1a7080bdbd59ba65639ca9fae21",
+        "policy": "docker-host-function-v1",
+        "source_revision": "sha256:95981d7729ebab3fa6f28a322b2d69b829c83663b12d237edb4189eba4de4c45",
+        "suite_sha256": "ce24a56d3335e09081d61ffd28aa51d6e48f9315cc258e166e17183485c2880d"
+      },
+      "manifest_sha256": "2e3252fc1b8a7a966f1eb26c99dff2ea356fad0d30eddc248aab0a53872e0363",
+      "package": "runs/lcm-regression-4ba6e642cbc240058cddbb68e3e9a3f5"
+    }
+  ],
+  "kind": "success_count",
+  "schema_version": 2,
+  "scope": {
+    "case_ids": [
+      "boltons-fix",
+      "boltons-noop",
+      "boltons-regression",
+      "lcm-fix",
+      "lcm-noop",
+      "lcm-regression"
+    ],
+    "suite_id": "reviewed-upstream-functions-v1",
+    "suite_sha256": "ce24a56d3335e09081d61ffd28aa51d6e48f9315cc258e166e17183485c2880d"
+  },
+  "text": "Exactly two of the six registered upstream-extract/control cases are verified for declared checks."
+}

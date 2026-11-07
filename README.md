@@ -2,6 +2,21 @@
 
 **Turn a bug fix into a replayable evidence package.**
 
+Version 0.2 adds two [pinned upstream function fixes](docs/real-cases.md), four
+explicitly synthetic controls, [EvidenceCI function claims](docs/function-claims.md)
+and a [reviewer/release walkthrough](docs/reviewer-guide.md).
+
+```sh
+python -m patchreplay function-demo --image sha256:<immutable-image-id> --output demo-v02
+python -m patchreplay check demo-v02/success_count.json
+python -m patchreplay check demo-v02/regression_all.json
+```
+
+The six-case demo includes two historical upstream fixes and four controls; its 2/6
+decision count is not a model-effectiveness benchmark. The host checks declared
+numeric observations through reviewed adapters. The [0.2 acceptance record](docs/verification/v02/README.md)
+separates automated trials, CI, visual QA and human participation.
+
 PatchReplay evaluates an existing patch against independently pinned bug examples
 and regression checks. EvidenceCI checks explicit numeric claims against the
 resulting packages. Python + pytest, local CLI, offline HTML, no API key.
@@ -13,9 +28,10 @@ An experimental Docker adapter is available for approved fixtures.
 See [container setup and acceptance gates](docs/container-executor.md) and
 [phase 2 verification](docs/verification/phase2.md). External patches remain disabled.
 
-> MVP boundary: only the bundled, registered synthetic sources and patches may
-> execute. The local executor is **not a sandbox**. External repositories are
-> deliberately unsupported until a hardened executor is implemented.
+> Admission boundary: local/pytest execution supports registered synthetic fixtures.
+> Docker host-function execution also admits pinned upstream extracts with reviewed
+> adapters. Arbitrary source, patch, command and repository intake remains disabled.
+> The local executor is **not a sandbox**.
 
 ## Quickstart
 

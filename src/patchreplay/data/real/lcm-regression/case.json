@@ -1,0 +1,15 @@
+{
+  "case_id": "lcm-regression",
+  "evaluator_sha256": "5e1b6a83d9791a68a79f6dfacf85b4fa793a98a0dd859bc9c855aec9858b1882",
+  "interface": "candidate.clamp(int,int,int)->int",
+  "patch_sha256": "225ed8cf8f6a8db1b2216504396d768448acf1a7080bdbd59ba65639ca9fae21",
+  "patched_sha256": "a14b42156ca8c88f96dd7f4488f847579bb7e6a32c46d0badd1398dd81679224",
+  "policy_sha256": "93c78c1e15e9653f7f683378d199fe26fa0c439c3e906a3a6bb04166525e0923",
+  "provenance_sha256": "f850e227bccfbbf67ba390b390a814572324a25be9488c3a445c8caa5b934592",
+  "repeats": 2,
+  "schema_version": 2,
+  "source_sha256": "95981d7729ebab3fa6f28a322b2d69b829c83663b12d237edb4189eba4de4c45",
+  "suite_id": "reviewed-upstream-functions-v1",
+  "suite_sha256": "ce24a56d3335e09081d61ffd28aa51d6e48f9315cc258e166e17183485c2880d",
+  "timeout_seconds": 10
+}

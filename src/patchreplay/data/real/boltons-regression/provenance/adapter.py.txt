@@ -1,0 +1,8 @@
+
+# Reviewed observation adapter; zero bounds select the upstream default-argument call.
+_upstream_clamp = clamp
+def clamp(value, lower, upper):
+    try:
+        return _upstream_clamp(value) if lower == upper == 0 else _upstream_clamp(value, lower, upper)
+    except TypeError:
+        return -9007199254740991

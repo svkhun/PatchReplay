@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "mode": "SIMULATED_AUTOMATED",
+  "human_participants": 0,
+  "scope": "Two scripted roles in isolated installed-wheel environments. No human usability or comprehension result is claimed.",
+  "scenarios": [
+    {
+      "scenario": "maintainer",
+      "mode": "SIMULATED_AUTOMATED",
+      "tasks": [
+        {
+          "module": "patchreplay",
+          "args": [
+            "doctor"
+          ],
+          "exit_code": 0,
+          "expected_exit": 0,
+          "stdout": "{\n  \"environment\": {\n    \"python\": \"3.12.14\",\n    \"implementation\": \"CPython\",\n    \"platform\": \"Windows-11-10.0.26300-SP0\",\n    \"machine\": \"AMD64\",\n    \"packages\": {\n      \"colorama\": \"0.4.6\",\n      \"iniconfig\": \"2.3.0\",\n      \"packaging\": \"25.0\",\n      \"patchreplay\": \"0.2.0\",\n      \"pip\": \"25.0.1\",\n      \"pluggy\": \"1.6.0\",\n      \"pytest\": \"8.3.5\"\n    },\n    \"git\": \"git version 2.52.0.windows.1\",\n    \"executor\": \"controlled-fixtures-v1\"\n  },\n  \"container_engines\": {\n    \"docker\": {\n      \"available\": true,\n      \"responsive\": true,\n      \"exit_code\": 0\n    },\n    \"podman\": {\n      \"available\": false,\n      \"responsive\": false\n    }\n  },\n  \"selected_executor\": \"controlled-fixtures-v1\",\n  \"external_repositories_supported\": false,\n  \"note\": \"Docker fixture executor is experimental; external repositories remain disabled.\",\n  \"ready\": true\n}\n",
+          "stderr": ""
+        },
+        {
+          "module": "patchreplay",
+          "args": [
+            "function-list"
+          ],
+          "exit_code": 0,
+          "expected_exit": 0,
+          "stdout": "already-fixed\nbaseline-regression\nboltons-fix\nboltons-noop\nboltons-regression\ndisconnect\nduplicate\nflood\nforge-records\nforge-status\ngood\nincorrect\nlcm-fix\nlcm-noop\nlcm-regression\nnarrow\nregression\ntimeout\nwrong-round\n",
+          "stderr": ""
+        },
+        {
+          "module": "patchreplay",
+          "args": [
+            "verify",
+            "D:\\All Project\\open-ai\\test-output\\v02-simulated-trials\\maintainer\\boltons-fix-e8dbcc5a67424c7a8fe19aa4ca8c555b"
+          ],
+          "exit_code": 0,
+          "expected_exit": 0,
+          "stdout": "{\"integrity\": \"CONSISTENT\", \"anchored\": false, \"status\": \"VERIFIED_FOR_DECLARED_CHECKS\"}\n",
+          "stderr": ""
+        },
+        {
+          "module": "patchreplay",
+          "args": [
+            "check",
+            "D:\\All Project\\open-ai\\test-output\\v02-wheel-accepted\\upstream\\success_count.json"
+          ],
+          "exit_code": 0,
+          "expected_exit": 0,
+          "stdout": "{\n  \"schema_version\": 2,\n  \"evaluation_kind\": \"host-function-v1\",\n  \"claim_id\": \"success_count\",\n  \"status\": \"SUPPORTED_FOR_SCOPE\",\n  \"reason\": \"Computed from host observations within the explicitly pinned scope\",\n  \"observed\": {\n    \"numerator\": 2,\n    \"denominator\": 6,\n    \"denominator_policy\": \"all_declared_cases\"\n  },\n  \"excluded_from_numerator\": {\n    \"FIX_FAILED\": 2,\n    \"REGRESSION_DETECTED\": 2\n  }\n}\n",
+          "stderr": ""
+        },
+        {
+          "module": "patchreplay",
+          "args": [
+            "check",
+            "D:\\All Project\\open-ai\\test-output\\v02-wheel-accepted\\upstream\\regression_all.json"
+          ],
+          "exit_code": 0,
+          "expected_exit": 0,
+          "stdout": "{\n  \"schema_version\": 2,\n  \"evaluation_kind\": \"host-function-v1\",\n  \"claim_id\": \"regression_all\",\n  \"status\": \"SUPPORTED_FOR_SCOPE\",\n  \"reason\": \"Computed from host observations within the explicitly pinned scope\",\n  \"observed\": {\n    \"numerator\": 2,\n    \"denominator\": 2,\n    \"denominator_policy\": \"all_declared_cases\"\n  },\n  \"excluded_from_numerator\": {}\n}\n",
+          "stderr": ""
+        },
+        {
+          "module": "patchreplay",
+          "args": [
+            "claim-draft",
+            "D:\\All Project\\open-ai\\test-output\\v02-simulated-trials\\maintainer\\boltons-fix-e8dbcc5a67424c7a8fe19aa4ca8c555b",
+            "--kind",
+            "regression_all",
+            "--output",
+            "D:\\All Project\\open-ai\\test-output\\v02-simulated-trials\\maintainer\\draft.json"
+          ],
+          "exit_code": 0,
+          "expected_exit": 0,
+          "stdout": "{\"approval\": \"UNREVIEWED\", \"draft\": \"D:\\\\All Project\\\\open-ai\\\\test-output\\\\v02-simulated-trials\\\\maintainer\\\\draft.json\"}\n",
+          "stderr": ""
+        },
+        {
+          "module": "patchreplay",
+          "args": [
+            "check",
+            "D:\\All Project\\open-ai\\test-output\\v02-simulated-trials\\maintainer\\draft.json"
+          ],
+          "exit_code": 1,
+          "expected_exit": 1,
+          "stdout": "{\n  \"schema_version\": 2,\n  \"evaluation_kind\": \"host-function-v1\",\n  \"claim_id\": \"draft\",\n  \"status\": \"INSUFFICIENT_EVIDENCE\",\n  \"reason\": \"Claim draft requires explicit review of text, scope and rule\"\n}\n",
+          "stderr": ""
+        }
+      ],
+      "passed": true
+    },
+    {
+      "scenario": "evidence-recipient",
+      "mode": "SIMULATED_AUTOMATED",
+      "tasks": [
+        {
+          "module": "patchreplay_provenance",
+          "args": [
+            "verify",
+            "--bundle",
+            "D:\\All Project\\open-ai\\test-output\\v02-simulated-trials\\recipient\\bundle",
+            "--trusted-key",
+            "D:\\All Project\\open-ai\\test-output\\v02-signed-accepted\\trust\\public.pem",
+            "--expectation",
+            "D:\\All Project\\open-ai\\test-output\\v02-signed-accepted\\trust\\expected.json"
+          ],
+          "exit_code": 0,
+          "expected_exit": 0,
+          "stdout": "{\n  \"status\": \"AUTHENTICATED_FOR_EXPECTED_SUBJECT\",\n  \"key_id\": \"sha256:c296a59266ba8c7b418bdd8a56326e912525d461658127551abd6ca1f5e03211\",\n  \"run_id\": \"boltons-fix-e8dbcc5a67424c7a8fe19aa4ca8c555b\",\n  \"kind\": \"host-function-v1\",\n  \"artifact_count\": 47,\n  \"scope\": \"Signature, expected-subject binding and artifact integrity; not correctness, freshness or real-world signer identity.\"\n}\n",
+          "stderr": ""
+        },
+        {
+          "module": "patchreplay_provenance",
+          "args": [
+            "verify",
+            "--bundle",
+            "D:\\All Project\\open-ai\\test-output\\v02-simulated-trials\\recipient\\bundle",
+            "--trusted-key",
+            "D:\\All Project\\open-ai\\test-output\\v02-signed-accepted\\trust\\public.pem",
+            "--expectation",
+            "D:\\All Project\\open-ai\\test-output\\v02-simulated-trials\\recipient\\wrong.json"
+          ],
+          "exit_code": 1,
+          "expected_exit": 1,
+          "stdout": "{\"status\": \"REJECTED\", \"reason\": \"Attested subject differs from the externally expected run or inputs\"}\n",
+          "stderr": ""
+        },
+        {
+          "module": "patchreplay",
+          "args": [
+            "replay",
+            "D:\\All Project\\open-ai\\test-output\\v02-simulated-trials\\maintainer\\boltons-fix-e8dbcc5a67424c7a8fe19aa4ca8c555b",
+            "--output",
+            "D:\\All Project\\open-ai\\test-output\\v02-simulated-trials\\recipient\\wrong-env"
+          ],
+          "exit_code": 2,
+          "expected_exit": 2,
+          "stdout": "",
+          "stderr": "patchreplay: IntegrityError: Replay environment/image drift\n"
+        },
+        {
+          "module": "patchreplay",
+          "args": [
+            "replay",
+            "D:\\All Project\\open-ai\\test-output\\v02-simulated-trials\\maintainer\\boltons-fix-e8dbcc5a67424c7a8fe19aa4ca8c555b",
+            "--output",
+            "D:\\All Project\\open-ai\\test-output\\v02-simulated-trials\\recipient\\replays"
+          ],
+          "exit_code": 0,
+          "expected_exit": 0,
+          "stdout": "{\n  \"status\": \"VERIFIED_FOR_DECLARED_CHECKS\",\n  \"reason\": \"Every declared bug reproduced; all patched bug and regression probes matched across repeats.\",\n  \"package\": \"D:\\\\All Project\\\\open-ai\\\\test-output\\\\v02-simulated-trials\\\\recipient\\\\replays\\\\boltons-fix-d1849bee011e4635b9e6f6979a3b8842\",\n  \"report\": \"D:\\\\All Project\\\\open-ai\\\\test-output\\\\v02-simulated-trials\\\\recipient\\\\replays\\\\boltons-fix-d1849bee011e4635b9e6f6979a3b8842\\\\report.html\"\n}\n",
+          "stderr": ""
+        },
+        {
+          "module": "patchreplay_provenance",
+          "args": [
+            "verify",
+            "--bundle",
+            "D:\\All Project\\open-ai\\test-output\\v02-simulated-trials\\recipient\\bundle",
+            "--trusted-key",
+            "D:\\All Project\\open-ai\\test-output\\v02-signed-accepted\\trust\\public.pem",
+            "--expectation",
+            "D:\\All Project\\open-ai\\test-output\\v02-signed-accepted\\trust\\expected.json"
+          ],
+          "exit_code": 1,
+          "expected_exit": 1,
+          "stdout": "{\"status\": \"REJECTED\", \"reason\": \"Evidence files are missing, added, or changed\"}\n",
+          "stderr": ""
+        }
+      ],
+      "passed": true
+    }
+  ]
+}

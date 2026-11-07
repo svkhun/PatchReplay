@@ -9,4 +9,7 @@ examples/container-evidence/** -text
 examples/provenance-evidence/** -text
 examples/function-evidence/** -text
 docs/verification/function/** -text
+src/patchreplay/data/real/** -text
+docs/verification/v02/** -text
+examples/v02-evidence/** -text
 

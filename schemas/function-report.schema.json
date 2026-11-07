@@ -103,14 +103,30 @@
       "type": "object"
     },
     "limitations": {
-      "const": [
-        "Registered synthetic function cases only; no arbitrary repository, command or patch intake.",
-        "MATCH proves only the declared numeric response, not which internal implementation executed.",
-        "Request IDs correlate responses; they are visible to the guest and do not authenticate it.",
-        "The host oracle, engine, reviewed image, Docker daemon and kernel are trusted.",
-        "No generic pytest isolation, container escape resistance or production readiness is established.",
-        "Replay pins recorded software and policy identities, not hardware, host load, scheduling or randomness.",
-        "Hashes check consistency; signatures authenticate an expected subject, not truthful observations or correct code."
+      "oneOf": [
+        {
+          "const": [
+            "Registered synthetic function cases only; no arbitrary repository, command or patch intake.",
+            "MATCH proves only the declared numeric response, not which internal implementation executed.",
+            "Request IDs correlate responses; they are visible to the guest and do not authenticate it.",
+            "The host oracle, engine, reviewed image, Docker daemon and kernel are trusted.",
+            "No generic pytest isolation, container escape resistance or production readiness is established.",
+            "Replay pins recorded software and policy identities, not hardware, host load, scheduling or randomness.",
+            "Hashes check consistency; signatures authenticate an expected subject, not truthful observations or correct code."
+          ]
+        },
+        {
+          "const": [
+            "Registered upstream function extracts with reviewed adapters; synthetic controls are labeled in provenance.",
+            "Exception sentinels encode only the specific exception declared by the adapter on the declared domain.",
+            "MATCH proves only the declared numeric response, not which internal implementation executed.",
+            "Request IDs correlate responses; they are visible to the guest and do not authenticate it.",
+            "The host oracle, engine, reviewed image, Docker daemon and kernel are trusted.",
+            "No generic pytest isolation, container escape resistance or production readiness is established.",
+            "Replay pins recorded software and policy identities, not hardware, host load, scheduling or randomness.",
+            "Hashes check consistency; signatures authenticate an expected subject, not truthful observations or correct code."
+          ]
+        }
       ]
     },
     "observations": {

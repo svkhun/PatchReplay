@@ -1,0 +1,22 @@
+{
+  "capabilities": [],
+  "container_per_request": true,
+  "control_timeout_seconds": 15,
+  "cpus": 1,
+  "guest_inputs": [
+    "candidate.py",
+    "guest.py"
+  ],
+  "id": "docker-host-function-v1",
+  "interface": "candidate.clamp(int,int,int)->int",
+  "max_integer": 9007199254740991,
+  "max_response_bytes": 4096,
+  "memory_bytes": 268435456,
+  "network": "none",
+  "no_new_privileges": true,
+  "pids": 64,
+  "protocol": 1,
+  "read_only": true,
+  "scratch_bytes": 67108864,
+  "uid_gid": "65534:65534"
+}

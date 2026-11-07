@@ -1,0 +1,12 @@
+diff --git a/candidate.py b/candidate.py
+--- a/candidate.py
++++ b/candidate.py
+@@ -5,7 +5,7 @@
+ import bisect
+ 
+ 
+-def clamp(x, lower=None, upper=None):
++def clamp(x, lower=float('-inf'), upper=float('inf')):
+     """Limit a value to a given range.
+ 
+     Args:

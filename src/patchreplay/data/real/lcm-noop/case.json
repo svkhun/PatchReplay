@@ -1,0 +1,15 @@
+{
+  "case_id": "lcm-noop",
+  "evaluator_sha256": "5e1b6a83d9791a68a79f6dfacf85b4fa793a98a0dd859bc9c855aec9858b1882",
+  "interface": "candidate.clamp(int,int,int)->int",
+  "patch_sha256": "791db2cf5f48565daa810d38b9b5338194be6cdef6405a88df3cfadf5711a697",
+  "patched_sha256": "cfc426d036295a46ec3fc53ec1b3db83e75648680a422cdee661aab4d42e6a76",
+  "policy_sha256": "93c78c1e15e9653f7f683378d199fe26fa0c439c3e906a3a6bb04166525e0923",
+  "provenance_sha256": "620f6b34b125bb5afd39320eee0dd89d6a55f08a920609ce74dfe246ad02464b",
+  "repeats": 2,
+  "schema_version": 2,
+  "source_sha256": "95981d7729ebab3fa6f28a322b2d69b829c83663b12d237edb4189eba4de4c45",
+  "suite_id": "reviewed-upstream-functions-v1",
+  "suite_sha256": "ce24a56d3335e09081d61ffd28aa51d6e48f9315cc258e166e17183485c2880d",
+  "timeout_seconds": 10
+}

@@ -8,8 +8,8 @@ import re
 
 from patchreplay.contracts import require_keys, sha
 from patchreplay.executors import DockerExecutor
-from patchreplay.integrity import digest, identity, read_json, safe_path, tree_files, verify_package
-from .contract import KIND, POLICY, LIMITATIONS, equal, parse_case, parse_oracle, schedule, decide
+from patchreplay.integrity import digest, identity, read_json, safe_path, tree_files, tree_hash, verify_package
+from .contract import KIND, POLICY, LIMITATIONS, limitations, equal, parse_case, parse_oracle, schedule, decide
 from .transport import interpret, MAX_RESPONSE
 
 REPORT_KEYS = {"schema_version", "evaluation_kind", "run_id", "case_id", "created_at", "identities",
@@ -70,6 +70,8 @@ def validate(root, report):
     if not isinstance(report["created_at"], str) or datetime.fromisoformat(report["created_at"]).tzinfo is None:
         raise ValueError("Invalid creation time")
     equal(identity(oracle), case["evaluator_sha256"], "Oracle drift")
+    if case["schema_version"] == 2:
+        equal(tree_hash(root / "inputs/provenance"), case["provenance_sha256"], "Upstream provenance snapshot drift")
     equal(read_json(root / "inputs/policy.json"), POLICY, "Policy drift")
     for file, key in (("source.py", "source_sha256"), ("patched.py", "patched_sha256"), ("patch.diff", "patch_sha256")):
         equal(digest((root / "inputs" / file).read_bytes()), case[key], "Input snapshot drift")
@@ -83,7 +85,7 @@ def validate(root, report):
     executor = DockerExecutor(image)  # Validates identity syntax only; never calls Docker.
     equal(report["identities"], bindings(case, env, engine, image), "Resolved execution bindings drift")
     equal(read_json(root / "inputs/execution.json"), report["identities"], "Pre-execution binding drift")
-    equal(report["limitations"], LIMITATIONS, "Missing or changed limitations")
+    equal(report["limitations"], limitations(case), "Missing or changed limitations")
     failure = report["failure"]
     if failure is not None:
         require_keys(failure, {"stage", "kind", "detail"}, "Failure")

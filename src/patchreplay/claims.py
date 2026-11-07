@@ -106,6 +106,12 @@ def parse_claim(data: dict) -> dict:
 
 
 def check_claim(path: Path, evidence_root: Path | None = None) -> dict:
+    try:
+        if read_json(path).get("schema_version") == 2:
+            from .function_claims import check
+            return check(path, evidence_root)
+    except (OSError, ValueError):
+        pass
     claim_id = path.stem
 
     def result(status, reason, **extra):

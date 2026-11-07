@@ -10,13 +10,19 @@ import uuid
 from patchreplay.engine import PACKAGE, environment
 from patchreplay.executors import DockerExecutor
 from patchreplay.integrity import (IntegrityError, digest, identity, patch_paths, read_json,
-                                   seal_package, tree_files, write_json)
+                                   seal_package, tree_files, tree_hash, write_json)
 from patchreplay.process import clean_environment, execute
-from .contract import KIND, POLICY, LIMITATIONS, equal, parse_case, parse_oracle, schedule, decide
+from .contract import KIND, POLICY, LIMITATIONS, limitations, equal, parse_case, parse_oracle, schedule, decide
 from .transport import observe
 
 DATA = PACKAGE / "data/function"
 SUITE_SHA256 = "fb14a31914cffe1561190499720a8aa806347ff68e709b9834660fc21bb91ddd"
+REAL_DATA = PACKAGE / "data/real"
+REAL_SUITE_SHA256 = "ce24a56d3335e09081d61ffd28aa51d6e48f9315cc258e166e17183485c2880d"
+
+
+def registered_names():
+    return sorted([*read_json(DATA / "suite.json")["members"], *read_json(REAL_DATA / "suite.json")["members"]])
 
 
 def engine_files():
@@ -25,14 +31,17 @@ def engine_files():
 
 
 def load_registered(name):
-    suite = read_json(DATA / "suite.json")
-    equal(identity(suite), SUITE_SHA256, "Registered function suite drift")
+    data = REAL_DATA if name in read_json(REAL_DATA / "suite.json")["members"] else DATA
+    suite = read_json(data / "suite.json")
+    equal(identity(suite), REAL_SUITE_SHA256 if data == REAL_DATA else SUITE_SHA256, "Registered function suite drift")
     if name not in suite["members"]:
         raise IntegrityError("Only registered function case names are admitted; use function-list")
-    folder = DATA / name
+    folder = data / name
     case = parse_case(read_json(folder / "case.json"))
     equal(case, {**suite["members"][name], "suite_sha256": identity(suite)}, "Registered case drift")
-    oracle = parse_oracle(read_json(DATA / "oracle.json"))
+    oracle = parse_oracle(read_json(folder / "oracle.json" if data == REAL_DATA else DATA / "oracle.json"))
+    if case["schema_version"] == 2:
+        equal(tree_hash(folder / "provenance"), case["provenance_sha256"], "Upstream provenance drift")
     equal(identity(oracle), case["evaluator_sha256"], "Registered evaluator drift")
     source, patch, patched = [(folder / file).read_bytes() for file in ("source.py", "patch.diff", "patched.py")]
     for value, key in ((source, "source_sha256"), (patch, "patch_sha256"), (patched, "patched_sha256")):
@@ -99,6 +108,8 @@ def evaluate(name, image, output, *, expected_bindings=None):
         write_json(inputs / file, value)
     for file, value in (("source.py", source), ("patch.diff", patch), ("patched.py", patched)):
         (inputs / file).write_bytes(value)
+    if case["schema_version"] == 2:
+        shutil.copytree(REAL_DATA / name / "provenance", inputs / "provenance")
     engine = engine_files()
     write_json(inputs / "engine.json", {"files": engine})
     for relative in engine:
@@ -109,7 +120,7 @@ def evaluate(name, image, output, *, expected_bindings=None):
     write_json(inputs / "execution.json", bindings(case, env, engine, image))
     report = {"schema_version": 2, "evaluation_kind": KIND, "run_id": root.name, "case_id": name,
               "created_at": datetime.now(timezone.utc).isoformat(), "identities": {}, "observations": [],
-              "failure": None, "status": "INFRA_ERROR", "reason": "", "limitations": LIMITATIONS}
+              "failure": None, "status": "INFRA_ERROR", "reason": "", "limitations": limitations(case)}
     stage = "preflight"
     try:
         env = runtime_environment(executor)

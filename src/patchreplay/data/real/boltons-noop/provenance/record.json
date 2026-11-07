@@ -1,0 +1,14 @@
+{
+  "adaptation": "Full upstream module retained; append a fixed wrapper. TypeError is encoded by the reserved integer -9007199254740991. Declared success probes cannot return this sentinel. Zero/zero bounds select the upstream default-argument call.",
+  "before_commit": "230b856dc31cc0702d77ef978daec9cff45944eb",
+  "dependency_policy": "Python standard library only; no installation during evaluation",
+  "fix_commit": "4bae3f55894e78ec6326d6dba8ac7e3eb39440aa",
+  "fix_url": "https://github.com/mahmoud/boltons/commit/4bae3f55894e78ec6326d6dba8ac7e3eb39440aa",
+  "origin": "upstream-function-extract",
+  "repository": "mahmoud/boltons",
+  "schema_version": 1,
+  "scope": "Declared function probes through a reviewed wrapper; not the complete upstream project/test suite.",
+  "upstream_path": "boltons/mathutils.py",
+  "variant": "noop",
+  "variant_origin": "synthetic-control"
+}

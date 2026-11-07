@@ -29,6 +29,9 @@ def parser() -> argparse.ArgumentParser:
     function.add_argument("case", help="Registered function case name; external paths are rejected")
     function.add_argument("--image", required=True, help="Immutable local Docker image ID")
     function.add_argument("--output", type=Path, default=Path(".patchreplay/function-runs"))
+    function_demo = sub.add_parser("function-demo", help="Run two pinned upstream fixes, four controls, claims and replay")
+    function_demo.add_argument("--image", required=True)
+    function_demo.add_argument("--output", type=Path, required=True)
     export = sub.add_parser("examples", help="Copy editable case specifications and patches for inspection")
     export.add_argument("destination", type=Path)
     run = sub.add_parser("run", help="Evaluate a bundled name or case JSON file")
@@ -46,6 +49,10 @@ def parser() -> argparse.ArgumentParser:
     check.add_argument("manifest", type=Path)
     check.add_argument("--evidence-root", type=Path)
     check.add_argument("--output", type=Path)
+    draft = sub.add_parser("claim-draft", help="Draft an unreviewed function claim for explicit scope/rule review")
+    draft.add_argument("packages", type=Path, nargs="+")
+    draft.add_argument("--kind", choices=["success_count", "regression_all"], required=True)
+    draft.add_argument("--output", type=Path, required=True)
     demo = sub.add_parser("demo", help="Run all synthetic cases and claim examples")
     demo.add_argument("--output", type=Path, default=Path("demo-output"))
     return p
@@ -83,8 +90,8 @@ def main(argv: list[str] | None = None) -> int:
             print("\n".join(p.stem for p in sorted((DATA / "cases").glob("*.json"))))
             return 0
         if args.command == "function-list":
-            from .function.workflow import DATA as FUNCTION_DATA, load_registered
-            names = sorted(read_json(FUNCTION_DATA / "suite.json")["members"])
+            from .function.workflow import registered_names, load_registered
+            names = registered_names()
             for name in names:
                 load_registered(name)
             print("\n".join(names))
@@ -96,6 +103,11 @@ def main(argv: list[str] | None = None) -> int:
             print(json.dumps({"status": report["status"], "reason": report["reason"], "package": str(folder),
                               "report": str(folder / "report.html")}, indent=2))
             return 0 if report["status"] == Status.VERIFIED.value else 1
+        if args.command == "function-demo":
+            from .function_demo import demo
+            result = demo(args.image, args.output)
+            print(json.dumps({"expected_outcomes_matched": result["expected_outcomes_matched"], "report": str((args.output / "index.html").resolve())}))
+            return 0 if result["expected_outcomes_matched"] else 1
         if args.command == "examples":
             if args.destination.exists():
                 raise ValueError("Destination already exists; choose a new directory")
@@ -141,6 +153,11 @@ def main(argv: list[str] | None = None) -> int:
                 write_json(args.output, result)
             print(json.dumps(result, indent=2))
             return 0 if result["status"] == "SUPPORTED_FOR_SCOPE" else 1
+        if args.command == "claim-draft":
+            from .function_claims import draft
+            draft(args.packages, args.output, args.kind)
+            print(json.dumps({"approval": "UNREVIEWED", "draft": str(args.output.resolve())}))
+            return 0
         if args.command == "demo":
             from .demo import demo
             result = demo(args.output.resolve())

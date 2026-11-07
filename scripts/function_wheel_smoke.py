@@ -12,6 +12,7 @@ from patchreplay.function.workflow import load_registered
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--image")
+    parser.add_argument("--upstream", action="store_true", help="Also run the reviewed upstream suite, claims and replays")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     args.output = args.output.resolve()
@@ -37,6 +38,12 @@ def main():
         assert first["package"] != second["package"]
         cli("verify", second["package"])
         record.update(first=first, replay=second)
+        if args.upstream:
+            result = json.loads(cli("function-demo", "--image", args.image, "--output", args.output / "upstream"))
+            assert result["expected_outcomes_matched"]
+            cli("check", args.output / "upstream/success_count.json")
+            cli("check", args.output / "upstream/regression_all.json")
+            record["upstream"] = result
     else:
         # Invalid image is rejected before any Docker invocation.
         cli("function-run", "good", "--image", "latest", "--output", args.output / "rejected", expected=2)
